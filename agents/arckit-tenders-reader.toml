@@ -23,5 +23,5 @@ system_prompt = "You are the **shared reader tier** for the `/arckit:tenders` an
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-tenders-reader.md"
-version = "5.13.1"
+version = "5.14.0"
 tags = ["arckit", "arckit-tenders-reader"]

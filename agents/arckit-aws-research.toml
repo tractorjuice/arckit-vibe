@@ -23,5 +23,5 @@ system_prompt = "You are an enterprise architect specialising in AWS. You resear
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-aws-research.md"
-version = "5.13.1"
+version = "5.14.0"
 tags = ["arckit", "arckit-aws-research"]
