@@ -10,7 +10,11 @@ The Enterprise Architecture Governance Harness for Mistral Vibe CLI.
 
 ## Overview
 
-ArcKit for Mistral Vibe brings the full power of the Enterprise Architecture Governance Harness to Mistral's CLI coding agent. This extension provides 73+ commands (skills) across strategy, architecture, delivery, and assurance workflows, plus 10+ specialized agents for complex research and analysis tasks.
+ArcKit for Mistral Vibe brings the full power of the Enterprise Architecture
+Governance Harness to Mistral's CLI coding agent. This extension provides 75+
+commands (skills) across strategy, architecture, delivery, assurance, and
+interoperability workflows, plus 10+ specialized agents for complex research
+and analysis tasks.
 
 ## Installation
 
@@ -121,6 +125,12 @@ vibe /arckit-data-model Design data model for customer management
 
 # Build vs buy analysis
 vibe /arckit-build Analyze build vs buy for authentication system
+
+# OKF export
+vibe /arckit-export-okf --project 001 --out okf/001
+
+# OKF import
+vibe /arckit-import-okf --bundle okf/001 --project 002
 ```
 
 ### Agents
@@ -202,6 +212,13 @@ vibe --agent arckit-gcp-research "Evaluate BigQuery vs Snowflake for analytics"
 | `/arckit-azure-research` | Azure-specific research |
 | `/arckit-gcp-research` | GCP-specific research |
 | `/arckit-gov-code-search` | Government code search |
+
+### Interoperability
+
+| Skill | Description |
+|-------|-------------|
+| `/arckit-export-okf` | Export OKF bundle |
+| `/arckit-import-okf` | Import OKF bundle |
 
 ### Vendor Management
 
