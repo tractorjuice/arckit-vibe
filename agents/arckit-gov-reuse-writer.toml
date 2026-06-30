@@ -23,5 +23,5 @@ system_prompt = "You are the **writer tier** of the gov-reuse three-tier subagen
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-gov-reuse-writer.md"
-version = "6.0.0"
+version = "6.1.0"
 tags = ["arckit", "arckit-gov-reuse-writer"]

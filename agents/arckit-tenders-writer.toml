@@ -23,5 +23,5 @@ system_prompt = "You are the **writer tier** of the tenders three-tier subagent 
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-tenders-writer.md"
-version = "6.0.0"
+version = "6.1.0"
 tags = ["arckit", "arckit-tenders-writer"]
