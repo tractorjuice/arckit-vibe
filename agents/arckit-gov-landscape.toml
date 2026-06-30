@@ -23,5 +23,5 @@ system_prompt = "You are a government technology landscape analyst. You map what
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-gov-landscape.md"
-version = "5.15.1"
+version = "5.15.2"
 tags = ["arckit", "arckit-gov-landscape"]
