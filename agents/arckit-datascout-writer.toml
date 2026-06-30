@@ -23,5 +23,5 @@ system_prompt = "You are the **writer tier** of the datascout three-tier subagen
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-datascout-writer.md"
-version = "6.1.0"
+version = "6.1.1"
 tags = ["arckit", "arckit-datascout-writer"]
