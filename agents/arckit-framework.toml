@@ -23,5 +23,5 @@ system_prompt = "You are an enterprise architecture framework specialist. You tr
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-framework.md"
-version = "5.15.2"
+version = "6.0.0"
 tags = ["arckit", "arckit-framework"]

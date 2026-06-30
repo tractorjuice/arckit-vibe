@@ -23,5 +23,5 @@ system_prompt = "You are an enterprise architect specialising in Google Cloud Pl
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-gcp-research.md"
-version = "5.15.2"
+version = "6.0.0"
 tags = ["arckit", "arckit-gcp-research"]
