@@ -23,5 +23,5 @@ system_prompt = "You are a government code discovery specialist. You perform sem
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-gov-code-search.md"
-version = "6.1.4"
+version = "6.1.5"
 tags = ["arckit", "arckit-gov-code-search"]

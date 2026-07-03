@@ -23,5 +23,5 @@ system_prompt = "You are the **writer tier** of the grants three-tier subagent s
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-grants-writer.md"
-version = "6.1.4"
+version = "6.1.5"
 tags = ["arckit", "arckit-grants-writer"]
