@@ -23,5 +23,5 @@ system_prompt = "You are the **reader tier** of the grants three-tier subagent s
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-grants-reader.md"
-version = "6.1.6"
+version = "6.1.7"
 tags = ["arckit", "arckit-grants-reader"]

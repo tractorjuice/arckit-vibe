@@ -23,5 +23,5 @@ system_prompt = "You are an enterprise architect specialising in Microsoft Azure
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-azure-research.md"
-version = "6.1.6"
+version = "6.1.7"
 tags = ["arckit", "arckit-azure-research"]
