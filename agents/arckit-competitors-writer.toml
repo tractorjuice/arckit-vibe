@@ -23,5 +23,5 @@ system_prompt = "You are the **writer tier** of the competitors three-tier subag
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-competitors-writer.md"
-version = "6.1.3"
+version = "6.1.4"
 tags = ["arckit", "arckit-competitors-writer"]
