@@ -23,5 +23,5 @@ system_prompt = "You are an enterprise data source discovery specialist. You sys
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-datascout.md"
-version = "6.1.7"
+version = "6.2.0"
 tags = ["arckit", "arckit-datascout"]

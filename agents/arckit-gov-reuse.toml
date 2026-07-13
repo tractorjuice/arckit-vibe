@@ -23,5 +23,5 @@ system_prompt = "You are an enterprise architecture reuse specialist. You system
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-gov-reuse.md"
-version = "6.1.7"
+version = "6.2.0"
 tags = ["arckit", "arckit-gov-reuse"]
