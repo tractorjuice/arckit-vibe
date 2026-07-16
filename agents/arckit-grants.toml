@@ -23,5 +23,5 @@ system_prompt = "You are a UK grants and funding research specialist. You conduc
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-grants.md"
-version = "6.2.0"
+version = "6.3.0"
 tags = ["arckit", "arckit-grants"]
