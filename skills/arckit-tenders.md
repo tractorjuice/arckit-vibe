@@ -247,7 +247,7 @@ to the project's `research/` directory. Run the bundled helper (it is
 positional-then-flags):
 
 ```bash
-bash "${VIBE_EXTENSION_ROOT}/scripts/bash/generate-document-id.sh" \
+node "${VIBE_EXTENSION_ROOT}/scripts/generate-document-id.mjs" \
      {P} TNDR --next-num "{project_path}/research"
 ```
 
@@ -348,7 +348,7 @@ Return ONLY a concise summary to the user:
 
 - **Template** — `${VIBE_EXTENSION_ROOT}/templates/tenders-template.md` (read by writer)
 - **Schema** — `${VIBE_EXTENSION_ROOT}/schemas/tenders-handoff.schema.json`
-- **Helpers** — `${VIBE_EXTENSION_ROOT}/scripts/validate-handoff.mjs` · `${VIBE_EXTENSION_ROOT}/scripts/bash/generate-document-id.sh`
+- **Helpers** — `${VIBE_EXTENSION_ROOT}/scripts/validate-handoff.mjs` · `${VIBE_EXTENSION_ROOT}/scripts/generate-document-id.mjs`
 - **Subagents dispatched** — `arckit-tenders-reader` (fetch + extract) · `arckit-tenders-writer` (final render)
 - **External tools** — none directly (delegated to reader)
 - **Related commands** — `/arckit:sobc` (downstream Economic Case) · `/arckit:risk` (downstream concentration risk) · `/arckit:research` (build-vs-buy context)

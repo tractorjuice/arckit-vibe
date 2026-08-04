@@ -49,7 +49,7 @@ instead of recreating it. Extract `project_dir` and `project_number` from the JS
 Run:
 
 ```bash
-${VIBE_EXTENSION_ROOT}/scripts/bash/generate-document-id.sh <PROJECT_NUMBER> FSCTP --filename
+${VIBE_EXTENSION_ROOT}/scripts/generate-document-id.mjs <PROJECT_NUMBER> FSCTP --filename
 ```
 
 This produces a filename of the form `ARC-NNN-FSCTP-v1.0.md`. FSCTP is the doc-type code for this

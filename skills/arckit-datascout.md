@@ -462,7 +462,7 @@ Return ONLY a concise summary including:
 ## Toolchain
 
 - **Templates** — `${VIBE_EXTENSION_ROOT}/templates/datascout-template.md` (override at `.arckit/templates-custom/datascout-template.md`)
-- **Helpers** — `${VIBE_EXTENSION_ROOT}/scripts/bash/create-project.sh` · `${VIBE_EXTENSION_ROOT}/scripts/bash/generate-document-id.sh`
+- **Helpers** — `${VIBE_EXTENSION_ROOT}/scripts/bash/create-project.sh` · `${VIBE_EXTENSION_ROOT}/scripts/generate-document-id.mjs`
 - **External tools** — `WebSearch` · `WebFetch` (no MCP)
 - **Related commands** — `/arckit:requirements` (input) · `/arckit:data-model` (downstream) · `/arckit:dpia` (downstream privacy assessment)
 

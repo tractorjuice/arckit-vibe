@@ -52,7 +52,7 @@ instead of recreating it. Extract `project_dir` and `project_number` from the JS
 Run:
 
 ```bash
-${VIBE_EXTENSION_ROOT}/scripts/bash/generate-document-id.sh <PROJECT_NUMBER> FSSAFE --filename
+${VIBE_EXTENSION_ROOT}/scripts/generate-document-id.mjs <PROJECT_NUMBER> FSSAFE --filename
 ```
 
 This produces a filename of the form `ARC-NNN-FSSAFE-v1.0.md`. FSSAFE is the doc-type code for this

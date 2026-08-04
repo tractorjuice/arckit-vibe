@@ -272,7 +272,7 @@ Return ONLY a concise summary including:
 ## Toolchain
 
 - **Templates** — `${VIBE_EXTENSION_ROOT}/templates/gcp-research-template.md` (override at `.arckit/templates-custom/gcp-research-template.md`)
-- **Helpers** — `${VIBE_EXTENSION_ROOT}/scripts/bash/create-project.sh` · `${VIBE_EXTENSION_ROOT}/scripts/bash/generate-document-id.sh`
+- **Helpers** — `${VIBE_EXTENSION_ROOT}/scripts/bash/create-project.sh` · `${VIBE_EXTENSION_ROOT}/scripts/generate-document-id.mjs`
 - **MCP server** — `google-developer-knowledge` (search documents, get document, batch get documents)
 - **External tools** — `WebSearch` · `WebFetch` (STANDALONE-mode fallback when MCP unavailable)
 - **Related commands** — `/arckit:requirements` (input) · `/arckit:research` (cross-cloud comparison) · `/arckit:aws-research` · `/arckit:azure-research`
