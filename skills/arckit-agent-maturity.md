@@ -61,6 +61,7 @@ ${args}
 - **First**, check if `.arckit/templates-custom/agent-maturity-template.md` exists in the project root
 - **If found**: Read the user's customized template (user override takes precedence)
 - **If not found**: Read `${VIBE_EXTENSION_ROOT}/templates/agent-maturity-template.md` (default)
+- **Then**, read `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` and resolve the template's `<!-- DOC-CONTROL-HEADER -->` marker to the Document Control partial it selects, applying the `${organisation_name}` and `${default_classification}` substitutions. Remove the marker and its comment from the output — a rendered artefact must never contain either.
 
 > **Tip**: Users can customize templates with `/arckit:customize agent-maturity`
 

@@ -51,7 +51,7 @@ Australian Government agencies covered by the Privacy Act 1988 must conduct PIAs
    - **Then**, `.arckit/templates/au-pia-template.md`
    - **Fallback**, `${VIBE_EXTENSION_ROOT}/templates/au-pia-template.md`
 
-3. Use `scripts/bash/create-project.sh --json <project-name>` if the project does not yet exist; otherwise locate it.
+3. Use `scripts/bash/create-project.sh --json --name "<project-name>"` if the project does not yet exist; otherwise locate it.
 
 4. Use `node scripts/generate-document-id.mjs <PROJECT_ID> AUPIA --filename` for the artefact filename.
 
@@ -97,9 +97,10 @@ Australian Government agencies covered by the Privacy Act 1988 must conduct PIAs
 
 7. Populate the External References section per `${VIBE_EXTENSION_ROOT}/references/citation-instructions.md`. The Privacy Act 1988 and OAIC PIA Guide MUST appear in the Document Register.
 
-8. Write the artefact via the Write tool to `projects/<project-id>/<filename>`.
+8. Before writing the file, read `${VIBE_EXTENSION_ROOT}/references/quality-checklist.md` and verify all **Common Checks** plus the **AUPIA** per-type checks pass. Fix any failures before proceeding.
+9. Write the artefact via the Write tool to `projects/<project-id>/<filename>`.
 
-9. Show only a summary to the user (one paragraph plus the APP compliance summary table).
+10. Show only a summary to the user (one paragraph plus the APP compliance summary table).
 
 ## Important Notes
 
