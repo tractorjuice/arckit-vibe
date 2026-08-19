@@ -8,11 +8,11 @@ display_name = "ArcKit Grants"
 description = "Use this agent when the user needs to research UK funding opportunities for a project, including government grants (UKRI, Innovate UK, NIHR, DSIT), charitable foundations (Wellcome, Nesta), social impact funding, and accelerator programmes. This agent performs extensive web research autonomously. Examples:\n\n<example>\nContext: User has a project and wants to find relevant UK grants\nuser: \"/arckit:grants Research funding opportunities for the NHS appointment booking project\"\nassistant: \"I'll launch the grants agent to research UK funding opportunities for the NHS appointment booking project. It will search government grants, charitable foundations, and accelerators, then produce an eligibility-scored report.\"\n<commentary>\nThe grants agent is ideal here because it needs to perform dozens of WebSearch and WebFetch calls across multiple UK funding bodies. Running as an agent keeps this context-heavy work isolated.\n</commentary>\n</example>\n\n<example>\nContext: User wants to explore funding after creating requirements\nuser: \"Are there any UK grants we could apply for with this project?\"\nassistant: \"I'll launch the grants agent to discover and evaluate UK funding opportunities based on your project requirements.\"\n<commentary>\nEven without the explicit slash command, the request for grant/funding research should trigger this agent since it involves heavy web research.\n</commentary>\n</example>\n"
 
 safety = "safe"
-max_turns = 30
-effort = "high"
+max_turns = 50
+effort = "max"
 
 # Tool permissions
-enabled_tools = []
+enabled_tools = ["read_file", "glob", "grep", "write_file", "bash", "todo", "web_search", "web_fetch"]
 disabled_tools = []
 
 # Model configuration
@@ -23,5 +23,5 @@ system_prompt = "You are a UK grants and funding research specialist. You conduc
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-grants.md"
-version = "6.11.0"
+version = "6.12.0"
 tags = ["arckit", "arckit-grants"]
