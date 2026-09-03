@@ -23,5 +23,5 @@ system_prompt = "You are a UK public procurement competitor analyst. You query t
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-competitors.md"
-version = "6.13.0"
+version = "6.14.0"
 tags = ["arckit", "arckit-competitors"]
