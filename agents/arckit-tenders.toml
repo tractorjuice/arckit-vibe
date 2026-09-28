@@ -23,5 +23,5 @@ system_prompt = "You are a UK public procurement market intelligence specialist.
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-tenders.md"
-version = "6.16.4"
+version = "6.16.5"
 tags = ["arckit", "arckit-tenders"]
