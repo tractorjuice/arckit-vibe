@@ -53,7 +53,7 @@ ${args}
    - **Citation traceability**: When referencing content from external documents, follow the citation instructions in `${VIBE_EXTENSION_ROOT}/references/citation-instructions.md`. Place inline citation markers (e.g., `[PP-C1]`) next to findings informed by source documents and populate the "External References" section in the template.
 
 4. **Read the template** (with user override support):
-   - **First**, check if `.arckit/templates/data-model-template.md` exists in the project root
+   - **First**, check if `.arckit/templates-custom/data-model-template.md` exists in the project root, then `.arckit/templates/data-model-template.md`
    - **If found**: Read the user's customized template (user override takes precedence)
    - **If not found**: Read `${VIBE_EXTENSION_ROOT}/templates/data-model-template.md` (default)
    - **Then read** `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` and resolve the `<!-- DOC-CONTROL-HEADER -->` marker in the template before writing. Do not hand-write the Document Control table: the partial `RENDERING.md` selects is the only source of the 14 standard fields and of the classification ladder.

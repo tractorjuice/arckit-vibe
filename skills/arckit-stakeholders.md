@@ -28,7 +28,7 @@ ${args}
      6. Set `PROJECT_ID` = the 3-digit number, `PROJECT_PATH` = the new directory path
 
 2. **Read the template** (with user override support):
-   - **First**, check if `.arckit/templates/stakeholder-drivers-template.md` exists in the project root
+   - **First**, check if `.arckit/templates-custom/stakeholder-drivers-template.md` exists in the project root, then `.arckit/templates/stakeholder-drivers-template.md`
    - **If found**: Read the user's customized template (user override takes precedence)
    - **If not found**: Read `${VIBE_EXTENSION_ROOT}/templates/stakeholder-drivers-template.md` (default)
    - **Then read** `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` and resolve the `<!-- DOC-CONTROL-HEADER -->` marker in the template before writing. Do not hand-write the Document Control table: the partial `RENDERING.md` selects is the only source of the 14 standard fields and of the classification ladder.
