@@ -28,8 +28,8 @@ ${args}
 
 **RECOMMENDED** (read if available, note if missing):
 
-- **TBB** (Te Beschermen Belangen determination, from `/arckit:nl-tbb`) — Extract: BIV scores to prioritise which control areas matter most
-- **RBCLOUD** (Rijksbreed Cloudbeleid Compliance Assessment, from `/arckit:nl-cloud`) — Extract: hosting model, data location, encryption posture already assessed
+- **TBB** (Te Beschermen Belangen determination, from `/arckit-nl-tbb`) — Extract: BIV scores to prioritise which control areas matter most
+- **RBCLOUD** (Rijksbreed Cloudbeleid Compliance Assessment, from `/arckit-nl-cloud`) — Extract: hosting model, data location, encryption posture already assessed
 - **SECD** (Secure by Design) — Extract: existing security controls that overlap with BIO2 measures
 - **RISK** (Risk Register) — Extract: existing security risks
 
@@ -69,7 +69,7 @@ Also read `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` — the temp
 
 ### Step 4: Scope and Certification Posture
 
-State the system in scope, the BIV scores if available from `/arckit:nl-tbb`, and the certification posture: BIO2 does not require ISO/IEC 27001 certification, but its overheidsmaatregelen are mandatory where applicable regardless of certification status. Do not present "not certified" as equivalent to "non-conformant" — they are different questions.
+State the system in scope, the BIV scores if available from `/arckit-nl-tbb`, and the certification posture: BIO2 does not require ISO/IEC 27001 certification, but its overheidsmaatregelen are mandatory where applicable regardless of certification status. Do not present "not certified" as equivalent to "non-conformant" — they are different questions.
 
 ### Step 5: Assess Against the Four ISO/IEC 27002:2022 Control Themes
 
@@ -80,7 +80,7 @@ Structure the assessment around the four themes the base standard uses — **Org
 3. **Do not invent an overheidsmaatregel number or requirement text you were not given** — where the specific measure text is not available, mark it `[PENDING — cite from current BIO2 text]` and instruct the assessor to complete it from the official document
 4. Record a gap where the control is absent, partial, or unverified
 
-Cross-reference `/arckit:nl-cloud` Section 7 (data location and encryption) for the Technological controls theme where the system is cloud-hosted — do not re-derive the encryption assessment from scratch if it already exists.
+Cross-reference `/arckit-nl-cloud` Section 7 (data location and encryption) for the Technological controls theme where the system is cloud-hosted — do not re-derive the encryption assessment from scratch if it already exists.
 
 ### Step 6: Gap Summary
 
@@ -142,9 +142,9 @@ ISO 27001 certified:  {Yes / No — not required by BIO2}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Next steps:
-1. {If BIV scores not available: Run /arckit:nl-tbb to prioritise remaining control work}
-2. {If cloud-hosted: Run /arckit:nl-cloud for the data-location and encryption assessment}
-3. Run /arckit:risk to add open gaps to the risk register
+1. {If BIV scores not available: Run /arckit-nl-tbb to prioritise remaining control work}
+2. {If cloud-hosted: Run /arckit-nl-cloud for the data-location and encryption assessment}
+3. Run /arckit-risk to add open gaps to the risk register
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -153,7 +153,7 @@ Next steps:
 - **Certification is not conformance**: BIO2 does not mandate ISO/IEC 27001 certification. Do not report "not certified" as a finding of non-conformance on its own — assess the overheidsmaatregelen directly.
 - **Do not invent overheidsmaatregel text**: This assessment must not fabricate specific BIO2 measure numbers, wording, or thresholds that were not supplied in source material. Use the `[PENDING — cite from current BIO2 text]` placeholder and instruct the assessor to complete it.
 - **BIO2 is version 1.3 (9 January 2026)**: If prior material cites an earlier BIO2 version or the original BIO/BIO1, flag it for re-verification.
-- **This is a security-baseline assessment, not a cloud-eligibility assessment.** Run `/arckit:nl-cloud` for hosting eligibility and `/arckit:nl-tbb` for the TBB category.
+- **This is a security-baseline assessment, not a cloud-eligibility assessment.** Run `/arckit-nl-cloud` for hosting eligibility and `/arckit-nl-tbb` for the TBB category.
 - **Use Write Tool**: BIO2 assessments are detailed technical documents. Always use the Write tool.
 
 ## Key References
@@ -175,18 +175,18 @@ Next steps:
 - ✅ Certification-vs-conformance distinction stated explicitly
 - ✅ All four ISO/IEC 27002:2022 control themes addressed
 - ✅ No overheidsmaatregel number or requirement text fabricated
-- ✅ BIV scores from `/arckit:nl-tbb` used to prioritise controls where available
+- ✅ BIV scores from `/arckit-nl-tbb` used to prioritise controls where available
 - ✅ Gap summary includes priority, owner, and target date
 - ✅ Cbw/Wwke sector applicability noted
 
 ## Example Usage
 
 ```text
-/arckit:nl-bio Assess BIO2 conformance for a ministry shared-services platform, ISO 27001 certification not pursued, BIV scores not yet determined
+/arckit-nl-bio Assess BIO2 conformance for a ministry shared-services platform, ISO 27001 certification not pursued, BIV scores not yet determined
 
-/arckit:nl-bio BIO2 conformance for 001, cloud-hosted case management system, cross-reference existing clause 4.6 encryption assessment
+/arckit-nl-bio BIO2 conformance for 001, cloud-hosted case management system, cross-reference existing clause 4.6 encryption assessment
 
-/arckit:nl-bio Conformance assessment for an interdepartmental data-exchange platform in scope of the Cyberbeveiligingswet as an essential entity
+/arckit-nl-bio Conformance assessment for an interdepartmental data-exchange platform in scope of the Cyberbeveiligingswet as an essential entity
 ```
 
 ## Suggested Next Steps

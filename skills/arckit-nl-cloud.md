@@ -28,8 +28,8 @@ ${args}
 
 **RECOMMENDED** (read if available, note if missing):
 
-- **TBB** (Te Beschermen Belangen determination, from `/arckit:nl-tbb`) — Extract: TBB category and BIV scores. Use this directly; do not re-derive a TBB category inside this command.
-- **BIO2** (BIO2 Conformance Assessment, from `/arckit:nl-bio`) — Extract: existing conformance status relevant to the cloud environment
+- **TBB** (Te Beschermen Belangen determination, from `/arckit-nl-tbb`) — Extract: TBB category and BIV scores. Use this directly; do not re-derive a TBB category inside this command.
+- **BIO2** (BIO2 Conformance Assessment, from `/arckit-nl-bio`) — Extract: existing conformance status relevant to the cloud environment
 - **RISK** (Risk Register) — Extract: existing cloud/hosting risks, third-party risks, foreign-interference risks
 - **PRIN** (Architecture Principles, 000-global) — Extract: cloud strategy, data sovereignty principles
 
@@ -79,7 +79,7 @@ If either holds, treat the use as materieel — clauses 3.1 (risk assessment), 3
 
 ### Step 5: Risk Assessment (clause 3.1)
 
-1. **Integral risk assessment**, required for materieel cloudgebruik, based on the BIV/TBB classification (pull from `/arckit:nl-tbb` output if available; if not available, warn and proceed on user-supplied classification)
+1. **Integral risk assessment**, required for materieel cloudgebruik, based on the BIV/TBB classification (pull from `/arckit-nl-tbb` output if available; if not available, warn and proceed on user-supplied classification)
 2. Weigh the five aspects clause 3.1 lists, besides the regular topics of security, continuity and privacy:
    1. The characteristics of the cloud use — the main provider and any sub-providers, the type of service (public / private / hybrid / community cloud), and the geographic region where data are processed and stored
    2. The provider's role in security and continuity, and how it is assured
@@ -116,7 +116,7 @@ v1.1 applies to materieel public cloudgebruik by the Rijksdienst, to hybrid clou
 
 This is the section a reader of this assessment will look for first — do not leave it implicit.
 
-1. **Clause 5.2 prohibition check**: Pull the TBB category for the data in scope, and any existing rubricering the `/arckit:nl-tbb` determination records (it records a marking; it never assigns one). Public cloud is **prohibited** for staatsgeheim gerubriceerde informatie and for Te Beschermen Belangen niveau 1, 2, and 3. The implementatiekader adds that the prohibition covers NATO information above NATO RESTRICTED (Art. 1f). If the TBB category is not yet known, state that explicitly and recommend running `/arckit:nl-tbb` before the assessment can be finalised — do not guess a category.
+1. **Clause 5.2 prohibition check**: Pull the TBB category for the data in scope, and any existing rubricering the `/arckit-nl-tbb` determination records (it records a marking; it never assigns one). Public cloud is **prohibited** for staatsgeheim gerubriceerde informatie and for Te Beschermen Belangen niveau 1, 2, and 3. The implementatiekader adds that the prohibition covers NATO information above NATO RESTRICTED (Art. 1f). If the TBB category is not yet known, state that explicitly and recommend running `/arckit-nl-tbb` before the assessment can be finalised — do not guess a category.
 2. **Clause 4.5 email/file-storage conditions**: If the service in scope is email or document/workplace/file storage, assess all **three cumulative conditions** individually — (a) it is independently established that continuity of service is otherwise at risk, (b) a risk analysis and exit plan have been produced and tested under this policy, (c) the decision is agreed by the responsible minister in agreement with the bewindspersoon voor digitalisering. All three must hold; do not treat partial satisfaction as eligible.
 3. **Clause 5.4 basisregistraties**: If the system holds or sources basisregistratie data, state that basisregistraties are not (solely) held in public cloud inside or outside the EEA, and that source data are not managed in public cloud. Implementatiekader Art. 12, written for the 2022 policy's basisregistraties rule, has CIO Rijk advise before a basisregistratie is stored or processed in public cloud: the request goes to CISORijk@minbzk.nl with an explain (why cloud use is necessary, the risk analysis and, where personal data are processed, the DPIA, any DTIA and the residual privacy risks), and the kader asks for a month after all documents are delivered. Existing public-cloud use by a basisregistratie or its sources is reported to CIO Rijk as soon as possible.
 4. **No provider qualification list**: State explicitly that, unlike some other jurisdictions, there is no published Dutch cloud-provider qualification list. Do not name, shortlist, or imply that any specific commercial cloud provider is compliant or qualified.
@@ -152,7 +152,7 @@ Assess storage and processing location (EEA plus Switzerland — this does **not
 
 ### Step 12: Exit-Plan Cross-Reference (clause 3.2)
 
-State that an exit plan is mandatory, documented, self-tested, covers two scenarios (planned exit; disruptive interruption of service), addresses destruction of data at the provider after migration, and is reviewed annually. The implementatiekader requires the risk analysis to describe the exit strategy (Art. 4.3(c)), and Art. 7 lists its parts: conditions on the provider and its sub-suppliers for data portability, service portability and data destruction; an alternative provider or an internal landing place; a strategy, conditions and budget for leaving at once in a crisis or a sudden (geopolitical) development; and a strategy and budget for the regular end of the contract. Summarise each in a line. Point to `/arckit:nl-exit` for the full plan rather than duplicating it here.
+State that an exit plan is mandatory, documented, self-tested, covers two scenarios (planned exit; disruptive interruption of service), addresses destruction of data at the provider after migration, and is reviewed annually. The implementatiekader requires the risk analysis to describe the exit strategy (Art. 4.3(c)), and Art. 7 lists its parts: conditions on the provider and its sub-suppliers for data portability, service portability and data destruction; an alternative provider or an internal landing place; a strategy, conditions and budget for leaving at once in a crisis or a sudden (geopolitical) development; and a strategy and budget for the regular end of the contract. Summarise each in a line. Point to `/arckit-nl-exit` for the full plan rather than duplicating it here.
 
 ### Step 13: Generate the Assessment
 
@@ -205,9 +205,9 @@ Exit plan required:             {Yes / No}
 Risks identified: {N} ({N} high, {N} medium)
 
 Next steps:
-1. {If TBB category not determined: Run /arckit:nl-tbb to determine the TBB category}
-2. {If materieel cloudgebruik and no exit plan: Run /arckit:nl-exit for the clause 3.2 exit plan}
-3. Run /arckit:nl-bio for BIO2 conformance of the hosting environment
+1. {If TBB category not determined: Run /arckit-nl-tbb to determine the TBB category}
+2. {If materieel cloudgebruik and no exit plan: Run /arckit-nl-exit for the clause 3.2 exit plan}
+3. Run /arckit-nl-bio for BIO2 conformance of the hosting environment
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -217,7 +217,7 @@ Next steps:
 - **5.2 is a prohibition, not a risk to manage**: Staatsgeheim gerubriceerde informatie and TBB niveau 1–3 cannot go to public cloud under any mitigation. Do not present this as a risk-acceptance decision.
 - **4.5 is cumulative, not alternative**: All three conditions for email/file-storage services must be met together. A partially-met set is not eligible.
 - **Basisregistraties are out of scope for public cloud** under clause 5.4 — source data are not managed there, inside or outside the EEA.
-- **The TBB inference runs one way**: This command consumes a TBB category from `/arckit:nl-tbb`; it does not infer a rubricering level from a TBB category. See that command's one-way inference warning.
+- **The TBB inference runs one way**: This command consumes a TBB category from `/arckit-nl-tbb`; it does not infer a rubricering level from a TBB category. See that command's one-way inference warning.
 - **Use Write Tool**: This is a detailed governance document. Always use the Write tool.
 
 ## Key References
@@ -241,7 +241,7 @@ Next steps:
 - ✅ Materieel publiek cloudgebruik determination made with rationale (clause 4.1)
 - ✅ Clause 3.1 risk assessment completed for all five aspects, including foreign-government interference, with residual-risk acceptance and DPIA/DTIA applicability
 - ✅ Implementatiekader applied (Step 5a), with the version stated: roles, the Art. 4.3 contents, the NBV risk scenarios, main-provider selection, formal adoption and the review cycle recorded
-- ✅ Clause 5.2 eligibility explicitly determined using a TBB category (or explicitly flagged as pending `/arckit:nl-tbb`)
+- ✅ Clause 5.2 eligibility explicitly determined using a TBB category (or explicitly flagged as pending `/arckit-nl-tbb`)
 - ✅ Clause 4.5 three cumulative conditions assessed individually where applicable
 - ✅ Clause 5.4 basisregistraties constraint assessed where applicable
 - ✅ Clause 4.2 cybersecurity criteria assessed
@@ -255,11 +255,11 @@ Next steps:
 ## Example Usage
 
 ```text
-/arckit:nl-cloud Assess cloud eligibility for a case management platform at a Dutch ministry, processing personal data at scale, no cloud provider selected yet
+/arckit-nl-cloud Assess cloud eligibility for a case management platform at a Dutch ministry, processing personal data at scale, no cloud provider selected yet
 
-/arckit:nl-cloud Cloud hosting assessment for 001, departmental email and document collaboration service currently under review for public cloud migration
+/arckit-nl-cloud Cloud hosting assessment for 001, departmental email and document collaboration service currently under review for public cloud migration
 
-/arckit:nl-cloud Evaluate materieel cloudgebruik and clause 5.2 eligibility for a system handling Departementaal VERTROUWELIJK policy documents
+/arckit-nl-cloud Evaluate materieel cloudgebruik and clause 5.2 eligibility for a system handling Departementaal VERTROUWELIJK policy documents
 ```
 
 ## Suggested Next Steps

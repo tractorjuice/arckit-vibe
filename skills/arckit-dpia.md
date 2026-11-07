@@ -24,7 +24,7 @@ ${args}
 **MANDATORY** (warn if missing):
 
 - **DATA** (Data Model) — Extract: all entities with PII/special category data, data subjects, GDPR Article 6 lawful basis, Article 9 conditions, retention periods, data flows, data classifications
-  - If missing: STOP and warn user to run `/arckit:data-model` first — a DPIA requires a data model to identify personal data processing
+  - If missing: STOP and warn user to run `/arckit-data-model` first — a DPIA requires a data model to identify personal data processing
 
 **RECOMMENDED** (read if available, note if missing):
 
@@ -99,7 +99,7 @@ Read the DPIA template:
 - **If not found**: Read `${VIBE_EXTENSION_ROOT}/templates/dpia-template.md` (default)
 - **Then read** `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` and resolve the `<!-- DOC-CONTROL-HEADER -->` marker in the template before writing. Do not hand-write the Document Control table: the partial `RENDERING.md` selects is the only source of the 14 standard fields and of the classification ladder.
 
-> **Tip**: Users can customize templates with `/arckit:customize dpia`
+> **Tip**: Users can customize templates with `/arckit-customize dpia`
 
 This template has 16 major sections. Its screening checklist covers the three Article 35(3) cases, the ICO's list of processing likely to result in high risk (published under Article 35(4)), and the nine screening criteria from the European DPIA guidelines (Article 29 Working Party WP248, endorsed by the EDPB) that the ICO cites. The nine criteria are not the ICO's own.
 
@@ -413,7 +413,7 @@ If YES:
 
 10. **Children's Data**: If processing children's data, the DPIA must include additional assessment of age verification, parental consent, best interests, and child-friendly privacy notices.
 
-11. **AI/ML Systems**: If the system uses AI/ML for profiling, automated decision-making, or algorithmic processing, integrate with `/arckit:ai-playbook` assessment and link to ATRS record.
+11. **AI/ML Systems**: If the system uses AI/ML for profiling, automated decision-making, or algorithmic processing, integrate with `/arckit-ai-playbook` assessment and link to ATRS record.
 
 12. **Classification**: DPIAs contain sensitive information about data protection risks and vulnerabilities. Always classify as **OFFICIAL-SENSITIVE** at minimum.
 
@@ -448,9 +448,9 @@ If YES:
 ## Example Usage
 
 ```text
-/arckit:dpia Generate DPIA for NHS appointment booking system
+/arckit-dpia Generate DPIA for NHS appointment booking system
 
-/arckit:dpia Create data protection impact assessment for HMRC chatbot handling taxpayer queries
+/arckit-dpia Create data protection impact assessment for HMRC chatbot handling taxpayer queries
 
-/arckit:dpia Assess DPIA necessity for Windows 11 deployment (employee data only)
+/arckit-dpia Assess DPIA necessity for Windows 11 deployment (employee data only)
 ```

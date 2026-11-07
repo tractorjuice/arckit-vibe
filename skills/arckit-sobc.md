@@ -34,8 +34,8 @@ This command creates a **Strategic Outline Business Case (SOBC)** following HM T
 
 **When to use this:**
 
-- **After**: `/arckit:stakeholders` (MANDATORY - SOBC must link to stakeholder goals)
-- **Usually before**: `/arckit:requirements` (SOBC justifies whether to proceed with detailed requirements). Where requirements already exist, for example in a bulk build (`/arckit:build` recipes build REQ first) or a refresh, read them to sharpen the cost estimates; they are an OPTIONAL input below, never a reason to stop
+- **After**: `/arckit-stakeholders` (MANDATORY - SOBC must link to stakeholder goals)
+- **Usually before**: `/arckit-requirements` (SOBC justifies whether to proceed with detailed requirements). Where requirements already exist, for example in a bulk build (`/arckit-build` recipes build REQ first) or a refresh, read them to sharpen the cost estimates; they are an OPTIONAL input below, never a reason to stop
 - **Purpose**: Secure executive approval and funding to proceed to next stage
 
 **Note**: HM Treasury's later stages, the OBC (Outline Business Case) and FBC (Full Business Case), refine the costs and arrangements; ArcKit does not generate them. This SOBC uses strategic estimates and options analysis.
@@ -45,7 +45,7 @@ This command creates a **Strategic Outline Business Case (SOBC)** following HM T
    **MANDATORY** (warn if missing):
    - **STKE** (Stakeholder Analysis) in `projects/{project}/`
      - Extract: ALL stakeholder goals (become benefits), drivers (explain WHY needed), conflicts (become risks/mitigations), outcomes (become success criteria)
-     - If missing: STOP and warn user to run `/arckit:stakeholders` first — every SOBC benefit MUST trace to a stakeholder goal
+     - If missing: STOP and warn user to run `/arckit-stakeholders` first — every SOBC benefit MUST trace to a stakeholder goal
 
    **RECOMMENDED** (read if available, note if missing):
    - **PRIN** (Architecture Principles, in `projects/000-global/`)
@@ -119,7 +119,7 @@ This command creates a **Strategic Outline Business Case (SOBC)** following HM T
    - **If not found**: Read `${VIBE_EXTENSION_ROOT}/templates/sobc-template.md` (default)
    - **Then read** `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` and resolve the `<!-- DOC-CONTROL-HEADER -->` marker in the template before writing. Do not hand-write the Document Control table: the partial `RENDERING.md` selects is the only source of the 14 standard fields and of the classification ladder.
 
-   > **Tip**: Users can customize templates with `/arckit:customize sobc`
+   > **Tip**: Users can customize templates with `/arckit-customize sobc`
 
    **Five Cases (HM Treasury Green Book Model)**:
 
@@ -231,7 +231,7 @@ This command creates a **Strategic Outline Business Case (SOBC)** following HM T
    - **Rationale**: Why this option? (reference stakeholder goals met)
    - **Go/No-Go Criteria**: Under what conditions do we proceed?
    - **Next Steps**: If approved, what happens next?
-     - Typically: `/arckit:requirements` to define detailed requirements
+     - Typically: `/arckit-requirements` to define detailed requirements
      - Then: the Outline Business Case (OBC, HM Treasury Stage 2) with refined costs. ArcKit has no OBC command, so name the OBC as a next step without suggesting a command for it
 
 **CRITICAL - Auto-Populate Document Control Fields**:
@@ -300,7 +300,7 @@ Provide:
    - "Business case stage: SOBC (HM Treasury Stage 1, Strategic Outline Case)"
 3. **Next steps**:
    - "Present to [approving authority] for go/no-go decision"
-   - "If approved: Run `/arckit:requirements` to define detailed requirements"
+   - "If approved: Run `/arckit-requirements` to define detailed requirements"
    - "Then: Outline Business Case (OBC, HM Treasury Stage 2) to appraise the shortlist in detail and identify the preferred option"
    - "After procurement: Full Business Case (FBC, HM Treasury Stage 3) for the investment decision, before contracts are signed"
 4. **Traceability note**:
@@ -376,7 +376,7 @@ For UK Government/public sector projects, ensure:
 If stakeholder analysis doesn't exist:
 
 - **DO NOT proceed** with SOBC
-- Tell user: "SOBC requires stakeholder analysis to link benefits to stakeholder goals. Please run `/arckit:stakeholders` first."
+- Tell user: "SOBC requires stakeholder analysis to link benefits to stakeholder goals. Please run `/arckit-stakeholders` first."
 
 If user wants detailed business case:
 
@@ -479,7 +479,7 @@ After writing the file, show ONLY a concise summary:
 
 - Review `ARC-{PROJECT_ID}-SOBC-v{VERSION}.md` for full SOBC document
 - Senior Responsible Owner (SRO) to submit it to the approving authority, after Gate Review 1 where it applies, and to HM Treasury if the Treasury Approvals Process applies
-- If approved, run `/arckit:requirements` to define detailed requirements
+- If approved, run `/arckit-requirements` to define detailed requirements
 - Then develop the Outline Business Case (OBC) with firmer costs
 ```
 

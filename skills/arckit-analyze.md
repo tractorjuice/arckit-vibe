@@ -34,7 +34,7 @@ Identify inconsistencies, gaps, ambiguities, and compliance issues across all ar
 - **If not found**: Read `${VIBE_EXTENSION_ROOT}/templates/analysis-report-template.md` (default)
 - **Then read** `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` and resolve the `<!-- DOC-CONTROL-HEADER -->` marker in the template before writing. Do not hand-write the Document Control table: the partial `RENDERING.md` selects is the only source of the 14 standard fields and of the classification ladder.
 
-> **Tip**: Users can customize templates with `/arckit:customize analyze`
+> **Tip**: Users can customize templates with `/arckit-customize analyze`
 
 ### Hook-Aware Shortcut
 
@@ -384,7 +384,7 @@ Focus on high-signal findings. Limit to 50 findings total; aggregate remainder i
 
 **Missing Stakeholder Analysis**:
 
-- Project has requirements but no stakeholder analysis document (RECOMMENDED to run `/arckit:stakeholders`)
+- Project has requirements but no stakeholder analysis document (RECOMMENDED to run `/arckit-stakeholders`)
 
 #### F. Risk Management Analysis (if ARC-*-RISK-*.md exists)
 
@@ -409,7 +409,7 @@ Focus on high-signal findings. Limit to 50 findings total; aggregate remainder i
 
 **Missing Risk Assessment**:
 
-- Project has requirements but no risk register document (RECOMMENDED to run `/arckit:risk`)
+- Project has requirements but no risk register document (RECOMMENDED to run `/arckit-risk`)
 
 #### G. Business Case Alignment (if ARC-*-SOBC-*.md exists)
 
@@ -442,7 +442,7 @@ Focus on high-signal findings. Limit to 50 findings total; aggregate remainder i
 
 **Missing Business Case**:
 
-- Project has requirements but no SOBC (RECOMMENDED for major investments to run `/arckit:sobc`)
+- Project has requirements but no SOBC (RECOMMENDED for major investments to run `/arckit-sobc`)
 
 #### H. Data Model Consistency (if ARC-*-DATA-*.md exists)
 
@@ -473,7 +473,7 @@ Focus on high-signal findings. Limit to 50 findings total; aggregate remainder i
 
 **Missing Data Model**:
 
-- Project has DR-xxx requirements but no data model (RECOMMENDED to run `/arckit:data-model`)
+- Project has DR-xxx requirements but no data model (RECOMMENDED to run `/arckit-data-model`)
 
 #### I. UK Government Compliance (if applicable)
 
@@ -567,7 +567,7 @@ Focus on high-signal findings. Limit to 50 findings total; aggregate remainder i
 
 **Missing MOD SbD Assessment**:
 
-- Project for MOD but no SbD assessment (MANDATORY to run `/arckit:mod-secure`)
+- Project for MOD but no SbD assessment (MANDATORY to run `/arckit-mod-secure`)
 
 #### K. Consistency Across Artifacts
 
@@ -1199,9 +1199,9 @@ Generate a comprehensive Markdown report and save it to `projects/{project-dir}/
 ### Immediate Actions
 
 1. **If CRITICAL issues exist**: ❌ **DO NOT PROCEED** with implementation/procurement until resolved.
-   - Run: `/arckit:requirements` to fix requirements issues
-   - Run: `/arckit:hld-review` to address design gaps
-   - Run: `/arckit:ai-playbook` (if AI system) to complete mandatory assessments
+   - Run: `/arckit-requirements` to fix requirements issues
+   - Run: `/arckit-hld-review` to address design gaps
+   - Run: `/arckit-ai-playbook` (if AI system) to complete mandatory assessments
 
 2. **If only HIGH/MEDIUM issues**: ⚠️ **MAY PROCEED** with caution, but address issues in parallel.
    - Document exceptions for HIGH issues
@@ -1215,39 +1215,39 @@ Generate a comprehensive Markdown report and save it to `projects/{project-dir}/
 Based on findings, consider running:
 
 **Governance Foundation**:
-- `/arckit:principles` - Create/update architecture principles
-- `/arckit:stakeholders` - Analyze stakeholder drivers, goals, conflicts (RECOMMENDED)
-- `/arckit:risk` - Create risk register using Orange Book framework (RECOMMENDED)
-- `/arckit:sobc` - Create Strategic Outline Business Case using Green Book 5-case model (RECOMMENDED for major investments)
+- `/arckit-principles` - Create/update architecture principles
+- `/arckit-stakeholders` - Analyze stakeholder drivers, goals, conflicts (RECOMMENDED)
+- `/arckit-risk` - Create risk register using Orange Book framework (RECOMMENDED)
+- `/arckit-sobc` - Create Strategic Outline Business Case using Green Book 5-case model (RECOMMENDED for major investments)
 
 **Requirements & Design**:
-- `/arckit:requirements` - Refine requirements to address ambiguity/gaps
-- `/arckit:data-model` - Create data model with ERD, GDPR compliance (RECOMMENDED if DR-xxx exist)
-- `/arckit:hld-review` - Re-review HLD after addressing issues
-- `/arckit:dld-review` - Re-review DLD after addressing issues
+- `/arckit-requirements` - Refine requirements to address ambiguity/gaps
+- `/arckit-data-model` - Create data model with ERD, GDPR compliance (RECOMMENDED if DR-xxx exist)
+- `/arckit-hld-review` - Re-review HLD after addressing issues
+- `/arckit-dld-review` - Re-review DLD after addressing issues
 
 **UK Government Compliance**:
-- `/arckit:tcop` - Complete TCoP assessment for UK Gov projects
-- `/arckit:ai-playbook` - Complete AI Playbook assessment for AI systems
-- `/arckit:atrs` - Generate ATRS record for algorithmic tools
-- `/arckit:secure` - UK Government Secure by Design review
+- `/arckit-tcop` - Complete TCoP assessment for UK Gov projects
+- `/arckit-ai-playbook` - Complete AI Playbook assessment for AI systems
+- `/arckit-atrs` - Generate ATRS record for algorithmic tools
+- `/arckit-secure` - UK Government Secure by Design review
 
 **MOD Compliance**:
-- `/arckit:mod-secure` - MOD Secure by Design assessment with CAAT (MANDATORY for MOD projects)
+- `/arckit-mod-secure` - MOD Secure by Design assessment with CAAT (MANDATORY for MOD projects)
 
 **Vendor Procurement**:
-- `/arckit:sow` - Generate statement of work for RFP
-- `/arckit:evaluate` - Update vendor evaluation criteria
+- `/arckit-sow` - Generate statement of work for RFP
+- `/arckit-evaluate` - Update vendor evaluation criteria
 
 **Analysis & Traceability**:
-- `/arckit:traceability` - Generate/update traceability matrix
-- `/arckit:analyze` - Re-run this analysis after fixes
+- `/arckit-traceability` - Generate/update traceability matrix
+- `/arckit-analyze` - Re-run this analysis after fixes
 
 ### Re-run Analysis
 
 After making changes, re-run analysis:
 ```bash
-/arckit:analyze
+/arckit-analyze
 ```text
 
 Expected improvement in scores after addressing findings.
@@ -1375,7 +1375,7 @@ Before completing the document, populate ALL document control fields in the head
 **Populate Revision History**:
 
 ```markdown
-| 1.0 | {DATE} | ArcKit AI | Initial creation from `/arckit:analyze` command | [PENDING] | [PENDING] |
+| 1.0 | {DATE} | ArcKit AI | Initial creation from `/arckit-analyze` command | [PENDING] | [PENDING] |
 ```
 
 **Populate Generation Metadata Footer**:
@@ -1383,7 +1383,7 @@ Before completing the document, populate ALL document control fields in the head
 The footer should be populated with:
 
 ```markdown
-**Generated by**: ArcKit `/arckit:analyze` command
+**Generated by**: ArcKit `/arckit-analyze` command
 **Generated on**: {DATE} {TIME} GMT
 **ArcKit Version**: {ARCKIT_VERSION}
 **Project**: {PROJECT_NAME} (Project {PROJECT_ID})
@@ -1504,7 +1504,7 @@ Unlike Spec Kit's focus on code implementation, ArcKit analyze focuses on:
 
 ## Example Usage
 
-User: `/arckit:analyze`
+User: `/arckit-analyze`
 
 You should:
 
@@ -1553,7 +1553,7 @@ Example output: "Architecture Governance Analysis Report" with 18 findings (3 CR
 
 - This is **non-destructive analysis** - existing artifacts are not modified
 - Analysis report is saved to `projects/{project-dir}/ARC-{PROJECT_ID}-ANAL-v{VERSION}.md` for audit trail
-- Run `/arckit:analyze` after major changes to requirements, designs, or assessments
+- Run `/arckit-analyze` after major changes to requirements, designs, or assessments
 - Ideal times to run:
   - Before issuing SOW/RFP to vendors
   - After receiving vendor proposals
@@ -1572,32 +1572,32 @@ After analysis, you may need:
 
 **Governance Foundation**:
 
-- `/arckit:principles` - Create/update architecture principles
-- `/arckit:stakeholders` - Analyze stakeholder drivers and conflicts
-- `/arckit:risk` - Create Orange Book risk register
-- `/arckit:sobc` - Create Green Book business case
+- `/arckit-principles` - Create/update architecture principles
+- `/arckit-stakeholders` - Analyze stakeholder drivers and conflicts
+- `/arckit-risk` - Create Orange Book risk register
+- `/arckit-sobc` - Create Green Book business case
 
 **Requirements & Data**:
 
-- `/arckit:requirements` - Fix requirements issues
-- `/arckit:data-model` - Create data model with ERD and GDPR compliance
+- `/arckit-requirements` - Fix requirements issues
+- `/arckit-data-model` - Create data model with ERD and GDPR compliance
 
 **Design Reviews**:
 
-- `/arckit:hld-review` - Re-review high-level design
-- `/arckit:dld-review` - Re-review detailed design
+- `/arckit-hld-review` - Re-review high-level design
+- `/arckit-dld-review` - Re-review detailed design
 
 **UK Government Compliance**:
 
-- `/arckit:tcop` - Complete TCoP assessment
-- `/arckit:ai-playbook` - Complete AI Playbook assessment
-- `/arckit:atrs` - Generate ATRS record
-- `/arckit:secure` - UK Government Secure by Design review
+- `/arckit-tcop` - Complete TCoP assessment
+- `/arckit-ai-playbook` - Complete AI Playbook assessment
+- `/arckit-atrs` - Generate ATRS record
+- `/arckit-secure` - UK Government Secure by Design review
 
 **MOD Compliance**:
 
-- `/arckit:mod-secure` - MOD Secure by Design assessment with CAAT
+- `/arckit-mod-secure` - MOD Secure by Design assessment with CAAT
 
 **Traceability**:
 
-- `/arckit:traceability` - Update traceability matrix
+- `/arckit-traceability` - Update traceability matrix

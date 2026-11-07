@@ -101,7 +101,7 @@ The Australian Signals Directorate (ASD) Information Security Manual (ISM) is th
 
    - **IRAP Assessment Position** — if the system holds or pursues IRAP assessment, note the IRAP scope, assessment date, residual risks accepted, and re-assessment cadence. For systems integrating with IRAP-assessed cloud services, note the inherited control posture.
 
-   - **ArcKit Evidence Integration** — map `/arckit:diagram`, `/arckit:dfd`, `/arckit:data-model`, `/arckit:servicenow`, `/arckit:risk`, `/arckit:traceability`, `/arckit:graph-report`, and `/arckit:maturity-model` evidence to ISM guideline applicability, CMDB ownership, control gaps, risk treatments, and assurance coverage.
+   - **ArcKit Evidence Integration** — map `/arckit-diagram`, `/arckit-dfd`, `/arckit-data-model`, `/arckit-servicenow`, `/arckit-risk`, `/arckit-traceability`, `/arckit-graph-report`, and `/arckit-maturity-model` evidence to ISM guideline applicability, CMDB ownership, control gaps, risk treatments, and assurance coverage.
 
    - **Recommendations** — prioritised remediation actions grouped by Quick Wins ( < 30 days), Short-Term (30–90 days), Medium-Term (90–180 days). Each recommendation references the specific ISM control ID(s).
 
@@ -119,7 +119,7 @@ The Australian Signals Directorate (ASD) Information Security Manual (ISM) is th
 - For systems integrating with IRAP-assessed cloud services, note explicit shared-responsibility — many ISM controls inherit from the cloud provider's IRAP attestation. Cite the IRAP scope statement, not the cloud provider's marketing.
 - Cross-reference the E8 posture artefact wherever an ISM control maps to an E8 sub-control — avoids duplication and keeps the two artefacts consistent.
 - For DISP members or systems supporting Defence work, scope the Guidelines for personnel security and Guidelines for physical security carefully — these are commonly under-assessed in cloud-only environments.
-- The Guidelines for cyber security incidents assessment should reference the project's NDB playbook (`/arckit:au-ndb-playbook`) for personal-information breach scenarios.
+- The Guidelines for cyber security incidents assessment should reference the project's NDB playbook (`/arckit-au-ndb-playbook`) for personal-information breach scenarios.
 - The Guidelines for procurement and outsourcing assessment must include MSP-held admin role boundaries, contractual security-control flow-down, and supply-chain attestation review.
 - Use embedded ArcKit artefacts as evidence: diagrams and DFDs for boundaries and data transfer, data models for classification, ServiceNow/CMDB for ownership and operations, risk and traceability for controls, graph-report for coverage, and maturity-model for uplift.
 

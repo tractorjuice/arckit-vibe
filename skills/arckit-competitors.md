@@ -208,7 +208,7 @@ Then, still within bounded edits:
 - **Projects Referenced In** — append `{P}-{NAME}` if not already listed; never remove existing entries.
 - **Revision History** — append a row: `| {next-minor-version} | {date} | ArcKit AI | Refreshed Government Award History from competitor landscape run | PENDING | PENDING |`.
 
-**If no profile exists**, do not create one — note the rival as "award history available, no profile yet" in your summary. Vendor profiles are created by `/arckit:research`, which gathers the product and pricing detail this agent does not.
+**If no profile exists**, do not create one — note the rival as "award history available, no profile yet" in your summary. Vendor profiles are created by `/arckit-research`, which gathers the product and pricing detail this agent does not.
 
 ### Step 12: Return summary
 
@@ -220,7 +220,7 @@ Return ONLY a concise summary to the user:
 - Concentration flag.
 - Data freshness, or "unavailable".
 - Vendor profiles enriched, and rivals with no profile yet. If no rival had a profile, state "No existing vendor profiles matched the rivals in this landscape."
-- Next steps (`/arckit:research`, `/arckit:score`, `/arckit:risk`).
+- Next steps (`/arckit-research`, `/arckit-score`, `/arckit-risk`).
 
 ## Edge Cases
 
@@ -243,7 +243,7 @@ Return ONLY a concise summary to the user:
 - **Helpers** — `${VIBE_EXTENSION_ROOT}/scripts/generate-document-id.mjs`
 - **MCP server** — `uk-tenders` (read-only tools only; `query_sql` never granted)
 - **External tools** — none
-- **Related commands** — `/arckit:research` (creates vendor profiles) · `/arckit:score` (Company Experience evidence) · `/arckit:risk` (concentration risk) · `/arckit:tenders` (award-value benchmarks)
+- **Related commands** — `/arckit-research` (creates vendor profiles) · `/arckit-score` (Company Experience evidence) · `/arckit-risk` (concentration risk) · `/arckit-tenders` (award-value benchmarks)
 
 ## Important Notes
 

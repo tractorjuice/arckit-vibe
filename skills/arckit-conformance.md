@@ -13,7 +13,7 @@ ${args}
 
 ## Goal
 
-Generate a systematic **Architecture Conformance Assessment** that checks whether the *decided* architecture (ADRs, principles, approved designs) matches the *designed/implemented* architecture (HLD, DLD, DevOps artifacts). This command fills the gap between `/arckit:health` (quick metadata scan) and `/arckit:analyze` (deep governance across all dimensions) by focusing specifically on **decided-vs-designed conformance**, architecture drift, and architecture technical debt (ATD).
+Generate a systematic **Architecture Conformance Assessment** that checks whether the *decided* architecture (ADRs, principles, approved designs) matches the *designed/implemented* architecture (HLD, DLD, DevOps artifacts). This command fills the gap between `/arckit-health` (quick metadata scan) and `/arckit-analyze` (deep governance across all dimensions) by focusing specifically on **decided-vs-designed conformance**, architecture drift, and architecture technical debt (ATD).
 
 **This is a point-in-time assessment** — run at key project gates or after major design changes to track conformance over time.
 
@@ -23,13 +23,13 @@ Generate a systematic **Architecture Conformance Assessment** that checks whethe
 
 a. **PRIN** (Architecture Principles, in `projects/000-global/`) (MUST exist):
 
-- If NOT found: ERROR "Run /arckit:principles first to define governance standards for your organization"
+- If NOT found: ERROR "Run /arckit-principles first to define governance standards for your organization"
 
 ### Architecture Decision Records (MANDATORY)
 
 b. **ADR** (Architecture Decision Records, in `projects/{project-dir}/decisions/`) (MUST exist):
 
-- If NOT found: ERROR "Run /arckit:adr first — conformance assessment requires at least one accepted ADR"
+- If NOT found: ERROR "Run /arckit-adr first — conformance assessment requires at least one accepted ADR"
 
 ### Project Artifacts (RECOMMENDED)
 
@@ -81,19 +81,19 @@ c. `.arckit/conformance-rules.md` in the project root (if exists):
 - **If not found**: Read `${VIBE_EXTENSION_ROOT}/templates/conformance-assessment-template.md` (default)
 - **Then read** `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` and resolve the `<!-- DOC-CONTROL-HEADER -->` marker in the template before writing. Do not hand-write the Document Control table: the partial `RENDERING.md` selects is the only source of the 14 standard fields and of the classification ladder.
 
-> **Tip**: Users can customize templates with `/arckit:customize conformance`
+> **Tip**: Users can customize templates with `/arckit-customize conformance`
 
 ### 1. Validate Prerequisites
 
 **Check Architecture Principles**:
 
 - Look for `ARC-000-PRIN-*.md` in `projects/000-global/`
-- If NOT found: ERROR "Architecture principles not found. Run /arckit:principles first."
+- If NOT found: ERROR "Architecture principles not found. Run /arckit-principles first."
 
 **Check ADRs**:
 
 - Look for `ARC-*-ADR-*.md` files in `projects/{project-dir}/decisions/`
-- If NONE found: ERROR "No ADRs found. Run /arckit:adr first — conformance assessment requires at least one accepted ADR."
+- If NONE found: ERROR "No ADRs found. Run /arckit-adr first — conformance assessment requires at least one accepted ADR."
 
 ### 1b. Read external documents and policies
 
@@ -143,6 +143,14 @@ Read the following artifacts. Do NOT read entire files — extract relevant sect
 - `ARC-*-TRAC-*.md` — Traceability matrix
 - `ARC-*-RISK-*.md` — Risk register (for exception context)
 - `ARC-*-DEVOPS-*.md` — DevOps strategy (for technology stack drift check)
+
+**Spec Kit Delivery Artefacts** (if a `specs/` folder exists at the repository root, or the arguments name one with `SPECS=<path>`):
+
+- `.specify/memory/constitution.md` — the constitution the delivery team builds to
+- `specs/*/plan.md`, `specs/*/data-model.md` and `specs/*/contracts/` — each feature's design
+- Treat each plan, data model and contract as a design document in the ADR-IMPL, ADR-SUPER, PRIN-DESIGN, DRIFT-TECH and DRIFT-PATTERN checks, and cite it by path and line like an HLD or DLD
+- `[ArcKit ADR-NNN]` and `[ArcKit Principle N]` tags in a plan say which decisions and principles it claims to follow; check each claim against the plan's content rather than taking it on trust
+- Assess only the features this project owns: those whose spec, plan or tasks carry its ownership tag, `[ArcKit Project NNN]`, and no other project's. A feature with no ownership tag, or with tags for more than one project, is NOT ASSESSED; name it and the fix (one ownership tag in its spec). A feature owned by another project is out of scope
 
 **Custom Rules** (if exist):
 
@@ -205,8 +213,9 @@ For EACH architecture principle:
    - Does the design SATISFY this principle? → PASS
    - Insufficient evidence to determine? → NOT ASSESSED
 4. This is a **hard constraint check**, not a maturity assessment
+5. If a Spec Kit constitution exists, check that it carries every non-negotiable principle, by name or `[ArcKit Principle N]` tag. A non-negotiable principle missing from the constitution is a FAIL: the delivery team is not bound by it
 
-**Note**: This differs from `/arckit:principles-compliance` which provides RAG scoring with remediation plans. This check is a binary gate: does the design conform or not?
+**Note**: This differs from `/arckit-principles-compliance` which provides RAG scoring with remediation plans. This check is a binary gate: does the design conform or not?
 
 **Evidence format**: `Principle "Name" — HLD Section X (file:line) [SATISFIES/VIOLATES] — [description]`
 
@@ -424,10 +433,10 @@ After generating the assessment document:
 
    ```text
    📋 **Related Commands**:
-   - /arckit:principles-compliance - Detailed RAG scoring of principle compliance
-   - /arckit:analyze - Comprehensive governance gap analysis
-   - /arckit:traceability - Requirements traceability matrix
-   - /arckit:health - Quick metadata health check
+   - /arckit-principles-compliance - Detailed RAG scoring of principle compliance
+   - /arckit-analyze - Comprehensive governance gap analysis
+   - /arckit-traceability - Requirements traceability matrix
+   - /arckit-health - Quick metadata health check
    ```
 
 2. **Track in Project**:

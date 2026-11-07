@@ -37,8 +37,8 @@ node ${VIBE_EXTENSION_ROOT}/scripts/export-okf.mjs ${args}
 ## Example Usage
 
 ```text
-/arckit:export-okf --project 001 --out okf/001
-/arckit:export-okf --all --out okf/all
+/arckit-export-okf --project 001 --out okf/001
+/arckit-export-okf --all --out okf/all
 ```
 
 ## Key References

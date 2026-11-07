@@ -39,7 +39,7 @@ The CAIO (§3(a)(i)) must be designated within 60 days of the memo and, in a CFO
 
 **OMB M-25-22** ("Driving Efficient Acquisition of Artificial Intelligence in Government", 3 April 2025) replaced M-24-18 as the acquisition memo. It applies to contracts awarded under solicitations issued from 30 September 2025 (180 days after the memo) and to options exercised after that date (§2(c)). When practicable, solicitations must say whether a planned use is, or is reasonably likely to become, high-impact, and tell vendors what documentation the agency needs for its impact assessment (§4(c)). Contracts must cover IP rights and use of government data, privacy, vendor lock-in protections, compliance with the M-25-21 minimum practices for high-impact use, and ongoing testing and monitoring (§4(d)). Agencies must ensure contracts permanently prohibit the use of non-public agency inputs and outputs to train publicly or commercially available AI without explicit agency consent (§3(e)). **OMB M-26-04** (11 December 2025), which complements M-25-22, adds contract terms on the Unbiased AI Principles of EO 14319 to every solicitation or order for a large language model issued after that date, with minimum vendor transparency: an acceptable use policy; model, system or data cards; end-user resources; and a feedback mechanism.
 
-Neither M-25-21 nor M-25-22 mentions the NIST AI RMF. ArcKit uses the AI RMF assessment (`/arckit:us-ai-rmf`) as the evidence base for the practices, not as a mandate.
+Neither M-25-21 nor M-25-22 mentions the NIST AI RMF. ArcKit uses the AI RMF assessment (`/arckit-us-ai-rmf`) as the evidence base for the practices, not as a mandate.
 
 EO 14434 (29 September 2026) tells agencies to use "Super Intelligence" and "SI" in place of "artificial intelligence" and "AI" in non-statutory documents, to the extent the law allows. It changes neither memo and does not require earlier documents to be altered. Follow the agency's own instruction on wording; the requirements in this artefact are unaffected.
 
@@ -56,7 +56,7 @@ EO 14434 (29 September 2026) tells agencies to use "Super Intelligence" and "SI"
 
 1. Read prerequisites:
    - `projects/000-global/ARC-000-PRIN-*.md` (architecture principles, if present)
-   - The project's AI RMF artefact (recommended prerequisite — if absent, suggest running `/arckit:us-ai-rmf` first)
+   - The project's AI RMF artefact (recommended prerequisite — if absent, suggest running `/arckit-us-ai-rmf` first)
    - The project's REQ artefact — extract `NFR-SEC-*`, `DR-*`, `INT-*`, plus any explicit fairness / non-discrimination requirements
    - The project's STKE artefact — for affected populations and decisions affecting them
    - `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md`
@@ -91,7 +91,7 @@ EO 14434 (29 September 2026) tells agencies to use "Super Intelligence" and "SI"
 
 ## Handoffs
 
-Minimum-practice gaps drive the AI RMF uplift backlog via `/arckit:us-ai-rmf`. PII-handling AI systems require `/arckit:us-privacy-pia`, and the impact assessment should reference the PIA (M-25-21 §4(b)(ii)(C)). Any residual M-25-21 risks — particularly waiver scenarios — should be entered into `/arckit:risk` with the next CAIO review date.
+Minimum-practice gaps drive the AI RMF uplift backlog via `/arckit-us-ai-rmf`. PII-handling AI systems require `/arckit-us-privacy-pia`, and the impact assessment should reference the PIA (M-25-21 §4(b)(ii)(C)). Any residual M-25-21 risks — particularly waiver scenarios — should be entered into `/arckit-risk` with the next CAIO review date.
 
 ## Important Notes
 

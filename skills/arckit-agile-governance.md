@@ -43,7 +43,7 @@ Use this command when **any** of the following conditions are met:
 
 - **PRIN** (Architecture Principles, in 000-global) — Extract: Governance principles, decision authority, compliance obligations
 
-  - If missing: warn user to run `/arckit:principles` first
+  - If missing: warn user to run `/arckit-principles` first
 
 - **OAAL** (O-AA ADM Lite) — Extract: Sprint plan, governance cadence, compliance mapping
 
@@ -94,7 +94,7 @@ Identify the target project from the hook context. If the user specifies a proje
 
 - **Also** apply the O-AA placeholder substitutions in `${VIBE_EXTENSION_ROOT}/references/placeholder-substitutions.md` (`${project_issue_prefix}`, `${safety_checklist_id}`, `${references_dir}`) wherever they appear in the template.
 
-> **Tip**: Users can customise templates with `/arckit:customize agile-governance`
+> **Tip**: Users can customise templates with `/arckit-customize agile-governance`
 
 ### 3. O-AA Agile Governance Framework
 
@@ -120,9 +120,9 @@ The agile governance command defines artefacts whose structure is inlined in `ag
 
 - **`change-request.yaml`** — architecture change request (one per change request)
 
-- **`compliance-evidence.yaml`** — sprint compliance evidence, always current (shared with `/arckit:agile-security`)
+- **`compliance-evidence.yaml`** — sprint compliance evidence, always current (shared with `/arckit-agile-security`)
 
-- **`vision.yaml`** — governance constraints from architecture vision (inherited from `/arckit:oaa-adm-lite`)
+- **`vision.yaml`** — governance constraints from architecture vision (inherited from `/arckit-oaa-adm-lite`)
 
 ### 5. Generate Agile Governance Document
 

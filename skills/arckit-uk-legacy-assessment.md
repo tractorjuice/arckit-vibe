@@ -14,8 +14,8 @@ tags: [arckit, architecture, governance]
 Assess one or several existing systems and their dependencies within a project, in
 any delivery phase where operational technology exists or modernisation is planned.
 Produce an evidence-led classification and actionable remediation plan. Detailed
-options and investment work belong in `/arckit:sobc`, `/arckit:roadmap` and
-`/arckit:plan`. This assessment does not approve policy, accept risk, scan an estate,
+options and investment work belong in `/arckit-sobc`, `/arckit-roadmap` and
+`/arckit-plan`. This assessment does not approve policy, accept risk, scan an estate,
 submit government data or schedule automated reviews.
 
 ## User Input
@@ -332,7 +332,7 @@ at the earliest of 12 months, a known threshold/support/contract event, or an ea
 organisational review. An overdue event calls for immediate review. The helper's
 `proposedReviewDate` is a recommendation, not a schedule. Recommend reassessment after
 incidents, supplier/dependency changes or verified remediation. Feed investment evidence
-to `/arckit:sobc`, `/arckit:roadmap` and `/arckit:plan` without duplicating their strategies.
+to `/arckit-sobc`, `/arckit-roadmap` and `/arckit-plan` without duplicating their strategies.
 
 ## Validate and finish
 
@@ -349,10 +349,10 @@ Disclose any unavailable source/runtime checks. Do not stop at a proposed plan.
 ## Examples and integration
 
 ```text
-/arckit:uk-legacy-assessment 001
-/arckit:uk-legacy-assessment 001 systems "Payments, Reporting"
-/arckit:uk-legacy-assessment 001 as-of 2026-10-28 risk-model published
-/arckit:uk-legacy-assessment 001 risk-model none
+/arckit-uk-legacy-assessment 001
+/arckit-uk-legacy-assessment 001 systems "Payments, Reporting"
+/arckit-uk-legacy-assessment 001 as-of 2026-10-28 risk-model published
+/arckit-uk-legacy-assessment 001 risk-model none
 ```
 
 Service assessment, TCoP, security, risk and analysis may consume this evidence when

@@ -29,9 +29,9 @@ Use this command when **any** of the following conditions are met:
 
 **Do NOT use** when:
 
-- Enterprise-wide architecture is needed (use `/arckit:adm-preliminary` instead)
+- Enterprise-wide architecture is needed (use `/arckit-adm-preliminary` instead)
 
-- Multi-product portfolio rationalization (use `/arckit:application-rationalization` instead)
+- Multi-product portfolio rationalization (use `/arckit-application-rationalization` instead)
 
 - Client requires traditional TOGAF documentation with full ADM audit trail
 
@@ -43,7 +43,7 @@ Use this command when **any** of the following conditions are met:
 
 - **PRIN** (Architecture Principles, in 000-global) — Extract: Product architecture principles, technology standards, compliance requirements
 
-  - If missing: warn user to run `/arckit:principles` first
+  - If missing: warn user to run `/arckit-principles` first
 
 - **OAAL** (O-AA ADM Lite) — Extract: Sprint plan, vision, scope, success criteria
 
@@ -55,7 +55,7 @@ Use this command when **any** of the following conditions are met:
 
 - **REQ** (Requirements) — Extract: Functional and non-functional requirements (FR/NFR) to place inside or outside the product boundary
 
-  - If missing: note that requirements traceability cannot be completed, and suggest `/arckit:requirements`
+  - If missing: note that requirements traceability cannot be completed, and suggest `/arckit-requirements`
 
 - **STKE** (Stakeholder Analysis) — Extract: Stakeholder goals and measures that the product outcomes serve
 
@@ -94,7 +94,7 @@ Identify the target project from the hook context. If the user specifies a proje
 
 - **Also** apply the O-AA placeholder substitutions in `${VIBE_EXTENSION_ROOT}/references/placeholder-substitutions.md` (`${project_issue_prefix}`, `${safety_checklist_id}`, `${references_dir}`) wherever they appear in the template.
 
-> **Tip**: Users can customise templates with `/arckit:customize product-architecture`
+> **Tip**: Users can customise templates with `/arckit-customize product-architecture`
 
 ### 3. O-AA Product Architecture Framework
 
@@ -119,7 +119,7 @@ The product architecture command defines artefacts whose structure is inlined in
 It also reads two artefacts it does not define:
 
 - **`vision.yaml`** — architecture vision from O-AA ADM Lite (structure inlined in `oaa-adm-lite-template.md`) or the ADM Preliminary
-- **`implementation-strategy.yaml`** — implementation waves from O-AA ADM Lite Sprint 3 (consistent with `/arckit:transition-architecture`)
+- **`implementation-strategy.yaml`** — implementation waves from O-AA ADM Lite Sprint 3 (consistent with `/arckit-transition-architecture`)
 
 ### 5. Generate Product Architecture Document
 
@@ -244,9 +244,9 @@ After writing the file, show a concise summary (NOT the full document):
 
 ### Next Steps
 1. Populate product backlog with architecture epics
-2. Embed security into sprint rhythm: `/arckit:agile-security`
-3. Plan dual transformation: `/arckit:agile-strategy`
-4. Establish governance cadence: `/arckit:agile-governance`
+2. Embed security into sprint rhythm: `/arckit-agile-security`
+3. Plan dual transformation: `/arckit-agile-strategy`
+4. Establish governance cadence: `/arckit-agile-governance`
 
 **File location**: `projects/{P}/ARC-{P}-OAPR-v{VERSION}.md`
 ```

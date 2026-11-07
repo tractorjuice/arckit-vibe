@@ -198,17 +198,17 @@ Not applicable:     {N} / 42
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Next steps:
-1. {If OIV/OSE: Run /arckit:fr-ebios — ANSSI findings feed Workshop 1 baseline}
-2. {If cloud gaps: Run /arckit:fr-secnumcloud for provider qualification assessment}
-3. Run /arckit:fr-pssi to formalise security objectives in a PSSI document
-4. Run /arckit:secure to implement technical remediation measures
+1. {If OIV/OSE: Run /arckit-fr-ebios — ANSSI findings feed Workshop 1 baseline}
+2. {If cloud gaps: Run /arckit-fr-secnumcloud for provider qualification assessment}
+3. Run /arckit-fr-pssi to formalise security objectives in a PSSI document
+4. Run /arckit-secure to implement technical remediation measures
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 ## Important Notes
 
 - **Both public and private sector**: The ANSSI guide d'hygiène applies to all French organisations — public, private, OIV, OSE, SME. Priority and obligation level differ (OIV must apply all measures; others treat them as strongly recommended).
-- **OIV / OSE obligations**: For OIV systems (SIIV), the hygiene measures are a baseline minimum. The sectoral arrêté sectoriel may impose additional measures. For OSE under NIS2, Article 21 measures overlap significantly — run `/arckit:eu-nis2` to avoid duplication.
+- **OIV / OSE obligations**: For OIV systems (SIIV), the hygiene measures are a baseline minimum. The sectoral arrêté sectoriel may impose additional measures. For OSE under NIS2, Article 21 measures overlap significantly — run `/arckit-eu-nis2` to avoid duplication.
 - **OIV/OSE terminology is being succeeded by EE/EI**: France's NIS2 transposition bill, the *projet de loi relatif à la résilience des infrastructures critiques et au renforcement de la cybersécurité* ("loi Résilience"), would move former OIV/OSE entities into two new categories — Entités Essentielles (EE) and Entités Importantes (EI) — with a much larger population in scope than the legacy regime; adopted by the Sénat on 12 March 2025, it was still awaiting its Assemblée nationale plenary reading on 27 October 2026, so it is not yet law. This command still uses OIV/OSE as the working vocabulary; confirm current terminology and designation with the client's legal/compliance function before relying on it, as the exact transposition timeline was not independently confirmed against a primary source at the time of writing.
 - **ANSSI cloud recommendations are separate from SecNumCloud**: The cloud recommendations assess the security of the architecture; SecNumCloud is a provider qualification programme. Both are relevant for cloud-hosted sensitive systems.
 - **CERT-FR monitoring (Measure 34)**: The update policy in Measure 34 relies on tracking new vulnerabilities through CERT-FR. Subscription at cert.ssi.gouv.fr is free — flag it if not already done.
@@ -237,11 +237,11 @@ Next steps:
 ## Example Usage
 
 ```text
-/arckit:fr-anssi Assess ANSSI hygiene compliance for a French regional prefecture information system — on-premise Windows/Active Directory environment, 300 users, no cloud services
+/arckit-fr-anssi Assess ANSSI hygiene compliance for a French regional prefecture information system — on-premise Windows/Active Directory environment, 300 users, no cloud services
 
-/arckit:fr-anssi ANSSI security posture for 001 — hybrid cloud ministry portal, hosted on OVHcloud, handling citizen personal data, NIS2 OSE designation
+/arckit-fr-anssi ANSSI security posture for 001 — hybrid cloud ministry portal, hosted on OVHcloud, handling citizen personal data, NIS2 OSE designation
 
-/arckit:fr-anssi ANSSI hygiene assessment for a French private company (OIV énergie sector), SCADA-adjacent IS, mixed cloud and on-premise, 50 IT staff
+/arckit-fr-anssi ANSSI hygiene assessment for a French private company (OIV énergie sector), SCADA-adjacent IS, mixed cloud and on-premise, 50 IT staff
 ```
 
 ## Suggested Next Steps

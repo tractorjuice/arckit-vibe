@@ -37,7 +37,7 @@ You are an enterprise architect generating a UAE Smart Data Classification Regis
 7. Cross-reference each dataset to:
    - Upstream BR / DR requirements that drove its capture
    - Downstream INT requirements that consume it
-   - The applicable PDPL lawful basis (if personal data is in scope — see `/arckit:uae-pdpl`)
+   - The applicable PDPL lawful basis (if personal data is in scope — see `/arckit-uae-pdpl`)
 8. Populate the External References section per `${VIBE_EXTENSION_ROOT}/references/citation-instructions.md`. The UAE Smart Data Framework (Part 1: Smart Data Principles and Standards, and Part 2: Smart Data Implementation Guide) MUST appear in the Document Register with its primary URL and the verification date.
 9. Before writing the file, read `${VIBE_EXTENSION_ROOT}/references/quality-checklist.md` and verify all **Common Checks** plus the **CLAS** per-type checks pass. Fix any failures before proceeding.
 10. Write the artefact via the Write tool to `projects/<project-id>/<filename>`.
@@ -53,8 +53,8 @@ This citation MUST be present in the artefact's External References section.
 
 - Do NOT use UK Government classifications (PUBLIC / OFFICIAL / OFFICIAL-SENSITIVE / SECRET) in this artefact — the UAE Smart Data Framework classes are the authoritative scheme for UAE Federal entities.
 - The framework has four classes. "Shared" and "Closed" are exchange modes in the framework, not classes, and there is no "Top Secret" class. If an earlier version of this register uses the overlay's former five-rung ladder, re-classify each dataset against the four classes rather than carrying the old label forward (former `Shared` is usually `Confidential`, former `Top Secret` is `Secret`, and a former `Confidential` dataset may now be `Sensitive`), and record the change in the Revision History.
-- Confidential, Sensitive and Secret datasets carry residency obligations under the National Cloud Security Policy v2 — flag these for `/arckit:uae-cloud-residency`.
-- Personal data datasets must be mapped to a PDPL lawful basis — if `/arckit:uae-pdpl` has not yet been run, recommend it as a follow-up.
+- Confidential, Sensitive and Secret datasets carry residency obligations under the National Cloud Security Policy v2 — flag these for `/arckit-uae-cloud-residency`.
+- Personal data datasets must be mapped to a PDPL lawful basis — if `/arckit-uae-pdpl` has not yet been run, recommend it as a follow-up.
 
 ## Suggested Next Steps
 

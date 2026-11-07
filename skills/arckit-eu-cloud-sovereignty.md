@@ -158,7 +158,7 @@ Show this scoping summary before generating the full document.
 8. **Section 6: Member State Adoption Context**
    - Note the framework is being adopted as a national yardstick, using the Netherlands as the worked example: the Dutch "Notitie: Verkenning Overheidsbrede Soevereine Clouddiensten" (NDS Cloudprogramma, v1.0, 11 June 2026) adopts the framework as its sovereignty measure, publishes an official Dutch rendering of the SEAL levels, sets SEAL4 as the target for a government-wide sovereign cloud service, and applies SEAL on the demand side (a workplace requiring SEAL3 requires a cloud service reaching at least SEAL3)
    - Note the Dutch Herziening rijksbreed cloudbeleid 2026 cites the framework as the instrument for limiting the risk of foreign-government interference in supplier selection
-   - For a Dutch entity, do not restate the cloud-policy obligations themselves — `/arckit:nl-cloud` (`RBCLOUD`) covers Rijksbreed cloudbeleid compliance directly. Reference the RBCLOUD assessment if one exists, and otherwise point the reader at that command; this section stays scoped to how the sovereignty measure applies
+   - For a Dutch entity, do not restate the cloud-policy obligations themselves — `/arckit-nl-cloud` (`RBCLOUD`) covers Rijksbreed cloudbeleid compliance directly. Reference the RBCLOUD assessment if one exists, and otherwise point the reader at that command; this section stays scoped to how the sovereignty measure applies
    - If the project is not Dutch, note this section for context/comparison only and identify the relevant national programme if the user has supplied one
 
 9. **Section 7: Gap Analysis and Remediation Plan**
@@ -230,10 +230,10 @@ Sovereignty Score: {N}% (award-criterion contribution — the Overall SEAL above
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
 Next steps:
-1. {If Dutch central government: Run /arckit:nl-cloud for Rijksbreed cloudbeleid 2026 compliance}
-2. {If French dimension: Run /arckit:fr-secnumcloud for security qualification cross-check}
-3. {If NIS2 in scope: Run /arckit:eu-nis2 to map SOV-7 onto Article 21}
-4. Run /arckit:risk to register unmet minimum SEAL levels and sovereignty gaps
+1. {If Dutch central government: Run /arckit-nl-cloud for Rijksbreed cloudbeleid 2026 compliance}
+2. {If French dimension: Run /arckit-fr-secnumcloud for security qualification cross-check}
+3. {If NIS2 in scope: Run /arckit-eu-nis2 to map SOV-7 onto Article 21}
+4. Run /arckit-risk to register unmet minimum SEAL levels and sovereignty gaps
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -290,11 +290,11 @@ Next steps:
 ## Example Usage
 
 ```text
-/arckit:eu-cloud-sovereignty Set minimum SEAL levels for a government-wide case-management SaaS tender, 001, data sensitivity high, target SEAL-4 per the NDS Cloudprogramma ambition
+/arckit-eu-cloud-sovereignty Set minimum SEAL levels for a government-wide case-management SaaS tender, 001, data sensitivity high, target SEAL-4 per the NDS Cloudprogramma ambition
 
-/arckit:eu-cloud-sovereignty Assess sovereignty posture for a candidate IaaS service against a tender specification requiring at least SEAL-2 on every objective, evidence review requested before shortlisting
+/arckit-eu-cloud-sovereignty Assess sovereignty posture for a candidate IaaS service against a tender specification requiring at least SEAL-2 on every objective, evidence review requested before shortlisting
 
-/arckit:eu-cloud-sovereignty Sovereignty scoring for 001 — cross-reference SecNumCloud qualification status already documented, French public-sector hosting, no OIV designation
+/arckit-eu-cloud-sovereignty Sovereignty scoring for 001 — cross-reference SecNumCloud qualification status already documented, French public-sector hosting, no OIV designation
 ```
 
 ## Suggested Next Steps

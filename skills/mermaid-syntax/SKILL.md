@@ -4,7 +4,7 @@ description: 'Mermaid syntax reference for writing or fixing a diagram in an art
   flowchart, sequence, class, state, ER, Gantt, C4, mindmap, timeline and the other
   diagram types, node shapes, styling, theming, and why a diagram fails to render.
   Not needed for PlantUML (plantuml-syntax), or when the request is for a governed
-  diagram artefact with document control, which /arckit:diagram produces.'
+  diagram artefact with document control, which /arckit-diagram produces.'
 ---
 
 # Mermaid Syntax Reference
@@ -21,19 +21,19 @@ Select the appropriate diagram type and read the corresponding reference file:
 
 | Type | Reference | ArcKit Commands Using It |
 | ---- | --------- | ------------------------ |
-| Flowchart | [flowchart.md](references/flowchart.md) | `/arckit:diagram`, `/arckit:dfd`, `/arckit:roadmap`, `/arckit:plan`, `/arckit:backlog`, `/arckit:strategy`, `/arckit:story`, `/arckit:jsp-936` |
-| Sequence Diagram | [sequenceDiagram.md](references/sequenceDiagram.md) | `/arckit:diagram` |
+| Flowchart | [flowchart.md](references/flowchart.md) | `/arckit-diagram`, `/arckit-dfd`, `/arckit-roadmap`, `/arckit-plan`, `/arckit-backlog`, `/arckit-strategy`, `/arckit-story`, `/arckit-jsp-936` |
+| Sequence Diagram | [sequenceDiagram.md](references/sequenceDiagram.md) | `/arckit-diagram` |
 | Class Diagram | [classDiagram.md](references/classDiagram.md) | — |
 | State Diagram | [stateDiagram.md](references/stateDiagram.md) | — |
-| ER Diagram | [entityRelationshipDiagram.md](references/entityRelationshipDiagram.md) | `/arckit:data-model` |
-| Gantt Chart | [gantt.md](references/gantt.md) | `/arckit:roadmap`, `/arckit:plan`, `/arckit:strategy`, `/arckit:story`, `/arckit:presentation` |
-| Pie Chart | [pie.md](references/pie.md) | `/arckit:story`, `/arckit:presentation` |
-| Mindmap | [mindmap.md](references/mindmap.md) | `/arckit:story` |
-| Timeline | [timeline.md](references/timeline.md) | `/arckit:story` |
+| ER Diagram | [entityRelationshipDiagram.md](references/entityRelationshipDiagram.md) | `/arckit-data-model` |
+| Gantt Chart | [gantt.md](references/gantt.md) | `/arckit-roadmap`, `/arckit-plan`, `/arckit-strategy`, `/arckit-story`, `/arckit-presentation` |
+| Pie Chart | [pie.md](references/pie.md) | `/arckit-story`, `/arckit-presentation` |
+| Mindmap | [mindmap.md](references/mindmap.md) | `/arckit-story` |
+| Timeline | [timeline.md](references/timeline.md) | `/arckit-story` |
 | Git Graph | [gitgraph.md](references/gitgraph.md) | — |
-| Quadrant Chart | [quadrantChart.md](references/quadrantChart.md) | `/arckit:presentation` |
+| Quadrant Chart | [quadrantChart.md](references/quadrantChart.md) | `/arckit-presentation` |
 | Requirement Diagram | [requirementDiagram.md](references/requirementDiagram.md) | — |
-| C4 Diagram | [c4.md](references/c4.md) | `/arckit:diagram`, `/arckit:presentation` |
+| C4 Diagram | [c4.md](references/c4.md) | `/arckit-diagram`, `/arckit-presentation` |
 | Sankey Diagram | [sankey.md](references/sankey.md) | — |
 | XY Chart | [xyChart.md](references/xyChart.md) | — |
 | Block Diagram | [block.md](references/block.md) | — |
@@ -82,4 +82,4 @@ These are the most common Mermaid syntax errors encountered when generating diag
 
 This skill handles **conversational** Mermaid syntax questions — quick lookups, syntax examples, troubleshooting rendering issues, and learning about diagram types.
 
-For **formal architecture diagram generation** with document control, project integration, C4 layout science, and governance compliance, use the `/arckit:diagram` command instead. It generates versioned diagram artifacts saved to your project directory with full traceability to requirements and architecture principles.
+For **formal architecture diagram generation** with document control, project integration, C4 layout science, and governance compliance, use the `/arckit-diagram` command instead. It generates versioned diagram artifacts saved to your project directory with full traceability to requirements and architecture principles.

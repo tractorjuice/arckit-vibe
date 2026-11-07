@@ -93,7 +93,7 @@ The domains are named, not numbered. Earlier editions organised the PSPF into fo
 
    - **Compliance Summary** — one row per domain: requirements in scope, implemented, partially implemented, not implemented, N/A; overall statement per domain.
 
-   - **ArcKit Evidence Integration** — map `/arckit:diagram`, `/arckit:data-model`, `/arckit:servicenow`, `/arckit:risk`, `/arckit:traceability`, `/arckit:graph-report`, and `/arckit:maturity-model` outputs to PSPF domains, CMDB ownership, supporting services, annual reporting evidence, and remediation tracking.
+   - **ArcKit Evidence Integration** — map `/arckit-diagram`, `/arckit-data-model`, `/arckit-servicenow`, `/arckit-risk`, `/arckit-traceability`, `/arckit-graph-report`, and `/arckit-maturity-model` outputs to PSPF domains, CMDB ownership, supporting services, annual reporting evidence, and remediation tracking.
 
    - **Recommendations** — prioritised remediations by Quick Wins / Short-Term / Medium-Term, each tagged to a domain and requirement number.
 

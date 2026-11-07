@@ -101,7 +101,7 @@ A working NDB playbook is operational — it must be executable under time press
 
    - **Tabletop Exercise Plan** — annual tabletop scenario, evidence retention, lessons-learned cycle.
 
-   - **ArcKit Evidence Integration** — map `/arckit:dfd`, `/arckit:data-model`, `/arckit:servicenow`, `/arckit:risk`, `/arckit:traceability`, and `/arckit:graph-report` outputs to breach scope, incident workflow, decision evidence, risk treatment, and coverage gaps.
+   - **ArcKit Evidence Integration** — map `/arckit-dfd`, `/arckit-data-model`, `/arckit-servicenow`, `/arckit-risk`, `/arckit-traceability`, and `/arckit-graph-report` outputs to breach scope, incident workflow, decision evidence, risk treatment, and coverage gaps.
 
 7. Populate the External References section per `${VIBE_EXTENSION_ROOT}/references/citation-instructions.md`. Privacy Act 1988 + OAIC NDB scheme guidance MUST appear in the Document Register.
 

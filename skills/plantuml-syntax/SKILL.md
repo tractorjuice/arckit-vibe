@@ -4,7 +4,7 @@ description: 'PlantUML syntax reference, C4-PlantUML first, for writing or fixin
   a diagram in an artefact: sequence, class, activity, state, ER, component, deployment
   and use-case diagrams, skinparams and themes, C4 layout conflicts and rendering
   errors. Not needed for Mermaid (mermaid-syntax), or when the request is for a governed
-  diagram artefact with document control, which /arckit:diagram produces.'
+  diagram artefact with document control, which /arckit-diagram produces.'
 ---
 
 # PlantUML Syntax Reference
@@ -19,8 +19,8 @@ Select the appropriate diagram type and read the corresponding reference file:
 
 | Type | Reference | ArcKit Commands Using It |
 | ---- | --------- | ------------------------ |
-| C4-PlantUML | [c4-plantuml.md](references/c4-plantuml.md) | `/arckit:diagram` (C4 Context, Container, Component) |
-| Sequence Diagram | [sequence-diagrams.md](references/sequence-diagrams.md) | `/arckit:diagram` (Sequence mode) |
+| C4-PlantUML | [c4-plantuml.md](references/c4-plantuml.md) | `/arckit-diagram` (C4 Context, Container, Component) |
+| Sequence Diagram | [sequence-diagrams.md](references/sequence-diagrams.md) | `/arckit-diagram` (Sequence mode) |
 | Class Diagram | [class-diagrams.md](references/class-diagrams.md) | — |
 | Activity Diagram | [activity-diagrams.md](references/activity-diagrams.md) | — |
 | State Diagram | [state-diagrams.md](references/state-diagrams.md) | — |
@@ -70,4 +70,4 @@ These are the most common PlantUML syntax errors encountered when generating dia
 
 This skill handles **conversational** PlantUML syntax questions — quick lookups, syntax examples, troubleshooting rendering issues, and learning about diagram types.
 
-For **formal architecture diagram generation** with document control, project integration, layout science, and governance compliance, use the `/arckit:diagram` command instead. It generates versioned diagram artifacts saved to your project directory with full traceability to requirements and architecture principles.
+For **formal architecture diagram generation** with document control, project integration, layout science, and governance compliance, use the `/arckit-diagram` command instead. It generates versioned diagram artifacts saved to your project directory with full traceability to requirements and architecture principles.

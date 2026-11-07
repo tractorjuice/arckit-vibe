@@ -60,13 +60,13 @@ ${args}
 6. **If the query is empty**, show a usage summary:
 
    ```text
-   Usage: /arckit:search <query> [--type=TYPE] [--project=NNN] [--id=REQ-ID]
+   Usage: /arckit-search <query> [--type=TYPE] [--project=NNN] [--id=REQ-ID]
 
    Examples:
-     /arckit:search PostgreSQL
-     /arckit:search "data residency" --type=ADR
-     /arckit:search --id=BR-003
-     /arckit:search security --project=001
+     /arckit-search PostgreSQL
+     /arckit-search "data residency" --type=ADR
+     /arckit-search --id=BR-003
+     /arckit-search security --project=001
    ```
 
 ## Suggested Next Steps

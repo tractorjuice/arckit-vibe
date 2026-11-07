@@ -104,7 +104,7 @@ Show role determination before proceeding.
    - Role determination table with rationale
    - Connected product in-scope assessment
    - Data types: personal data, non-personal data, trade secrets (mixed data sets common in IoT)
-   - GDPR intersection note (Article 1(5)): the Data Act is without prejudice to GDPR, and data protection law prevails where the two conflict — both apply when personal data is involved. Chapter II access rights complement GDPR Articles 15 and 20 for users who are data subjects; Data Act sharing does not override GDPR purpose limitation; GDPR Chapter V still governs personal data transfers. Recommend running `/arckit:eu-rgpd` if personal data is involved
+   - GDPR intersection note (Article 1(5)): the Data Act is without prejudice to GDPR, and data protection law prevails where the two conflict — both apply when personal data is involved. Chapter II access rights complement GDPR Articles 15 and 20 for users who are data subjects; Data Act sharing does not override GDPR purpose limitation; GDPR Chapter V still governs personal data transfers. Recommend running `/arckit-eu-rgpd` if personal data is involved
 
 4. **Section 2: User Data Access Rights (Chapter II)** (Manufacturer / Data holder)
    - Pre-purchase disclosure obligation (Article 3): users informed of data generated
@@ -203,9 +203,9 @@ Personal data involved: {Yes — GDPR also applies / No}
 Total Gaps: {N} ({N} high)
 
 Next steps:
-1. {If personal data: Run /arckit:eu-rgpd}
-2. {If procurement: Run /arckit:fr-marche-public for data sharing clauses}
-3. Run /arckit:risk to register Data Act gaps
+1. {If personal data: Run /arckit-eu-rgpd}
+2. {If procurement: Run /arckit-fr-marche-public for data sharing clauses}
+3. Run /arckit-risk to register Data Act gaps
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -243,17 +243,17 @@ Next steps:
 - ✅ Public sector exceptional access (Chapter V) assessed or N/A
 - ✅ Cloud switching obligations (Chapter VI) assessed if DAPS or N/A
 - ✅ Unlawful international governmental access safeguards (Chapter VII, Article 32) assessed if DAPS
-- ✅ GDPR intersection documented with recommendation to run `/arckit:eu-rgpd`
+- ✅ GDPR intersection documented with recommendation to run `/arckit-eu-rgpd`
 - ✅ Gap analysis with Data Act application timeline (12 Sep 2025 / 12 Sep 2026 / 12 Jan 2027)
 
 ## Example Usage
 
 ```text
-/arckit:eu-data-act Assess Data Act compliance for an industrial IoT platform collecting sensor data from 50,000 connected machines in EU factories, selling analytics as SaaS, B2B sharing with factory operators required
+/arckit-eu-data-act Assess Data Act compliance for an industrial IoT platform collecting sensor data from 50,000 connected machines in EU factories, selling analytics as SaaS, B2B sharing with factory operators required
 
-/arckit:eu-data-act Data Act scoping for 001 — cloud SaaS provider (IaaS switching obligations focus), assess the switching charge withdrawal timeline and switching process requirements
+/arckit-eu-data-act Data Act scoping for 001 — cloud SaaS provider (IaaS switching obligations focus), assess the switching charge withdrawal timeline and switching process requirements
 
-/arckit:eu-data-act Data Act for a smart home appliance manufacturer (France), connected devices collecting usage data, assess user access rights and B2B sharing with maintenance service providers
+/arckit-eu-data-act Data Act for a smart home appliance manufacturer (France), connected devices collecting usage data, assess user access rights and B2B sharing with maintenance service providers
 ```
 
 ## Suggested Next Steps

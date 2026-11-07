@@ -81,7 +81,7 @@ The AI RMF is voluntary. OMB M-25-21 (agency use of AI) and OMB M-25-22 (AI acqu
 
 ## Handoffs
 
-The RMF findings drive `/arckit:us-ai-impact` — the M-25-21 high-impact determination and minimum practices, and the M-25-22 acquisition terms, inherit the RMF risk register. PII-handling AI systems require `/arckit:us-privacy-pia`. Residual risks flow into `/arckit:risk`. Significant model, hosting, data-governance, and human-oversight decisions captured during the RMF process should be recorded as ADRs via `/arckit:adr`.
+The RMF findings drive `/arckit-us-ai-impact` — the M-25-21 high-impact determination and minimum practices, and the M-25-22 acquisition terms, inherit the RMF risk register. PII-handling AI systems require `/arckit-us-privacy-pia`. Residual risks flow into `/arckit-risk`. Significant model, hosting, data-governance, and human-oversight decisions captured during the RMF process should be recorded as ADRs via `/arckit-adr`.
 
 ## Important Notes
 

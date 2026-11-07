@@ -45,7 +45,7 @@ Find the project directory in `projects/` (user may specify name/number, otherwi
 
 - `ARC-*-REQ-*.md` in `projects/{project}/` — Requirements specification
   - Extract: sector, budget range, objectives, TRL indicators, organisation type, compliance requirements
-  - If missing: warn user to run `/arckit:requirements` first, but proceed using `${args}` as the project description
+  - If missing: warn user to run `/arckit-requirements` first, but proceed using `${args}` as the project description
 
 **RECOMMENDED** (read if available, note if missing):
 
@@ -195,7 +195,7 @@ Return ONLY a concise summary including:
 - Total potential funding range (sum of recommended grants)
 - Nearest application deadlines
 - Number of tech notes created/updated (unless `--no-spawn`)
-- Suggested next steps: `/arckit:sobc` (Economic Case), `/arckit:plan` (project plan), `/arckit:risk` (grant-specific risks)
+- Suggested next steps: `/arckit-sobc` (Economic Case), `/arckit-plan` (project plan), `/arckit-risk` (grant-specific risks)
 
 **CRITICAL**: Do NOT output the full document. It was already written to file. Only return the summary.
 
@@ -211,7 +211,7 @@ Return ONLY a concise summary including:
 - **Templates** — `${VIBE_EXTENSION_ROOT}/templates/grants-template.md` (override at `.arckit/templates-custom/grants-template.md`)
 - **Helpers** — `${VIBE_EXTENSION_ROOT}/scripts/bash/create-project.sh` · `${VIBE_EXTENSION_ROOT}/scripts/generate-document-id.mjs`
 - **External tools** — `WebSearch` · `WebFetch` (no MCP)
-- **Related commands** — `/arckit:requirements` (input) · `/arckit:stakeholders` (input) · `/arckit:sobc` (downstream business case)
+- **Related commands** — `/arckit-requirements` (input) · `/arckit-stakeholders` (input) · `/arckit-sobc` (downstream business case)
 
 ## Suggested Next Steps
 

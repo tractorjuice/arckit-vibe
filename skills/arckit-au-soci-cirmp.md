@@ -70,7 +70,7 @@ The CIRMP Rules set two tiers. The baseline requirements (Part 2, ss 6–11) app
 
    - **SOCI Applicability Assessment** - assess sector, asset class, thresholds, responsible entity obligations, register obligations, incident reporting, government assistance implications, and any uncertainty requiring legal confirmation. Record the CIRMP tier: baseline (CIRMP Rules s 4(1)), enhanced (s 4A(1)), TSRMP for a critical telecommunications asset, or not subject. For an enhanced-tier asset, record when it became a CI asset and whether the s 12 exception for earlier declarations applies.
 
-   - **ArcKit Architecture and Data Evidence Map** - cross-reference `/arckit:diagram`, `/arckit:dfd`, and `/arckit:data-model` artefacts to asset scope, protected-information handling, operational dependencies, and hazard evidence. Call out missing or stale evidence explicitly.
+   - **ArcKit Architecture and Data Evidence Map** - cross-reference `/arckit-diagram`, `/arckit-dfd`, and `/arckit-data-model` artefacts to asset scope, protected-information handling, operational dependencies, and hazard evidence. Call out missing or stale evidence explicitly.
 
    - **CIRMP Governance Model** - document accountable owner, board/council/governing body oversight, annual report owner, risk committee, review cadence, and evidence repository.
 
@@ -86,7 +86,7 @@ The CIRMP Rules set two tiers. The baseline requirements (Part 2, ss 6–11) app
 
    - **Annual Report and Attestation Readiness** - assess whether the entity can produce the annual CIRMP report within required timeframes, with board/council/governing body approval. The 2025–26 report need not include information about the enhanced material risks or measures.
 
-   - **Operations, CMDB, and Traceability Integration** - map critical components and support processes to `/arckit:servicenow` CMDB CIs; map obligations and material risks to `/arckit:risk`, `/arckit:traceability`, `/arckit:graph-report`, and `/arckit:maturity-model` outputs.
+   - **Operations, CMDB, and Traceability Integration** - map critical components and support processes to `/arckit-servicenow` CMDB CIs; map obligations and material risks to `/arckit-risk`, `/arckit-traceability`, `/arckit-graph-report`, and `/arckit-maturity-model` outputs.
 
    - **Cross-Sector vs Sector-Specific Obligations** - record general SOCI obligations here and explicitly defer sector-specific requirements such as AESCSF, AER ring-fencing, NER/NGR, or AEMO obligations to sector recipes.
 
@@ -106,7 +106,7 @@ The CIRMP Rules set two tiers. The baseline requirements (Part 2, ss 6–11) app
 - Treat ArcKit diagrams, DFDs, data models, ServiceNow/CMDB records, risk registers, traceability matrices, graph-report coverage, and maturity assessments as first-class evidence. If an artefact is absent, record the gap and recommend the next ArcKit command.
 - CIRMP obligations and rules are subject to amendments and vary by asset class: the enhanced tier applies only to the asset classes in s 4A(1) of the CIRMP Rules. Record the legislation and guidance version checked, including the CIRMP Rules compilation.
 - The annual report is a governance obligation, not only a cyber artefact. Board/council/governing body approval readiness must be assessed.
-- Where the asset includes OT, cross-reference `/arckit:au-ot-security`; where it does not, mark OT evidence as not applicable rather than forcing it into scope.
+- Where the asset includes OT, cross-reference `/arckit-au-ot-security`; where it does not, mark OT evidence as not applicable rather than forcing it into scope.
 
 ## Suggested Next Steps
 

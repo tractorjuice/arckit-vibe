@@ -7,7 +7,7 @@ tags: [arckit, architecture, governance]
 
 > ⚠️ **Community-contributed command** — not part of the officially-maintained ArcKit baseline. Output should be reviewed by qualified counsel and the departmental security officer before reliance. Citations to VIRBI 2025 and the TBB systematiek may lag the current text — verify against the source.
 
-You are helping an enterprise architect determine the **Te Beschermen Belangen (TBB) category** for a system or dataset, using the TBB systematiek — "Gereedschap: Te Beschermen Belangen", v1.0, 6 June 2026, part of the Toolkit VIRBI 2025. Its legal basis is the Besluit BVA-stelsel Rijksdienst 2021 (BWBR0044617). The TBB category is the input other Dutch government cloud and security commands (`/arckit:nl-cloud`, `/arckit:nl-bio`) consume — determine it here rather than re-deriving it downstream.
+You are helping an enterprise architect determine the **Te Beschermen Belangen (TBB) category** for a system or dataset, using the TBB systematiek — "Gereedschap: Te Beschermen Belangen", v1.0, 6 June 2026, part of the Toolkit VIRBI 2025. Its legal basis is the Besluit BVA-stelsel Rijksdienst 2021 (BWBR0044617). The TBB category is the input other Dutch government cloud and security commands (`/arckit-nl-cloud`, `/arckit-nl-bio`) consume — determine it here rather than re-deriving it downstream.
 
 ## User Input
 
@@ -135,7 +135,7 @@ State this explicitly and prominently in the generated document.
 
 ### Step 9: Downstream Implications
 
-State whether the determined TBB category triggers the clause 5.2 public-cloud prohibition (TBB 1–3), and point to `/arckit:nl-cloud` for the full eligibility assessment. Note that the BIV scores also feed `/arckit:nl-bio` control prioritisation.
+State whether the determined TBB category triggers the clause 5.2 public-cloud prohibition (TBB 1–3), and point to `/arckit-nl-cloud` for the full eligibility assessment. Note that the BIV scores also feed `/arckit-nl-bio` control prioritisation.
 
 ### Step 10: Generate the Determination Document
 
@@ -192,8 +192,8 @@ Vertrouwelijkheid: {score}
    authority, not an output of the TBB systematiek.
 
 Next steps:
-1. {If cloud hosting under consideration: Run /arckit:nl-cloud for the clause 5.2 eligibility check}
-2. Run /arckit:nl-bio to prioritise BIO2 controls using these BIV scores
+1. {If cloud hosting under consideration: Run /arckit-nl-cloud for the clause 5.2 eligibility check}
+2. Run /arckit-nl-bio to prioritise BIO2 controls using these BIV scores
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -203,7 +203,7 @@ Next steps:
 - **One-way inference is not optional framing**: This is the single most important thing this command must get right. A TBB 2 process is not automatically holding Stg. GEHEIM data. Reversing the inference silently mis-classifies data downstream and can cause an eligible cloud hosting decision to be blocked, or worse, an ineligible one to look eligible.
 - **This command produces no rubricering at all**: the systematiek takes the rubricering as an *input* to the categorisation (§2.1) and states that only the marking-to-category direction holds (§3.1). Step 7 therefore reads an existing marking and applies it as a floor; it never derives a marking from the category. If a downstream artefact needs a rubricering, it comes from the information's own marking or from the departmental security authority — never from this document.
 - **VIRBI 2013 is stale**: If prior assessments or source documents cite VIRBI 2013, flag it — VIRBI 2025 replaced and repealed it on 9 September 2025.
-- **This command determines the category; it does not determine the hosting decision.** Run `/arckit:nl-cloud` for the eligibility consequence.
+- **This command determines the category; it does not determine the hosting decision.** Run `/arckit-nl-cloud` for the eligibility consequence.
 - **Use Write Tool**: This determination is consumed by other commands — always use the Write tool so it can be read back reliably.
 
 ## Key References
@@ -231,11 +231,11 @@ Next steps:
 ## Example Usage
 
 ```text
-/arckit:nl-tbb Determine the TBB category for a ministry case-file system handling internal audit findings and sensitive policy correspondence
+/arckit-nl-tbb Determine the TBB category for a ministry case-file system handling internal audit findings and sensitive policy correspondence
 
-/arckit:nl-tbb TBB determination for 001, citizen-facing benefits platform processing large-scale personal data, no prior classification on record
+/arckit-nl-tbb TBB determination for 001, citizen-facing benefits platform processing large-scale personal data, no prior classification on record
 
-/arckit:nl-tbb Assess TBB category for an interdepartmental coordination system touching international relations correspondence
+/arckit-nl-tbb Assess TBB category for an interdepartmental coordination system touching international relations correspondence
 ```
 
 ## Suggested Next Steps

@@ -57,11 +57,11 @@ Install it (one-off, ~7.5MB, MIT licensed, third party):
 Or point ArcKit at an existing checkout:
   export ARCKIT_ARCHIFY_HOME=/path/to/archify
 
-In the meantime I can run /arckit:diagram to produce the Mermaid or
+In the meantime I can run /arckit-diagram to produce the Mermaid or
 PlantUML C4 version of the same diagram, which needs no extra install.
 ```
 
-Then offer to run `/arckit:diagram` instead. **Do not** attempt to install
+Then offer to run `/arckit-diagram` instead. **Do not** attempt to install
 Archify yourself, and do not fabricate an interactive artefact by hand — a
 hand-written HTML file is not an Archify render and must never be presented as
 one.
@@ -147,7 +147,7 @@ node-graph IR.
    OWM
    ```
 
-   If no WARD artefact exists, stop and offer `/arckit:wardley` to create one.
+   If no WARD artefact exists, stop and offer `/arckit-wardley` to create one.
    Do not invent a map.
 
 2. Render:
@@ -231,8 +231,8 @@ section recording:
 ⚠️  {Any unresolved diagnostics or parser warnings, stated plainly}
 
 🎯 Next Steps:
-- /arckit:pages — publish the render into the documentation site
-- /arckit:diagram — Mermaid/PlantUML companion for the same subject
+- /arckit-pages — publish the render into the documentation site
+- /arckit-diagram — Mermaid/PlantUML companion for the same subject
 ```
 
 ---

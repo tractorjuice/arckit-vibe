@@ -39,8 +39,8 @@ node ${VIBE_EXTENSION_ROOT}/scripts/import-okf.mjs ${args}
 ## Example Usage
 
 ```text
-/arckit:import-okf --bundle okf/all --project 001
-/arckit:import-okf --bundle /tmp/vendor-okf --project 001 --dry-run
+/arckit-import-okf --bundle okf/all --project 001
+/arckit-import-okf --bundle /tmp/vendor-okf --project 001 --dry-run
 ```
 
 ## Key References

@@ -44,7 +44,7 @@ Once `{P}-{NAME}` is locked, read these **if present** to derive default scope:
 - `projects/{P}-{NAME}/ARC-*-REQ-*.md` — Requirements. Use them to derive default capability keywords (and CPV codes if cited).
 - `projects/000-global/ARC-000-PRIN-*.md` — Architecture principles, and the commissioning buyer (the department or body running the project).
 
-Unlike `/arckit:datascout`, requirements are **not** mandatory here. If neither file is present, proceed using the explicit scope in the user's request and say so in your first message (e.g. "No requirements found — scoping the market query from your arguments only").
+Unlike `/arckit-datascout`, requirements are **not** mandatory here. If neither file is present, proceed using the explicit scope in the user's request and say so in your first message (e.g. "No requirements found — scoping the market query from your arguments only").
 
 ### Step 2: Parse the query scope
 
@@ -196,11 +196,11 @@ Return ONLY a concise summary to the user:
 - Top 3 suppliers with their share %.
 - Concentration flag.
 - Data freshness, or "unavailable".
-- Next steps (`/arckit:sobc`, `/arckit:risk`, `/arckit:research`).
+- Next steps (`/arckit-sobc`, `/arckit-risk`, `/arckit-research`).
 
 ## Edge Cases
 
-- **No requirements**: not a failure here. Proceed with the explicit scope from the user's request and say so. (`/arckit:datascout` requires requirements; this does not.)
+- **No requirements**: not a failure here. Proceed with the explicit scope from the user's request and say so. (`/arckit-datascout` requires requirements; this does not.)
 - **Tenders endpoint down**: omit the freshness timestamp, list the degraded feeds, and populate what you can. Still write the artefact — it renders with the freshness-unavailable note.
 - **Zero suppliers returned**: a valid outcome, not a failure. Write the artefact noting that no awards matched the scope, set the concentration flag to `LOW`, and add a key-findings line saying no awards were found.
 - **Ambiguous project match**: ask the user rather than guessing.
@@ -218,7 +218,7 @@ Return ONLY a concise summary to the user:
 - **Helpers** — `${VIBE_EXTENSION_ROOT}/scripts/generate-document-id.mjs`
 - **MCP server** — `uk-tenders` (read-only tools only; `query_sql` never granted)
 - **External tools** — none
-- **Related commands** — `/arckit:sobc` (downstream Economic Case) · `/arckit:risk` (downstream concentration risk) · `/arckit:research` (build-vs-buy context) · `/arckit:competitors` (rival landscape)
+- **Related commands** — `/arckit-sobc` (downstream Economic Case) · `/arckit-risk` (downstream concentration risk) · `/arckit-research` (build-vs-buy context) · `/arckit-competitors` (rival landscape)
 
 ## Important Notes
 

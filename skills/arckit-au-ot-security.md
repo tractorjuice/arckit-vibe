@@ -65,7 +65,7 @@ ASD operational technology guidance is reusable beyond any one industry sector. 
 
    - **Definitive OT Architecture View** - record whether the organisation has an authoritative view of OT assets, data flows, trust boundaries, dependencies, owners, and connectivity paths.
 
-   - **ArcKit Architecture Evidence Map** - cross-reference `/arckit:diagram`, `/arckit:dfd`, and `/arckit:data-model` artefacts to each OT zone, data flow, asset class, and control boundary. Call out missing diagrams, missing DFD levels, stale data entities, or unowned dependencies as evidence gaps.
+   - **ArcKit Architecture Evidence Map** - cross-reference `/arckit-diagram`, `/arckit-dfd`, and `/arckit-data-model` artefacts to each OT zone, data flow, asset class, and control boundary. Call out missing diagrams, missing DFD levels, stale data entities, or unowned dependencies as evidence gaps.
 
    - **IT/OT Segmentation and Trust Boundaries** - document zones, conduits, boundary controls, admin pathways, jump hosts, protocol gateways, DMZs, and monitoring points.
 
@@ -81,7 +81,7 @@ ASD operational technology guidance is reusable beyond any one industry sector. 
 
    - **ISM and E8 Cross-Reference** - show where OT findings reuse or qualify existing AUE8 and AUISM evidence.
 
-   - **Operations, CMDB, and Traceability Integration** - map OT components to `/arckit:servicenow` CMDB CIs and support workflows; map findings to `/arckit:risk`, `/arckit:traceability`, `/arckit:graph-report`, and `/arckit:maturity-model` outputs.
+   - **Operations, CMDB, and Traceability Integration** - map OT components to `/arckit-servicenow` CMDB CIs and support workflows; map findings to `/arckit-risk`, `/arckit-traceability`, `/arckit-graph-report`, and `/arckit-maturity-model` outputs.
 
    - **Recommendations** - prioritised actions grouped by Immediate, 30-90 days, 90-180 days, and strategic uplift. Each action must identify owner, evidence artefact, and residual risk.
 
@@ -99,7 +99,7 @@ ASD operational technology guidance is reusable beyond any one industry sector. 
 - Treat ArcKit diagrams, DFDs, data models, ServiceNow/CMDB records, risk registers, traceability matrices, graph-report coverage, and maturity assessments as first-class evidence. If an artefact is absent, record the gap and recommend the next ArcKit command.
 - OT safety and availability may override normal enterprise IT patching and change windows. Record compensating controls and residual risk explicitly.
 - Direct internet exposure, unmanaged vendor remote access, undocumented radio links, flat OT networks, and obsolete boundary devices are high-risk patterns that must be called out.
-- SOCI/CIRMP applicability is handled by `/arckit:au-soci-cirmp`; this command supplies OT cyber evidence that may feed that artefact.
+- SOCI/CIRMP applicability is handled by `/arckit-au-soci-cirmp`; this command supplies OT cyber evidence that may feed that artefact.
 - Keep this artefact cross-sector. Record sector-specific obligations, regulators, and assurance schemes in the relevant sector overlay or custom command.
 
 ## Suggested Next Steps

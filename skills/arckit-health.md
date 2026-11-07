@@ -43,7 +43,7 @@ ${args}
 
 ## What This Command Does
 
-Scans the `projects/` directory for all `ARC-*` artifacts and applies nine detection rules to identify governance health issues. Each finding is assigned a severity (HIGH, MEDIUM, or LOW) with a suggested remediation action. The hook also writes `docs/health.json` on every run for dashboard integration (consumed by `/arckit:pages`).
+Scans the `projects/` directory for all `ARC-*` artifacts and applies ten detection rules to identify governance health issues. Each finding is assigned a severity (HIGH, MEDIUM, or LOW) with a suggested remediation action. The hook also writes `docs/health.json` on every run for dashboard integration (consumed by `/arckit-pages`).
 
 The `STALE-DRAFT` and `REVIEW-OVERDUE` rules are intentionally a superset of what the session-start `stale-artifact-scan` monitor surfaces, so the on-demand command and the background notification agree on the same set of artifacts.
 
@@ -62,6 +62,7 @@ The `STALE-DRAFT` and `REVIEW-OVERDUE` rules are intentionally a superset of wha
 | STALE-EXT | Unincorporated External Files | HIGH | External file in `external/` newer than all ARC-* artifacts in the same project |
 | REVIEW-OVERDUE | Overdue Review | HIGH | Document Control `Next Review Date` is in the past, on a non-DRAFT/SUPERSEDED/ARCHIVED artifact |
 | STALE-DRAFT | Long-running Draft | MEDIUM | Artifact with `Status: DRAFT` whose `Last Modified` (or `Created Date`) is >30 days old (override via `STALE_DRAFT_DAYS=N`) |
+| STALE-VIEW | Out-of-date Generated View | MEDIUM | An artifact with a `## Source Artefacts` table (such as an arc42 description) cites a source, in its project or in `000-global`, that now has a newer version, or omits a later instance of a type it cites |
 
 ---
 
@@ -73,7 +74,7 @@ The `STALE-DRAFT` and `REVIEW-OVERDUE` rules are intentionally a superset of wha
 >
 > 1. **Scan Scope** — identified all projects and ARC-* artifacts
 > 2. **Metadata Extraction** — read every artifact and extracted dates, statuses, requirement IDs, review verdicts, and conditions
-> 3. **Rule Application** — applied all nine detection rules and generated findings with severities
+> 3. **Rule Application** — applied all ten detection rules and generated findings with severities
 >
 > The hook's `hook context` above contains all findings — use them directly. **Do NOT re-read any artifact files.** Proceed to Step 4 to format the console output.
 >
@@ -96,7 +97,7 @@ The `STALE-DRAFT` and `REVIEW-OVERDUE` rules are intentionally a superset of wha
 ```text
 [HIGH] STALE-RSCH: {filepath}
   Last modified: {date} ({N} days ago)
-  Action: Re-run /arckit:research to refresh pricing and vendor data
+  Action: Re-run /arckit-research to refresh pricing and vendor data
 ```
 
 #### Rule 2: FORGOTTEN-ADR — Forgotten ADR
@@ -237,16 +238,16 @@ The `STALE-DRAFT` and `REVIEW-OVERDUE` rules are intentionally a superset of wha
 
 | Pattern | Recommended Commands |
 |---------|---------------------|
-| `*api*`, `*swagger*`, `*openapi*` | `/arckit:requirements`, `/arckit:data-model`, `/arckit:diagram` |
-| `*schema*`, `*erd*`, `*.sql` | `/arckit:data-model`, `/arckit:data-mesh-contract` |
-| `*security*`, `*pentest*`, `*vuln*` | `/arckit:secure`, `/arckit:dpia` |
-| `*compliance*`, `*audit*` | `/arckit:tcop`, `/arckit:conformance` |
-| `*cost*`, `*pricing*`, `*budget*` | `/arckit:sobc`, `/arckit:finops` |
-| `*pipeline*`, `*ci*`, `*deploy*` | `/arckit:devops` |
-| `*rfp*`, `*itt*`, `*tender*` | `/arckit:sow`, `/arckit:evaluate` |
-| `*risk*`, `*threat*` | `/arckit:risk`, `/arckit:secure` |
-| `*policy*`, `*standard*` | `/arckit:principles`, `/arckit:tcop` |
-| (default) | `/arckit:requirements`, `/arckit:analyze` |
+| `*api*`, `*swagger*`, `*openapi*` | `/arckit-requirements`, `/arckit-data-model`, `/arckit-diagram` |
+| `*schema*`, `*erd*`, `*.sql` | `/arckit-data-model`, `/arckit-data-mesh-contract` |
+| `*security*`, `*pentest*`, `*vuln*` | `/arckit-secure`, `/arckit-dpia` |
+| `*compliance*`, `*audit*` | `/arckit-tcop`, `/arckit-conformance` |
+| `*cost*`, `*pricing*`, `*budget*` | `/arckit-sobc`, `/arckit-finops` |
+| `*pipeline*`, `*ci*`, `*deploy*` | `/arckit-devops` |
+| `*rfp*`, `*itt*`, `*tender*` | `/arckit-sow`, `/arckit-evaluate` |
+| `*risk*`, `*threat*` | `/arckit-risk`, `/arckit-secure` |
+| `*policy*`, `*standard*` | `/arckit-principles`, `/arckit-tcop` |
+| (default) | `/arckit-requirements`, `/arckit-analyze` |
 
 **Rationale**: External files (PoC results, API specs, compliance reports, vendor documents) are placed in `external/` to inform architecture decisions. If these files are newer than all existing artifacts, the architecture may not yet reflect their content — creating a governance gap.
 
@@ -303,6 +304,30 @@ The `STALE-DRAFT` and `REVIEW-OVERDUE` rules are intentionally a superset of wha
   Action: Promote to IN_REVIEW/APPROVED, bump the version, or archive the draft
 ```
 
+#### Rule 10: STALE-VIEW — Out-of-date Generated View
+
+**Scan**: The latest version of every `ARC-*` artifact that has a `## Source Artefacts` table. Such an artifact is a generated view over other artifacts; today that means the arc42 description (`ARC42`) and the SDD handover pack (`SDDH`).
+
+**Logic**:
+
+1. Read the Document ID and version on each row of the view's Source Artefacts table
+2. For each cited document, find its latest version in the same project, or in `projects/000-global/` for a global source such as `ARC-000-PRIN`. If it is newer than the version the view cites, the view is stale. Global artefacts are read only for this comparison; they raise no findings of their own
+3. For each type the view cites (for example `ADR`), find documents of that type in the project that the table does not list, such as an ADR written after the view. Those are not reflected in it
+4. If either list is non-empty: **flag as MEDIUM severity**
+
+**Rationale**: A generated view summarises its sources and records which versions it read. Once a source moves on, the view describes an architecture that no longer matches its own evidence. The sources stay authoritative, so this is MEDIUM: the fix is to regenerate the view, not to repair it by hand.
+
+**Output per finding**:
+
+```text
+[MEDIUM] STALE-VIEW: {filepath}
+  Sources with a newer version: {N}
+    - {shortId}: cites v{X}, latest v{Y}
+  Later artefacts not reflected: {N}
+    - {document ID}
+  Action: Re-run {generating command} to write the next version from the current sources
+```
+
 ### Step 4: Compile Health Report
 
 Produce the health report as **console output only** (do NOT write a file). Structure the report as follows:
@@ -334,6 +359,7 @@ FINDINGS BY TYPE
   ORPHAN-REQ:       {count}
   MISSING-TRACE:    {count}
   STALE-DRAFT:      {count}
+  STALE-VIEW:       {count}
   VERSION-DRIFT:    {count}
 ```
 
@@ -349,7 +375,7 @@ PROJECT: {project-dir}
 
   [HIGH] STALE-RSCH: research/ARC-001-RSCH-001-v1.0.md
     Last modified: 2025-06-15 (250 days ago)
-    Action: Re-run /arckit:research to refresh pricing and vendor data
+    Action: Re-run /arckit-research to refresh pricing and vendor data
 
   [HIGH] FORGOTTEN-ADR: decisions/ARC-001-ADR-003-v1.0.md
     Status: Proposed since 2025-12-01 (81 days without review)
@@ -381,7 +407,7 @@ RECOMMENDED ACTIONS (prioritised)
 ----------------------------------
 
 1. [HIGH] Address {count} stale research documents
-   Run: /arckit:research for affected projects
+   Run: /arckit-research for affected projects
    Why: Pricing data older than 6 months is unreliable for procurement decisions
 
 2. [HIGH] Review {count} forgotten ADRs
@@ -401,19 +427,23 @@ RECOMMENDED ACTIONS (prioritised)
    Why: A missed review on an approved artifact means the assurance gate has lapsed — the artifact is being trusted without current evidence
 
 6. [MEDIUM] Check {count} orphaned requirements
-   Run: /arckit:adr for requirements needing architectural decisions
+   Run: /arckit-adr for requirements needing architectural decisions
    Why: Requirements without ADR coverage may lack governance
 
 7. [MEDIUM] Add traceability to {count} ADRs
    Update ADRs with requirement references
-   Run: /arckit:traceability to generate full traceability matrix
+   Run: /arckit-traceability to generate full traceability matrix
    Why: Untraceable decisions reduce audit confidence
 
 8. [MEDIUM] Resolve {count} long-running drafts
    Promote DRAFT artifacts to IN_REVIEW/APPROVED, bump the version, or archive them
    Why: Drafts unchanged for over a month usually indicate stalled or abandoned work
 
-9. [LOW] Review {count} artifacts with version drift
+9. [MEDIUM] Regenerate {count} out-of-date views
+   Re-run the command named in each finding (for an arc42 description, /arckit-arc42)
+   Why: A generated view that predates its sources describes an architecture its evidence no longer supports
+
+10. [LOW] Review {count} artifacts with version drift
    Confirm latest versions are current or archive old versions
    Why: Stale multi-version artifacts may indicate abandoned work
 ```
@@ -437,7 +467,7 @@ All clear. No stale artifacts, forgotten decisions, or traceability gaps detecte
 
 The hook automatically writes `docs/health.json` on every run. No action is needed from the command for JSON output.
 
-**Dashboard integration**: Run `/arckit:pages` after the health check to see health data on the governance dashboard.
+**Dashboard integration**: Run `/arckit-pages` after the health check to see health data on the governance dashboard.
 
 **JSON schema** (written by hook to `docs/health.json`):
 
@@ -463,7 +493,8 @@ The hook automatically writes `docs/health.json` on every run. No action is need
     "MISSING-TRACE": 2,
     "VERSION-DRIFT": 1,
     "REVIEW-OVERDUE": 0,
-    "STALE-DRAFT": 0
+    "STALE-DRAFT": 0,
+    "STALE-VIEW": 0
   },
   "projects": [
     {
@@ -475,7 +506,7 @@ The hook automatically writes `docs/health.json` on every run. No action is need
           "rule": "STALE-RSCH",
           "file": "research/ARC-001-RSCH-001-v1.0.md",
           "message": "Last modified: 2025-06-15 (250 days ago)",
-          "action": "Re-run /arckit:research to refresh pricing and vendor data"
+          "action": "Re-run /arckit-research to refresh pricing and vendor data"
         }
       ]
     }
@@ -500,7 +531,7 @@ The hook automatically writes `docs/health.json` on every run. No action is need
 **No projects directory**:
 
 ```text
-No projects/ directory found. Run /arckit:init to create your first project.
+No projects/ directory found. Run /arckit-init to create your first project.
 ```
 
 **No artifacts found**:
@@ -525,7 +556,7 @@ Available projects:
 ### Example 1: Scan All Projects
 
 ```bash
-/arckit:health
+/arckit-health
 ```
 
 Scans every project under `projects/` and reports all findings.
@@ -533,7 +564,7 @@ Scans every project under `projects/` and reports all findings.
 ### Example 2: Scan a Specific Project
 
 ```bash
-/arckit:health PROJECT=001-payment-gateway
+/arckit-health PROJECT=001-payment-gateway
 ```
 
 Scans only the specified project.
@@ -541,7 +572,7 @@ Scans only the specified project.
 ### Example 3: Show Only High-Severity Issues
 
 ```bash
-/arckit:health SEVERITY=HIGH
+/arckit-health SEVERITY=HIGH
 ```
 
 Filters output to show only HIGH severity findings.
@@ -549,7 +580,7 @@ Filters output to show only HIGH severity findings.
 ### Example 4: Check Staleness as of a Future Date
 
 ```bash
-/arckit:health SINCE=2026-06-01
+/arckit-health SINCE=2026-06-01
 ```
 
 Useful for planning — "what will be stale by June?"
@@ -557,7 +588,7 @@ Useful for planning — "what will be stale by June?"
 ### Example 5: Continuous Monitoring with `/loop`
 
 ```bash
-/loop 30m /arckit:health SEVERITY=HIGH
+/loop 30m /arckit-health SEVERITY=HIGH
 ```
 
 Runs the health check every 30 minutes during your session, surfacing HIGH severity findings as they appear. Useful during long architecture sessions where multiple artifacts are being created or updated. Requires Claude Code v2.1.97+.
@@ -568,15 +599,15 @@ Runs the health check every 30 minutes during your session, surfacing HIGH sever
 
 ### Run After
 
-- `/arckit:analyze` — health check complements the deeper governance analysis
+- `/arckit-analyze` — health check complements the deeper governance analysis
 - Any artifact creation — verify new artifacts don't introduce drift
 
 ### Triggers For
 
-- `/arckit:research` — refresh stale RSCH documents
-- `/arckit:adr` — create ADRs for orphaned requirements
-- `/arckit:traceability` — fix missing traceability links
-- `/arckit:hld-review` or `/arckit:dld-review` — follow up on unresolved conditions
+- `/arckit-research` — refresh stale RSCH documents
+- `/arckit-adr` — create ADRs for orphaned requirements
+- `/arckit-traceability` — fix missing traceability links
+- `/arckit-hld-review` or `/arckit-dld-review` — follow up on unresolved conditions
 - Various commands per STALE-EXT findings — incorporate new external files (see filename-to-command mapping)
 
 ---
@@ -585,14 +616,14 @@ Runs the health check every 30 minutes during your session, surfacing HIGH sever
 
 ### Why Console Output as Primary?
 
-The health check is a **diagnostic tool**, not a governance artifact. Unlike `/arckit:analyze` which produces a formal analysis report (saved as `ARC-*-ANAL-*.md`), the health check is:
+The health check is a **diagnostic tool**, not a governance artifact. Unlike `/arckit-analyze` which produces a formal analysis report (saved as `ARC-*-ANAL-*.md`), the health check is:
 
 - **Ephemeral**: Results change every time you run it
 - **Actionable**: Designed to trigger other commands, not to be filed
 - **Lightweight**: Quick scan, not a deep analysis
 - **Repeatable**: Run it daily, weekly, or before any governance gate
 
-Console output is the primary user-facing output. `docs/health.json` is always written as a side effect for dashboard integration (`/arckit:pages`).
+Console output is the primary user-facing output. `docs/health.json` is always written as a side effect for dashboard integration (`/arckit-pages`).
 
 ### Threshold Rationale
 
@@ -607,6 +638,7 @@ Console output is the primary user-facing output. `docs/health.json` is always w
 | External file staleness | Any age | External files newer than all artifacts indicate unincorporated content; no safe window to ignore since governance may be based on outdated information |
 | Review overdue | Any past date | The review cycle is a governance commitment captured at creation; once the date passes, the assurance gate has lapsed regardless of how recently |
 | Draft staleness | 30 days | Long enough that "actively iterating" is no longer plausible; matches the session-start monitor so both surfaces agree (override via `STALE_DRAFT_DAYS`) |
+| Generated view staleness | Any newer source | A view records the versions it was built from, so any newer source is a precise, cheap-to-fix signal; there is no age threshold to tune |
 
 ### Future Enhancements
 

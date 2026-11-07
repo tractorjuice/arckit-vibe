@@ -97,7 +97,7 @@ It replaced the earlier 13-criterion Digital Service Standard ("Understand user 
 
    - **Assessment Readiness** — identify the top 3 risks to meeting all 10 criteria and reporting compliance to the DTA (and to moving to the next Service Design and Delivery Process phase), with recommended mitigations.
 
-   - **ArcKit Evidence Integration** — map `/arckit:diagram`, `/arckit:dfd`, `/arckit:data-model`, `/arckit:servicenow`, `/arckit:risk`, `/arckit:traceability`, `/arckit:graph-report`, and `/arckit:maturity-model` outputs to DSS criteria, evidence gaps, delivery risks, Live operations, and service maturity.
+   - **ArcKit Evidence Integration** — map `/arckit-diagram`, `/arckit-dfd`, `/arckit-data-model`, `/arckit-servicenow`, `/arckit-risk`, `/arckit-traceability`, `/arckit-graph-report`, and `/arckit-maturity-model` outputs to DSS criteria, evidence gaps, delivery risks, Live operations, and service maturity.
 
    - **Recommendations** — prioritised list of actions to improve compliance posture, grouped by criterion priority.
 
@@ -112,12 +112,12 @@ It replaced the earlier 13-criterion Digital Service Standard ("Understand user 
 
 - The Standard is mandatory for informational and transactional services subject to the IOF, new or replacement public-facing services, new staff-facing services, and all existing public-facing services (existing public-facing services from 1 July 2025). Agencies must meet all 10 criteria or obtain an exemption under the DTA's Compliance, Reporting and Exemption Guide.
 - The criteria were renumbered when the current Standard replaced the 13-criterion version. Never cite old criterion numbers or names (for example "Criterion 13 — Encourage everyone to use the digital service" no longer exists).
-- Criterion 5 (Build trust in design) should cross-reference the ASD Essential Eight assessment (`/arckit:au-e8-posture`) if one exists.
-- Criterion 7 (Do no harm) should cross-reference the Privacy Impact Assessment (`/arckit:au-pia`) if one exists.
+- Criterion 5 (Build trust in design) should cross-reference the ASD Essential Eight assessment (`/arckit-au-e8-posture`) if one exists.
+- Criterion 7 (Do no harm) should cross-reference the Privacy Impact Assessment (`/arckit-au-pia`) if one exists.
 - Criterion 3 (Leave no one behind) requires compliance with the latest version of WCAG (WCAG 2.2 at the time of writing). Record the WCAG version and conformance level the service achieves, and check the target level against current DTA guidance.
 - The DTA also recommends considering users' non-digital experience so services stay inclusive; record it with the Criterion 3 evidence.
 - Each criterion links to the most relevant phases of the DTA Service Design and Delivery Process, but applies across the whole service lifecycle. Agencies demonstrate compliance by reporting to the DTA through its IOF data collection; check the Compliance, Reporting and Exemption Guide for the current timeframes.
-- This assessment is analogous to the UK GDS Service Standard assessment (`/arckit:service-assessment`) but uses Australian criteria and governance structures.
+- This assessment is analogous to the UK GDS Service Standard assessment (`/arckit-service-assessment`) but uses Australian criteria and governance structures.
 - Use embedded ArcKit artefacts as evidence: diagrams for service boundaries, DFDs for flows, data models for privacy and analytics, ServiceNow for Live operations, risk and traceability for remediation governance, graph-report for coverage, and maturity-model for uplift.
 
 ## Suggested Next Steps

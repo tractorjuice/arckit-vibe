@@ -205,10 +205,10 @@ Incident Reporting: {Ready / Gap — 24h/72h capability needed}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Next steps:
-1. {If OIV/OSE (France): Run /arckit:fr-secnumcloud}
-2. {If a financial entity within DORA scope: Run /arckit:eu-dora — DORA applies instead of NIS2's risk-management and reporting provisions}
-3. Run /arckit:secure to implement Article 21 controls
-4. Run /arckit:risk to register NIS2 gaps
+1. {If OIV/OSE (France): Run /arckit-fr-secnumcloud}
+2. {If a financial entity within DORA scope: Run /arckit-eu-dora — DORA applies instead of NIS2's risk-management and reporting provisions}
+3. Run /arckit-secure to implement Article 21 controls
+4. Run /arckit-risk to register NIS2 gaps
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -217,7 +217,7 @@ Next steps:
 - **Management body liability**: NIS2 explicitly makes management body members personally liable for non-compliance. This is a new and significant change from NIS1. Flag this prominently.
 - **24-hour reporting capability**: The 24-hour early warning window is very tight. Flag if no 24/7 incident detection and reporting capability exists.
 - **OIV/OSE and NIS2 in France**: French OIV entities are subject to stricter obligations under LPM that supplement NIS2. OIV/SIIV systems must comply with both. ANSSI is the single competent authority for both regimes.
-- **DORA for financial entities**: DORA is a sector-specific Union legal act under NIS2 Article 4 for financial entities (DORA Article 1(2)) and *lex specialis* to NIS2 (DORA recital 16). For the financial entities it covers, DORA's ICT risk-management, incident-reporting, resilience-testing, information-sharing and ICT third-party risk rules apply instead of NIS2's cybersecurity risk-management (Art. 21), reporting (Art. 23) and supervision and enforcement (Chapter VII) provisions (NIS2 recital 28). Do not score such an entity against Articles 21 and 23 — run `/arckit:eu-dora`. NIS2 still matters: the entity can still be identified as essential or important under the national law transposing NIS2 Article 3 (DORA Art. 1(2)); entities in a NIS2 sector that DORA does not cover stay under NIS2 (NIS2 Art. 4(1)); DORA competent authorities pass major-incident details to the NIS2 CSIRTs, competent authorities or single points of contact (DORA Art. 19(6)) and can cooperate with NIS2 bodies (DORA Art. 47); and the ICT providers the entity relies on may be NIS2 entities in their own right.
+- **DORA for financial entities**: DORA is a sector-specific Union legal act under NIS2 Article 4 for financial entities (DORA Article 1(2)) and *lex specialis* to NIS2 (DORA recital 16). For the financial entities it covers, DORA's ICT risk-management, incident-reporting, resilience-testing, information-sharing and ICT third-party risk rules apply instead of NIS2's cybersecurity risk-management (Art. 21), reporting (Art. 23) and supervision and enforcement (Chapter VII) provisions (NIS2 recital 28). Do not score such an entity against Articles 21 and 23 — run `/arckit-eu-dora`. NIS2 still matters: the entity can still be identified as essential or important under the national law transposing NIS2 Article 3 (DORA Art. 1(2)); entities in a NIS2 sector that DORA does not cover stay under NIS2 (NIS2 Art. 4(1)); DORA competent authorities pass major-incident details to the NIS2 CSIRTs, competent authorities or single points of contact (DORA Art. 19(6)) and can cooperate with NIS2 bodies (DORA Art. 47); and the ICT providers the entity relies on may be NIS2 entities in their own right.
 - **Member state variations**: NIS2 transposition varies. Germany (NIS2UmsuCG) has extended scope beyond the EU minimum; France has not yet transposed (see the note for reviewers). Verify national transposition law for each member state of operation.
 - **Use Write Tool**: NIS2 assessments cover 8 sections with technical and regulatory depth. Always use the Write tool.
 
@@ -252,11 +252,11 @@ Next steps:
 ## Example Usage
 
 ```text
-/arckit:eu-nis2 Assess NIS2 obligations for a French regional energy distribution operator (DSO), Essential Entity under Annex I Energy sector, existing OIV designation, planning cloud migration to SecNumCloud-qualified provider
+/arckit-eu-nis2 Assess NIS2 obligations for a French regional energy distribution operator (DSO), Essential Entity under Annex I Energy sector, existing OIV designation, planning cloud migration to SecNumCloud-qualified provider
 
-/arckit:eu-nis2 NIS2 scoping for 001 — Dutch healthcare provider with 300 employees, operating across NL and BE, considering Essential Entity classification under health sector
+/arckit-eu-nis2 NIS2 scoping for 001 — Dutch healthcare provider with 300 employees, operating across NL and BE, considering Essential Entity classification under health sector
 
-/arckit:eu-nis2 NIS2 assessment for a managed service provider (MSP) operating across 6 EU member states, ICT service management Annex I
+/arckit-eu-nis2 NIS2 assessment for a managed service provider (MSP) operating across 6 EU member states, ICT service management Annex I
 ```
 
 ## Suggested Next Steps

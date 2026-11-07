@@ -62,20 +62,20 @@ ${args}
    - **LOW severity:** 1 (review recommended)
 
    ### Recommended Actions
-   1. Re-run `/arckit:secure` to update Secure by Design assessment
-   2. Re-run `/arckit:dpia` to update Data Protection Impact Assessment
+   1. Re-run `/arckit-secure` to update Secure by Design assessment
+   2. Re-run `/arckit-dpia` to update Data Protection Impact Assessment
    3. Review ADR-002 decision rationale against updated requirement
    ```
 
-5. **Recommend specific `/arckit:` commands** for HIGH severity impacts:
-   - SECD impacted → `/arckit:secure`
-   - DPIA impacted → `/arckit:dpia`
-   - TCOP impacted → `/arckit:tcop`
-   - HLDR impacted → `/arckit:hld-review`
-   - RISK impacted → `/arckit:risk`
-   - TRAC impacted → `/arckit:traceability`
+5. **Recommend specific `/arckit-` commands** for HIGH severity impacts:
+   - SECD impacted → `/arckit-secure`
+   - DPIA impacted → `/arckit-dpia`
+   - TCOP impacted → `/arckit-tcop`
+   - HLDR impacted → `/arckit-hld-review`
+   - RISK impacted → `/arckit-risk`
+   - TRAC impacted → `/arckit-traceability`
 
-6. **If no impacts found**, report that the document has no downstream dependencies. Note this may indicate a traceability gap — suggest running `/arckit:traceability` to check coverage.
+6. **If no impacts found**, report that the document has no downstream dependencies. Note this may indicate a traceability gap — suggest running `/arckit-traceability` to check coverage.
 
 7. **If the query matches multiple documents**, list them and ask the user to specify which one to analyse.
 

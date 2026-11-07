@@ -84,7 +84,7 @@ This command produces the **internal self-assessment** that FedRAMP's RAR templa
 
 ## Handoffs
 
-Surfaced gaps feed the broader `/arckit:service-assessment` evidence pack and remediation timelines drop into `/arckit:roadmap`. Each open gap should be tracked in `/arckit:risk` until closed. Once gaps are remediated, re-run this command to re-baseline before engaging a 3PAO.
+Surfaced gaps feed the broader `/arckit-service-assessment` evidence pack and remediation timelines drop into `/arckit-roadmap`. Each open gap should be tracked in `/arckit-risk` until closed. Once gaps are remediated, re-run this command to re-baseline before engaging a 3PAO.
 
 ## Important Notes
 

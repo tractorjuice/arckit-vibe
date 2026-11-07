@@ -20,7 +20,7 @@ ${args}
 **MANDATORY** (warn if missing):
 
 - **BPCM** (Business Capability Model) — Extract: Capability hierarchy, maturity levels, capability ownership, capability-to-objective mappings
-  - If missing: STOP and ask user to run `/arckit:business-capability-map` first. Gap analysis requires a capability baseline.
+  - If missing: STOP and ask user to run `/arckit-business-capability-map` first. Gap analysis requires a capability baseline.
 
 **RECOMMENDED** (read if available, note if missing):
 
@@ -29,9 +29,9 @@ ${args}
 - **STRAT** (Architecture Strategy, in this project or in 000-global) — Extract: Strategic vision, target state description, strategic themes, investment priorities
   - If missing: note in assumptions that strategic alignment could not be validated
 - **APP** (Application Inventory) — Extract: Applications in scope (APP-NNN IDs), the capabilities each supports and how fully (application-to-capability mapping), strategic fit, lifecycle phase, status and end-of-life dates, vendor lock-in risk
-  - If missing: note in assumptions that application coverage of each capability could not be validated, and suggest `/arckit:application-inventory`
+  - If missing: note in assumptions that application coverage of each capability could not be validated, and suggest `/arckit-application-inventory`
 - **APPR** (Application Rationalisation) — Extract: Per-application decisions (KEEP / MERGE / REPLACE / RETIRE), target platforms, the target portfolio's capability coverage, implementation waves
-  - If missing: note in assumptions that the target application portfolio was not available, and suggest `/arckit:application-rationalization`
+  - If missing: note in assumptions that the target application portfolio was not available, and suggest `/arckit-application-rationalization`
 
 **OPTIONAL** (read if available, skip silently if missing):
 
@@ -68,7 +68,7 @@ Identify the target project from the hook context. If the user specifies a proje
 - **If not found**: Read `${VIBE_EXTENSION_ROOT}/templates/gap-analysis-template.md` (default)
 - **Then**, read `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` and resolve the template's `<!-- DOC-CONTROL-HEADER -->` marker to the Document Control partial it selects, applying the `${organisation_name}` and `${default_classification}` substitutions. Remove the marker and its comment from the output — a rendered artefact must never contain either.
 
-> **Tip**: Users can customise templates with `/arckit:customize gap-analysis`
+> **Tip**: Users can customise templates with `/arckit-customize gap-analysis`
 
 ### 3. A question to the user: Gap Severity Weighting
 
@@ -262,8 +262,8 @@ After writing the file, show a concise summary (NOT the full document):
 - [✅/⚠️] Application Rationalisation: ARC-{P}-APPR-v[N].md
 
 ### Next Steps
-1. Review gap analysis with Architecture Board: `/arckit:architecture-board`
-2. Create work packages to close gaps: `/arckit:transition-architecture`
+1. Review gap analysis with Architecture Board: `/arckit-architecture-board`
+2. Create work packages to close gaps: `/arckit-transition-architecture`
 3. Validate workstream sequencing with delivery team
 4. Prioritise immediate-action gaps with sponsor
 
@@ -291,8 +291,8 @@ After writing the file, show a concise summary (NOT the full document):
 6. **Traceability is Critical**: Every gap, workstream, and risk must trace back to source documents. This ensures the gap analysis is grounded in evidence, not assumptions.
 
 7. **Integration with Other Commands**:
-   - Gap Analysis feeds into: `/arckit:transition-architecture` (Phase F — Migration Planning), `/arckit:architecture-board` (governance review)
-   - Gap Analysis is informed by: `/arckit:business-capability-map` (BPCM), `/arckit:strategy` (STRAT), `/arckit:principles` (PRIN), `/arckit:application-inventory` (APP), `/arckit:application-rationalization` (APPR)
+   - Gap Analysis feeds into: `/arckit-transition-architecture` (Phase F — Migration Planning), `/arckit-architecture-board` (governance review)
+   - Gap Analysis is informed by: `/arckit-business-capability-map` (BPCM), `/arckit-strategy` (STRAT), `/arckit-principles` (PRIN), `/arckit-application-inventory` (APP), `/arckit-application-rationalization` (APPR)
 
 8. **Version Management**: If a gap analysis already exists (`ARC-*-GAPA-v*.md`), create a new version (v2.0) rather than overwriting. Gap analyses should be versioned to track re-assessment across ADM cycles.
 

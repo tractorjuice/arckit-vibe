@@ -89,11 +89,11 @@ Australian Government agencies covered by the Privacy Act 1988 must conduct PIAs
 
    - **Sensitive Information Assessment** — identify whether any sensitive information (as defined in s 6 of the Privacy Act) is processed: racial or ethnic origin, political opinions, religious beliefs, sexual orientation, criminal record, health information, genetic information, biometric information, trade union membership. If yes, note the additional consent requirements under APP 3.3.
 
-   - **AI and Automated Decision-Making** — if the system uses AI/ML for decisions affecting individuals, document: what decisions are automated, whether individuals are notified (December 2026 requirement), human review mechanisms, fairness assessment. Cross-reference `/arckit:au-ai-assurance` if applicable.
+   - **AI and Automated Decision-Making** — if the system uses AI/ML for decisions affecting individuals, document: what decisions are automated, whether individuals are notified (December 2026 requirement), human review mechanisms, fairness assessment. Cross-reference `/arckit-au-ai-assurance` if applicable.
 
    - **Recommendations** — prioritised list of privacy-enhancing measures.
 
-   - **ArcKit Evidence Integration** — map `/arckit:dfd`, `/arckit:data-model`, `/arckit:risk`, `/arckit:traceability`, and `/arckit:graph-report` outputs to APP assessments, personal-information flows, privacy risks, mitigation ownership, and coverage gaps.
+   - **ArcKit Evidence Integration** — map `/arckit-dfd`, `/arckit-data-model`, `/arckit-risk`, `/arckit-traceability`, and `/arckit-graph-report` outputs to APP assessments, personal-information flows, privacy risks, mitigation ownership, and coverage gaps.
 
 7. Populate the External References section per `${VIBE_EXTENSION_ROOT}/references/citation-instructions.md`. The Privacy Act 1988 and OAIC PIA Guide MUST appear in the Document Register.
 

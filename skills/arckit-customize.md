@@ -61,71 +61,71 @@ Then display the core templates as a table:
 
 | Template | Command | Description |
 |----------|---------|-------------|
-| `adr` | `/arckit:adr` | Architecture Decision Records (MADR v4.0) |
-| `analysis-report` | `/arckit:analyze` | Governance quality analysis report |
-| `architecture-diagram` | `/arckit:diagram` | Mermaid architecture diagrams |
-| `architecture-principles` | `/arckit:principles` | Enterprise architecture principles |
-| `architecture-strategy` | `/arckit:strategy` | Executive-level strategy document |
-| `aws-research` | `/arckit:aws-research` | AWS service research findings |
-| `azure-research` | `/arckit:azure-research` | Azure service research findings |
-| `backlog` | `/arckit:backlog` | Product backlog with user stories |
-| `competitors` | `/arckit:competitors` | Competitor landscape and market share |
-| `conformance-assessment` | `/arckit:conformance` | Architecture conformance assessment |
-| `data-mesh-contract` | `/arckit:data-mesh-contract` | Data product contracts |
-| `data-model` | `/arckit:data-model` | Data model with GDPR compliance |
-| `data-source-profile` | `/arckit:datascout` | Per-source data profile (multi-instance) |
-| `datascout` | `/arckit:datascout` | External data source discovery |
-| `devops` | `/arckit:devops` | DevOps strategy and CI/CD |
-| `dfd` | `/arckit:dfd` | Yourdon-DeMarco data flow diagrams |
-| `dld-review` | `/arckit:dld-review` | Detailed design review |
-| `dos-requirements` | `/arckit:dos` | Digital Outcomes & Specialists |
-| `dpia` | `/arckit:dpia` | Data Protection Impact Assessment |
-| `evaluation-criteria` | `/arckit:evaluate` | Vendor evaluation framework |
-| `finops` | `/arckit:finops` | FinOps cloud cost management |
-| `framework-overview` | `/arckit:framework` | Framework overview and executive guide |
-| `gcloud-clarify` | `/arckit:gcloud-clarify` | G-Cloud clarification questions |
-| `gcloud-requirements` | `/arckit:gcloud-search` | G-Cloud service requirements |
-| `gcp-research` | `/arckit:gcp-research` | Google Cloud service research findings |
-| `glossary` | `/arckit:glossary` | Consolidated project glossary |
-| `gov-code-search` | `/arckit:gov-code-search` | UK government code search report |
-| `gov-landscape` | `/arckit:gov-landscape` | UK government domain landscape |
-| `gov-reuse` | `/arckit:gov-reuse` | Government code reuse assessment |
-| `grants` | `/arckit:grants` | UK grants and funding research |
-| `hld-review` | `/arckit:hld-review` | High-level design review |
-| `jsp-936` | `/arckit:jsp-936` | MOD AI assurance (JSP 936) |
-| `maturity-model` | `/arckit:maturity-model` | Capability maturity model |
-| `mlops` | `/arckit:mlops` | MLOps strategy |
-| `mod-secure-by-design` | `/arckit:mod-secure` | MOD Secure by Design |
-| `operationalize` | `/arckit:operationalize` | Operational readiness pack |
-| `pages` | `/arckit:pages` | GitHub Pages site (HTML/CSS/JS) |
-| `platform-design` | `/arckit:platform-design` | Platform Design Toolkit |
-| `presentation` | `/arckit:presentation` | MARP governance board slides |
-| `principles-compliance-assessment` | `/arckit:principles-compliance` | Principles compliance scorecard |
-| `project-plan` | `/arckit:plan` | Project plan with timeline |
-| `requirements` | `/arckit:requirements` | Business & technical requirements |
-| `research-findings` | `/arckit:research` | Technology research findings |
-| `risk-register` | `/arckit:risk` | Risk register (Orange Book) |
-| `roadmap` | `/arckit:roadmap` | Architecture roadmap |
-| `service-assessment-prep` | `/arckit:service-assessment` | GDS Service Standard prep |
-| `servicenow-design` | `/arckit:servicenow` | ServiceNow service design |
-| `sobc` | `/arckit:sobc` | Strategic Outline Business Case |
-| `sow` | `/arckit:sow` | Statement of Work / RFP |
-| `stakeholder-drivers` | `/arckit:stakeholders` | Stakeholder analysis |
-| `story` | `/arckit:story` | Project story with timeline |
-| `tcop-review` | `/arckit:tcop` | Technology Code of Practice |
-| `tech-note` | `/arckit:research` | Per-candidate technical note (multi-instance) |
-| `tenders` | `/arckit:tenders` | Procurement market intelligence |
-| `traceability-matrix` | `/arckit:traceability` | Requirements traceability |
-| `uk-gov-ai-playbook` | `/arckit:ai-playbook` | AI Playbook compliance |
-| `uk-gov-atrs` | `/arckit:atrs` | Algorithmic Transparency Record |
-| `ukgov-secure-by-design` | `/arckit:secure` | UK Gov Secure by Design |
-| `vendor-profile` | `/arckit:research` | Per-vendor profile (multi-instance) |
-| `vendor-scoring` | `/arckit:evaluate` | Vendor scoring matrix |
-| `wardley-climate` | `/arckit:wardley.climate` | Wardley climatic patterns assessment |
-| `wardley-doctrine` | `/arckit:wardley.doctrine` | Wardley doctrine maturity assessment |
-| `wardley-gameplay` | `/arckit:wardley.gameplay` | Wardley gameplay analysis |
-| `wardley-map` | `/arckit:wardley` | Wardley Map documentation |
-| `wardley-value-chain` | `/arckit:wardley.value-chain` | Wardley value chain decomposition |
+| `adr` | `/arckit-adr` | Architecture Decision Records (MADR v4.0) |
+| `analysis-report` | `/arckit-analyze` | Governance quality analysis report |
+| `architecture-diagram` | `/arckit-diagram` | Mermaid architecture diagrams |
+| `architecture-principles` | `/arckit-principles` | Enterprise architecture principles |
+| `architecture-strategy` | `/arckit-strategy` | Executive-level strategy document |
+| `aws-research` | `/arckit-aws-research` | AWS service research findings |
+| `azure-research` | `/arckit-azure-research` | Azure service research findings |
+| `backlog` | `/arckit-backlog` | Product backlog with user stories |
+| `competitors` | `/arckit-competitors` | Competitor landscape and market share |
+| `conformance-assessment` | `/arckit-conformance` | Architecture conformance assessment |
+| `data-mesh-contract` | `/arckit-data-mesh-contract` | Data product contracts |
+| `data-model` | `/arckit-data-model` | Data model with GDPR compliance |
+| `data-source-profile` | `/arckit-datascout` | Per-source data profile (multi-instance) |
+| `datascout` | `/arckit-datascout` | External data source discovery |
+| `devops` | `/arckit-devops` | DevOps strategy and CI/CD |
+| `dfd` | `/arckit-dfd` | Yourdon-DeMarco data flow diagrams |
+| `dld-review` | `/arckit-dld-review` | Detailed design review |
+| `dos-requirements` | `/arckit-dos` | Digital Outcomes & Specialists |
+| `dpia` | `/arckit-dpia` | Data Protection Impact Assessment |
+| `evaluation-criteria` | `/arckit-evaluate` | Vendor evaluation framework |
+| `finops` | `/arckit-finops` | FinOps cloud cost management |
+| `framework-overview` | `/arckit-framework` | Framework overview and executive guide |
+| `gcloud-clarify` | `/arckit-gcloud-clarify` | G-Cloud clarification questions |
+| `gcloud-requirements` | `/arckit-gcloud-search` | G-Cloud service requirements |
+| `gcp-research` | `/arckit-gcp-research` | Google Cloud service research findings |
+| `glossary` | `/arckit-glossary` | Consolidated project glossary |
+| `gov-code-search` | `/arckit-gov-code-search` | UK government code search report |
+| `gov-landscape` | `/arckit-gov-landscape` | UK government domain landscape |
+| `gov-reuse` | `/arckit-gov-reuse` | Government code reuse assessment |
+| `grants` | `/arckit-grants` | UK grants and funding research |
+| `hld-review` | `/arckit-hld-review` | High-level design review |
+| `jsp-936` | `/arckit-jsp-936` | MOD AI assurance (JSP 936) |
+| `maturity-model` | `/arckit-maturity-model` | Capability maturity model |
+| `mlops` | `/arckit-mlops` | MLOps strategy |
+| `mod-secure-by-design` | `/arckit-mod-secure` | MOD Secure by Design |
+| `operationalize` | `/arckit-operationalize` | Operational readiness pack |
+| `pages` | `/arckit-pages` | GitHub Pages site (HTML/CSS/JS) |
+| `platform-design` | `/arckit-platform-design` | Platform Design Toolkit |
+| `presentation` | `/arckit-presentation` | MARP governance board slides |
+| `principles-compliance-assessment` | `/arckit-principles-compliance` | Principles compliance scorecard |
+| `project-plan` | `/arckit-plan` | Project plan with timeline |
+| `requirements` | `/arckit-requirements` | Business & technical requirements |
+| `research-findings` | `/arckit-research` | Technology research findings |
+| `risk-register` | `/arckit-risk` | Risk register (Orange Book) |
+| `roadmap` | `/arckit-roadmap` | Architecture roadmap |
+| `service-assessment-prep` | `/arckit-service-assessment` | GDS Service Standard prep |
+| `servicenow-design` | `/arckit-servicenow` | ServiceNow service design |
+| `sobc` | `/arckit-sobc` | Strategic Outline Business Case |
+| `sow` | `/arckit-sow` | Statement of Work / RFP |
+| `stakeholder-drivers` | `/arckit-stakeholders` | Stakeholder analysis |
+| `story` | `/arckit-story` | Project story with timeline |
+| `tcop-review` | `/arckit-tcop` | Technology Code of Practice |
+| `tech-note` | `/arckit-research` | Per-candidate technical note (multi-instance) |
+| `tenders` | `/arckit-tenders` | Procurement market intelligence |
+| `traceability-matrix` | `/arckit-traceability` | Requirements traceability |
+| `uk-gov-ai-playbook` | `/arckit-ai-playbook` | AI Playbook compliance |
+| `uk-gov-atrs` | `/arckit-atrs` | Algorithmic Transparency Record |
+| `ukgov-secure-by-design` | `/arckit-secure` | UK Gov Secure by Design |
+| `vendor-profile` | `/arckit-research` | Per-vendor profile (multi-instance) |
+| `vendor-scoring` | `/arckit-evaluate` | Vendor scoring matrix |
+| `wardley-climate` | `/arckit-wardley-climate` | Wardley climatic patterns assessment |
+| `wardley-doctrine` | `/arckit-wardley-doctrine` | Wardley doctrine maturity assessment |
+| `wardley-gameplay` | `/arckit-wardley-gameplay` | Wardley gameplay analysis |
+| `wardley-map` | `/arckit-wardley` | Wardley Map documentation |
+| `wardley-value-chain` | `/arckit-wardley-value-chain` | Wardley value chain decomposition |
 
 Then list the overlay templates, grouped by owning plugin, ordered by descending count. Render these from the glob results, not from a hardcoded list, so a newly added overlay appears without this file changing:
 
@@ -135,7 +135,7 @@ Then list the overlay templates, grouped by owning plugin, ordered by descending
 
 Close with the line that makes the two halves actionable:
 
-> Copy any of these by name, for example `/arckit:customize uae-ai-charter`. `/arckit:customize all` copies the core set only.
+> Copy any of these by name, for example `/arckit-customize uae-ai-charter`. `/arckit-customize all` copies the core set only.
 
 If the user asked to list a single plugin's templates (e.g. "list arckit-repo"), show only that group.
 
@@ -149,7 +149,7 @@ If the user asked to list a single plugin's templates (e.g. "list arckit-repo"),
    - Find: ``> **Template Origin**: Official | **ArcKit Version**: [VERSION] | **Command**: `/arckit.{command}` ``
    - Replace with: ``> **Template Origin**: Custom | **Based On**: `/arckit.{command}` | **ArcKit Version**: [VERSION]``
 4. Use the Write tool to save it to `.arckit/templates-custom/{name}-template.{ext}` (the directory will be created automatically)
-5. If the source template does not exist, do **not** stop at "not found". Glob `${VIBE_EXTENSION_ROOT}/../../arckit-*/*/templates/{name}-template.*`, `${VIBE_EXTENSION_ROOT}/../**/templates/{name}-template.*` and `${VIBE_EXTENSION_ROOT}/plugins/**/templates/{name}-template.*` before answering: if one matches, the template ships in an overlay plugin, so follow "Copy an overlay template" below. Only if both globs come back empty, tell the user it does not exist and suggest `/arckit:customize list`.
+5. If the source template does not exist, do **not** stop at "not found". Glob `${VIBE_EXTENSION_ROOT}/../../arckit-*/*/templates/{name}-template.*`, `${VIBE_EXTENSION_ROOT}/../**/templates/{name}-template.*` and `${VIBE_EXTENSION_ROOT}/plugins/**/templates/{name}-template.*` before answering: if one matches, the template ships in an overlay plugin, so follow "Copy an overlay template" below. Only if both globs come back empty, tell the user it does not exist and suggest `/arckit-customize list`.
 
 **Copy all templates:**
 
@@ -189,7 +189,7 @@ Your template has been copied to `.arckit/templates-custom/`. You can now custom
 
 ### How It Works
 
-When you run an ArcKit command (e.g., `/arckit:requirements`):
+When you run an ArcKit command (e.g., `/arckit-requirements`):
 
 1. Command checks: Does `.arckit/templates-custom/requirements-template.md` exist?
 2. **If YES** → Uses YOUR customized template
@@ -259,7 +259,7 @@ After completing the request, show:
 
 **Next Steps**:
 1. Edit the template(s) in `.arckit/templates-custom/`
-2. Run the corresponding `/arckit:*` command
+2. Run the corresponding `/arckit-*` command
 3. Your customized template will be used automatically
 
 **Tip**: Read both the default and your custom template to compare differences.
@@ -270,29 +270,29 @@ After completing the request, show:
 **List all templates:**
 
 ```text
-/arckit:customize list
+/arckit-customize list
 ```
 
 **Copy requirements template:**
 
 ```text
-/arckit:customize requirements
+/arckit-customize requirements
 ```
 
 **Copy multiple templates:**
 
 ```text
-/arckit:customize requirements risk adr
+/arckit-customize requirements risk adr
 ```
 
 **Copy all templates:**
 
 ```text
-/arckit:customize all
+/arckit-customize all
 ```
 
 **Get info about a template:**
 
 ```text
-/arckit:customize info requirements
+/arckit-customize info requirements
 ```

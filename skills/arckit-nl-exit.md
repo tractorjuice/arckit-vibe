@@ -30,8 +30,8 @@ ${args}
 
 **RECOMMENDED** (read if available, note if missing):
 
-- **RBCLOUD** (Rijksbreed Cloudbeleid Compliance Assessment, from `/arckit:nl-cloud`) — Extract: the materieel cloudgebruik determination that triggers this obligation, and whether this plan is being produced to satisfy clause 4.5(b) for an email/file-storage service
-  - If missing: warn that the trigger for this exit plan has not been formally established, and recommend running `/arckit:nl-cloud` first
+- **RBCLOUD** (Rijksbreed Cloudbeleid Compliance Assessment, from `/arckit-nl-cloud`) — Extract: the materieel cloudgebruik determination that triggers this obligation, and whether this plan is being produced to satisfy clause 4.5(b) for an email/file-storage service
+  - If missing: warn that the trigger for this exit plan has not been formally established, and recommend running `/arckit-nl-cloud` first
 - **RISK** (Risk Register) — Extract: existing provider-concentration or lock-in risks
 
 **OPTIONAL** (read if available, skip silently):
@@ -69,7 +69,7 @@ Also read `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` — the temp
 
 ### Step 4: Establish the Trigger
 
-State why this plan is being produced: materieel publiek cloudgebruik per `/arckit:nl-cloud`, and/or as one of the three cumulative conditions under clause 4.5(b) for an email or document/workplace/file-storage service. If no prior `/arckit:nl-cloud` assessment exists, note this as an open item rather than inventing a trigger.
+State why this plan is being produced: materieel publiek cloudgebruik per `/arckit-nl-cloud`, and/or as one of the three cumulative conditions under clause 4.5(b) for an email or document/workplace/file-storage service. If no prior `/arckit-nl-cloud` assessment exists, note this as an open item rather than inventing a trigger.
 
 ### Step 5: Scenario A — Planned Exit
 
@@ -153,9 +153,9 @@ Next review date:                       {date}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 Next steps:
-1. {If no prior /arckit:nl-cloud assessment: Run /arckit:nl-cloud to confirm the trigger for this plan}
-2. {If clause 4.5(b) is the trigger: Update /arckit:nl-cloud Section 3.2 with this plan's reference}
-3. Run /arckit:risk to add residual exit risks to the risk register
+1. {If no prior /arckit-nl-cloud assessment: Run /arckit-nl-cloud to confirm the trigger for this plan}
+2. {If clause 4.5(b) is the trigger: Update /arckit-nl-cloud Section 3.2 with this plan's reference}
+3. Run /arckit-risk to add residual exit risks to the risk register
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -165,7 +165,7 @@ Next steps:
 - **The disruptive scenario cannot assume provider cooperation.** If the plan's recovery method depends on the provider actively assisting, flag it as a gap — the scenario exists precisely because the provider may not be able or willing to help.
 - **Budget is part of the exit strategy.** Implementatiekader Art. 7 asks for a budget both for the regular end of the contract and for leaving at once in a crisis. Flag a missing budget as a gap, not a detail.
 - **A plan without test evidence is not yet compliant.** Self-testing is part of the clause 3.2 requirement, not an optional maturity add-on. State plainly if no test has occurred yet.
-- **This plan does not itself determine cloud eligibility** — that is `/arckit:nl-cloud`'s job. This command assumes a hosting decision already exists (or is being justified under clause 4.5(b)) and plans the exit from it.
+- **This plan does not itself determine cloud eligibility** — that is `/arckit-nl-cloud`'s job. This command assumes a hosting decision already exists (or is being justified under clause 4.5(b)) and plans the exit from it.
 - **Use Write Tool**: Exit plans are detailed operational documents. Always use the Write tool.
 
 ## Key References
@@ -176,7 +176,7 @@ Next steps:
 | Implementatiekader risicoafweging cloudgebruik, v1.1 (5 January 2023), Art. 7 (Exit-strategie); a revision for the 2026 policy is announced | CIO Rijk | <https://zoek.officielebekendmakingen.nl/blg-1070754.pdf> · Kamerstuk 26643, nr. 964 |
 | OBDO "Cloud definities en begrippenlijst" (approved 16 April 2026) | OBDO | *(not linked — verify current text via digitaleoverheid.nl before citing)* |
 
-> **Note for reviewers**: Clause 3.2 sits alongside clause 4.5(b), which requires a tested exit plan as one of three cumulative conditions before email or document/workplace/file-storage services may be processed in public cloud. A single exit plan can satisfy both purposes if it is referenced from the `/arckit:nl-cloud` assessment rather than duplicated.
+> **Note for reviewers**: Clause 3.2 sits alongside clause 4.5(b), which requires a tested exit plan as one of three cumulative conditions before email or document/workplace/file-storage services may be processed in public cloud. A single exit plan can satisfy both purposes if it is referenced from the `/arckit-nl-cloud` assessment rather than duplicated.
 
 ## Success Criteria
 
@@ -193,16 +193,16 @@ Next steps:
 ## Example Usage
 
 ```text
-/arckit:nl-exit Produce the exit plan for a departmental email and document collaboration service currently in public cloud, no prior exit test conducted
+/arckit-nl-exit Produce the exit plan for a departmental email and document collaboration service currently in public cloud, no prior exit test conducted
 
-/arckit:nl-exit Exit plan for 001, case management platform migrating to public cloud under a confirmed materieel cloudgebruik determination
+/arckit-nl-exit Exit plan for 001, case management platform migrating to public cloud under a confirmed materieel cloudgebruik determination
 
-/arckit:nl-exit Annual review update to the exit plan for a shared-services platform, provider contract renewed, update the self-test evidence
+/arckit-nl-exit Annual review update to the exit plan for a shared-services platform, provider contract renewed, update the self-test evidence
 ```
 
 ## Suggested Next Steps
 
 After completing this command, consider running:
 
-- `/arckit-nl-cloud` -- Confirm the materieel cloudgebruik determination that triggered this exit-plan obligation, or satisfy clause 4.5(b) *(when No prior /arckit:nl-cloud assessment exists for this system)*
+- `/arckit-nl-cloud` -- Confirm the materieel cloudgebruik determination that triggered this exit-plan obligation, or satisfy clause 4.5(b) *(when No prior /arckit-nl-cloud assessment exists for this system)*
 - `/arckit-risk` -- Integrate residual exit risks (data-format lock-in, provider non-cooperation under disruption) into the risk register *(when Residual risks identified in this plan are not yet reflected in ARC-*-RISK)*

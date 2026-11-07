@@ -17,7 +17,7 @@ ${args}
 
 ## Context
 
-DTAC was introduced by NHSX and is now published by NHS England. Commissioners and providers ask manufacturers for a completed DTAC form for each product version they buy or deploy, including trials and products bought outside normal procurement. DTAC applies alongside, and does not replace, MHRA medical-device regulation (`/arckit:uk-mdr-classification`), the Data Security and Protection Toolkit, the Pre-Acquisition Questionnaire for medical devices, or the NHS and GDS Service Standards (`/arckit:service-assessment`).
+DTAC was introduced by NHSX and is now published by NHS England. Commissioners and providers ask manufacturers for a completed DTAC form for each product version they buy or deploy, including trials and products bought outside normal procurement. DTAC applies alongside, and does not replace, MHRA medical-device regulation (`/arckit-uk-mdr-classification`), the Data Security and Protection Toolkit, the Pre-Acquisition Questionnaire for medical devices, or the NHS and GDS Service Standards (`/arckit-service-assessment`).
 
 NHS England asks buyers to accept the standard DTAC form and not to make amended versions; additional buyer requirements should be supplemental requests that do not duplicate DTAC. The ArcKit artefact is therefore a preparation and evidence pack that maps each form question to the project's evidence. The submission is the completed NHS England form plus its supporting documents.
 
@@ -37,12 +37,12 @@ NHS England asks buyers to accept the standard DTAC form and not to make amended
 | Section | Title | Assessed? | ArcKit cross-references |
 |---|---|---|---|
 | A | Company information (A1–A12) | Not assessed — context | Project metadata, `${organisation_name}` |
-| B | Value proposition (B1–B4) | Not assessed — context | `/arckit:requirements`, `/arckit:stakeholders`, `/arckit:data-model` |
-| C1 | Clinical safety (C1.1.1–C1.2.5): SaMD / AIaMD status and PAQ, DCB0129 scope, clinical risk management system, Clinical Safety Case Report and Hazard Log, CSO | Assessed — must pass | `/arckit:uk-mdr-classification`, `/arckit:uk-nhs-dcb0129` |
-| C2 | Data protection (C2.1–C2.2.6): DSPT, ICO registration, DPIA, transparency information, terms of use, data location and transfers | Assessed — must pass | `/arckit:dpia`, `/arckit:data-model` |
-| C3 | Technical security (C3.1–C3.6): Cyber Essentials, Cyber Security Charter, penetration test, Software Security Code of Practice, multi-factor authentication, logging | Assessed — must pass | `/arckit:secure`, `/arckit:hld-review`, `/arckit:dld-review` |
-| C4 | Interoperability (C4.1–C4.2.6): APIs and standards, GDS Open API practice, NHS number, PDS, NHS login, DAPB3051 | Assessed — must pass | `/arckit:data-model`, `/arckit:adr` |
-| D1 | Usability and accessibility (D1.1–D1.5): user journey, usability testing, Accessible Information Standard, WCAG 2.2 AA, accessibility statement, service availability | Scored, not pass/fail | `/arckit:service-assessment` |
+| B | Value proposition (B1–B4) | Not assessed — context | `/arckit-requirements`, `/arckit-stakeholders`, `/arckit-data-model` |
+| C1 | Clinical safety (C1.1.1–C1.2.5): SaMD / AIaMD status and PAQ, DCB0129 scope, clinical risk management system, Clinical Safety Case Report and Hazard Log, CSO | Assessed — must pass | `/arckit-uk-mdr-classification`, `/arckit-uk-nhs-dcb0129` |
+| C2 | Data protection (C2.1–C2.2.6): DSPT, ICO registration, DPIA, transparency information, terms of use, data location and transfers | Assessed — must pass | `/arckit-dpia`, `/arckit-data-model` |
+| C3 | Technical security (C3.1–C3.6): Cyber Essentials, Cyber Security Charter, penetration test, Software Security Code of Practice, multi-factor authentication, logging | Assessed — must pass | `/arckit-secure`, `/arckit-hld-review`, `/arckit-dld-review` |
+| C4 | Interoperability (C4.1–C4.2.6): APIs and standards, GDS Open API practice, NHS number, PDS, NHS login, DAPB3051 | Assessed — must pass | `/arckit-data-model`, `/arckit-adr` |
+| D1 | Usability and accessibility (D1.1–D1.5): user journey, usability testing, Accessible Information Standard, WCAG 2.2 AA, accessibility statement, service availability | Scored, not pass/fail | `/arckit-service-assessment` |
 
 DTAC version 2.0 has **no AI section**. AI appears only in C1.1.1 (AI as a Medical Device). ArcKit adds an optional **AI and machine learning supplement**, clearly labelled as outside DTAC, for buyers that ask for AI assurance as a supplemental request.
 
@@ -92,7 +92,7 @@ DTAC version 2.0 has **no AI section**. AI appears only in C1.1.1 (AI as a Medic
      - C3.3 external penetration test within 12 months including the OWASP Top 10, with no findings scoring CVSS 7.0 or above
      - C3.4 adherence to the DSIT / NCSC Software Security Code of Practice
      - C3.5 multi-factor authentication plan; C3.5.1 MFA on supplier privileged access; C3.6 logging and reporting
-     - Cross-reference `/arckit:secure` output for the evidence. Hosting, encryption, business continuity and vulnerability management are not DTAC questions: point to the Secure by Design assessment rather than adding them to the form answers
+     - Cross-reference `/arckit-secure` output for the evidence. Hosting, encryption, business continuity and vulnerability management are not DTAC questions: point to the Secure by Design assessment rather than adding them to the form answers
 
    - **C4 — Interoperability**:
      - C4.1–C4.1.3 APIs exposed, the interoperability standards used and why (FHIR UK Core, SNOMED CT, dm+d, HL7 v2 where relevant), GDS Open API best practice and open documentation
@@ -108,7 +108,7 @@ DTAC version 2.0 has **no AI section**. AI appears only in C1.1.1 (AI as a Medic
      - State whether the product uses AI / ML — if no, state explicitly and skip the rest
      - Model class (rule-based, statistical, deep learning, foundation model, agentic)
      - Training-data provenance and consent basis
-     - ATRS record published (cross-reference `/arckit:atrs` output)
+     - ATRS record published (cross-reference `/arckit-atrs` output)
      - Fairness assessment — protected characteristics evaluated, performance parity
      - Model drift monitoring approach
      - Human-in-the-loop / human-on-the-loop design
@@ -126,7 +126,7 @@ DTAC version 2.0 has **no AI section**. AI appears only in C1.1.1 (AI as a Medic
 
 ## Important Notes
 
-- **DTAC is procurement assurance, not regulation**: a passing DTAC does not constitute MHRA medical-device approval (run `/arckit:uk-mdr-classification` if the product is a medical device) and does not constitute DCB0129/0160 compliance (run those commands explicitly).
+- **DTAC is procurement assurance, not regulation**: a passing DTAC does not constitute MHRA medical-device approval (run `/arckit-uk-mdr-classification` if the product is a medical device) and does not constitute DCB0129/0160 compliance (run those commands explicitly).
 - **DTAC version pinning**: this command follows the DTAC form version 2.0 (24 February 2026), which replaced version 1.0 from 6 April 2026. NHS England says it will update DTAC again as the DCB0129 and DCB0160 review and other standards work conclude. Check the NHS England page before submission; if a later form is published, the questions may have changed.
 - **Use the NHS England form**: buyers are asked not to accept amended DTAC forms. Present the ArcKit artefact as the evidence pack behind the completed form, and the AI supplement as a separate supplemental document.
 - **`[PENDING]` markers**: mark any answer the project evidence does not support — DSPT status, ICO registration, certificates, test reports, the CSO's details — as `[PENDING]` rather than asserting it. Use `[PENDING — organisation responsibility]` only for items the deploying organisation, not the manufacturer, must supply (for example local Caldicott Guardian sign-off or its own DCB0160 case).

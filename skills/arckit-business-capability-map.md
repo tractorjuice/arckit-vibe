@@ -20,7 +20,7 @@ ${args}
 **MANDATORY** (warn if missing):
 
 - **ADMP** (ADM Preliminary / Architecture Vision) — Extract: Scope boundaries, architecture vision, drivers, constraints, success criteria, in-scope capabilities
-  - If missing: STOP and ask user to run `/arckit:adm-preliminary` first. Business Architecture must be grounded in the ADM scope and vision.
+  - If missing: STOP and ask user to run `/arckit-adm-preliminary` first. Business Architecture must be grounded in the ADM scope and vision.
 
 **RECOMMENDED** (read if available, note if missing):
 
@@ -61,7 +61,7 @@ Identify the target project from the hook context. If the user specifies a proje
 - **If not found**: Read `${VIBE_EXTENSION_ROOT}/templates/capability-map-template.md` (default)
 - **Then**, read `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` and resolve the template's `<!-- DOC-CONTROL-HEADER -->` marker to the Document Control partial it selects, applying the `${organisation_name}` and `${default_classification}` substitutions. Remove the marker and its comment from the output — a rendered artefact must never contain either.
 
-> **Tip**: Users can customise templates with `/arckit:customize capability-map`
+> **Tip**: Users can customise templates with `/arckit-customize capability-map`
 
 ### 3. Clarify Capability Depth with User
 
@@ -258,8 +258,8 @@ After writing the file, show a concise summary (NOT the full document):
 1. Review capability map with business architecture stakeholders
 2. Validate maturity assessments with capability owners
 3. Prioritise investment areas with investment board
-4. Perform gap analysis: `/arckit:gap-analysis`
-5. Map applications to capabilities: `/arckit:application-inventory`
+4. Perform gap analysis: `/arckit-gap-analysis`
+5. Map applications to capabilities: `/arckit-application-inventory`
 
 ### Traceability
 - Grounded in [N] ADM Preliminary scope items
@@ -285,8 +285,8 @@ After writing the file, show a concise summary (NOT the full document):
 6. **Version Management**: If a capability map already exists (`ARC-*-BPCM-v*.md`), create a new version (v2.0) rather than overwriting. Capability maps should be versioned to track evolution across ADM cycles.
 
 7. **Integration with Other Commands**:
-   - BPCM feeds into: `/arckit:gap-analysis` (Phase E — gap identification), `/arckit:application-inventory` (Phase C — application architecture)
-   - BPCM is informed by: `/arckit:adm-preliminary`, `/arckit:requirements`, `/arckit:stakeholders`, `/arckit:principles`
+   - BPCM feeds into: `/arckit-gap-analysis` (Phase E — gap identification), `/arckit-application-inventory` (Phase C — application architecture)
+   - BPCM is informed by: `/arckit-adm-preliminary`, `/arckit-requirements`, `/arckit-stakeholders`, `/arckit-principles`
 
 8. **TOGAF Alignment**: This document maps to TOGAF ADM Phase B (Business Architecture) outputs: the Business Capability map, Value Stream map and Business Capabilities catalog in the baseline and target Business Architecture. Phase A (Architecture Vision), which the ADMP covers, identifies capabilities and value streams only at a high level; this map details them.
 

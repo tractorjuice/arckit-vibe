@@ -72,7 +72,7 @@ Change requests are **multi-instance** documents (like ADRs). Find the next avai
 - **If not found**: Read `${VIBE_EXTENSION_ROOT}/templates/architecture-change-template.md` (default)
 - **Then**, read `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` and resolve the template's `<!-- DOC-CONTROL-HEADER -->` marker to the Document Control partial it selects, applying the `${organisation_name}` and `${default_classification}` substitutions. Remove the marker and its comment from the output — a rendered artefact must never contain either.
 
-> **Tip**: Users can customise templates with `/arckit:customize architecture-change`
+> **Tip**: Users can customise templates with `/arckit-customize architecture-change`
 
 ### 4. Interactive Configuration
 
@@ -324,9 +324,9 @@ After writing the file, show a concise summary (NOT the full document):
 - [✅/⚠️] Transition Architecture: ARC-{P}-TRANS-v[N].md
 
 ### Next Steps
-1. Review change request with Architecture Board: `/arckit:architecture-board`
-2. Update transition plan for approved changes: `/arckit:transition-architecture`
-3. Re-assess gaps after implementation: `/arckit:gap-analysis`
+1. Review change request with Architecture Board: `/arckit-architecture-board`
+2. Update transition plan for approved changes: `/arckit-transition-architecture`
+3. Re-assess gaps after implementation: `/arckit-gap-analysis`
 4. Schedule ADM cycle re-entry if phases require re-work
 5. Update affected artefacts after approval
 
@@ -358,8 +358,8 @@ After writing the file, show a concise summary (NOT the full document):
 6. **Multi-Instance Numbering**: Change requests follow sequential numbering (ACHG-001, ACHG-002, etc.) similar to ADRs. Numbers are never reused — superseded or rejected changes retain their numbers.
 
 7. **Integration with Other Commands**:
-   - Architecture Change feeds into: `/arckit:transition-architecture` (update migration plans), `/arckit:gap-analysis` (re-assess after implementation)
-   - Architecture Change is informed by: `/arckit:architecture-board` (governance context), BPCM (capability baseline), ADMP (framework)
+   - Architecture Change feeds into: `/arckit-transition-architecture` (update migration plans), `/arckit-gap-analysis` (re-assess after implementation)
+   - Architecture Change is informed by: `/arckit-architecture-board` (governance context), BPCM (capability baseline), ADMP (framework)
 
 8. **Version Management**: If a change request needs revision (e.g., after board feedback), create a new version (v1.1 for minor changes, v2.0 for significant changes) rather than overwriting.
 

@@ -7,7 +7,7 @@ tags: [arckit, architecture, governance]
 
 > ⚠️ **Community-contributed command** — not part of the officially-maintained ArcKit baseline. Output should be reviewed by qualified DSB-Beauftragter / DPO / Rechtsabteilung before reliance. Citations to Datenschutzbehörde (DSB) / EU regulations may lag the current text — verify against the source. Some citations are marked `[NEEDS VERIFICATION]` and should be confirmed by an Austrian data protection practitioner before external use.
 
-You are helping an enterprise architect generate an **Austrian Data Protection Assessment** — the Austrian-specific GDPR layer applied by the Datenschutzbehörde (DSB) under the Datenschutzgesetz (DSG 2018, BGBl. I Nr. 165/1999 as amended). Run this after `/arckit:eu-rgpd` to add Austrian obligations that go beyond the EU GDPR baseline.
+You are helping an enterprise architect generate an **Austrian Data Protection Assessment** — the Austrian-specific GDPR layer applied by the Datenschutzbehörde (DSB) under the Datenschutzgesetz (DSG 2018, BGBl. I Nr. 165/1999 as amended). Run this after `/arckit-eu-rgpd` to add Austrian obligations that go beyond the EU GDPR baseline.
 
 ## User Input
 
@@ -26,7 +26,7 @@ ${args}
 - **DATA** (Data Model) — Extract: all entities with personal data, special category data (besondere Kategorien), data subjects, data flows, retention periods, third-party processors
   - If missing: warn that an AT DSG assessment requires a data model to identify personal data categories
 - **RGPD** (EU RGPD Assessment) — Extract: legal basis mapping, DPIA screening results, DPO determination, international transfer analysis
-  - If missing: warn that `/arckit:at-dsgvo` should be run after `/arckit:eu-rgpd` for best results. Proceed with available data.
+  - If missing: warn that `/arckit-at-dsgvo` should be run after `/arckit-eu-rgpd` for best results. Proceed with available data.
 
 **RECOMMENDED** (read if available, note if missing):
 
@@ -110,7 +110,7 @@ Read all documents from Step 0. Identify:
 7. **Section 4: DPIA Screening (Art. 35 GDPR + DSB Blacklist)**
    - Score the nine EDPB WP248 criteria; two or more → full DPIA
    - Check the DSB's Art. 35(4) list, the **DSFA-V (BGBl. II Nr. 278/2018)**; a match means a DPIA is required. The DSFA-AV (BGBl. II Nr. 108/2018) lists the exceptions
-   - If a DPIA is required, hand off to `/arckit:dpia`
+   - If a DPIA is required, hand off to `/arckit-dpia`
 
 8. **Section 5: Image and Video Processing (GDPR; §§12–13 DSG)** (conditional — only if CCTV/imagery detected)
    - ⚠️ **Current case law — assess on the GDPR**: the VwGH has held that where private video surveillance is assessed under Art. 6(1)(f) GDPR, **§12 Abs. 2 Z 4 in conjunction with Abs. 3 DSG must be left unapplied**, because the GDPR gives no opening clause for a legislated balancing of interests; the processing is measured **solely** against Art. 6(1)(f) GDPR, case by case (**VwGH 22.10.2025, Ra 2023/04/0075**, confirming the BVwG line of W256 2214855-1, 20.11.2019 and W211 2210458-1, 25.11.2019). The VwGH did not rule on the rest of §§12–13, but its reasoning applies to them too. The OGH applied §12 DSG in civil proceedings (6 Ob 150/19f, 27.11.2019, requiring a case-by-case proportionality test) and civil courts still cite it alongside Art. 6(1)(f) (e.g. 1 Ob 155/25p, 11.11.2025). So: do **not** present §§12–13 DSG as the legal basis, and do **not** present them as stricter than the GDPR
@@ -126,7 +126,7 @@ Read all documents from Step 0. Identify:
    - Elektronische Gesundheitsakte (ELGA-G) interoperability requirements
    - GTelG 2012 telematics interop for data exchange between health providers
    - Art. 9(2) GDPR legal basis selection — in AT typically §§7–8 DSG + ELGA-G
-   - DPIA mandatory flag: special category data + large scale → run `/arckit:dpia`
+   - DPIA mandatory flag: special category data + large scale → run `/arckit-dpia`
    - Opt-out vs opt-in for ELGA participation — controller's integration obligations
    - If no health data: include section header with "N/A — no health data identified"
 
@@ -233,15 +233,15 @@ projects/{project_id}/ARC-{PROJECT_ID}-ATDSG-v{VERSION}.md
 {List 🔴 High priority gaps}
 
 Next steps:
-1. {If DPIA required: Run /arckit:dpia}
+1. {If DPIA required: Run /arckit-dpia}
 2. {If employee monitoring: draft Betriebsvereinbarung §96a ArbVG}
-3. {If no eu-rgpd baseline: Run /arckit:eu-rgpd first}
+3. {If no eu-rgpd baseline: Run /arckit-eu-rgpd first}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
 ## Important Notes
 
-- **Run after eu-rgpd**: This command adds the Austrian layer on top of the EU GDPR baseline. For best results, run `/arckit:eu-rgpd` first, then this command.
+- **Run after eu-rgpd**: This command adds the Austrian layer on top of the EU GDPR baseline. For best results, run `/arckit-eu-rgpd` first, then this command.
 - **Austrian age of digital consent is 14, not 16**: Austria chose the lower limit allowed by GDPR (§4(4) DSG). Do not apply the GDPR default of 16.
 - **Image processing is assessed on the GDPR, not §12 DSG**: §§12–13 DSG are still on the statute book, but the VwGH has held that for private video surveillance assessed under Art. 6(1)(f) GDPR, §12 Abs. 2 Z 4 iVm Abs. 3 DSG stays unapplied for want of a GDPR opening clause, and the processing is measured solely against Art. 6(1)(f) (VwGH 22.10.2025, Ra 2023/04/0075, confirming the BVwG's 2019 line). The OGH applied §12 in civil proceedings (6 Ob 150/19f, with a case-by-case proportionality test) and civil courts still cite it alongside Art. 6(1)(f) GDPR. Never present §§12–13 DSG as the legal basis or as stricter than the GDPR.
 - **ArbVG Betriebsvereinbarung is separate from GDPR**: Employee monitoring capability requires a works-council agreement even where GDPR lawfulness is established — §96 Abs 1 Z 3 for control measures affecting human dignity, §96a for Personaldatensysteme. Flag if employee monitoring or a personnel data system is possible.
@@ -269,11 +269,11 @@ Next steps:
 ## Example Usage
 
 ```text
-/arckit:at-dsgvo Austrian DSG layer for 001 — federal ministry HR system with CCTV at entrances, employee data, and potential monitoring of IT usage
+/arckit-at-dsgvo Austrian DSG layer for 001 — federal ministry HR system with CCTV at entrances, employee data, and potential monitoring of IT usage
 
-/arckit:at-dsgvo Assess AT DSG obligations for a Vienna regional hospital group integrating with ELGA, processing Gesundheitsdaten, planning mobile patient portal
+/arckit-at-dsgvo Assess AT DSG obligations for a Vienna regional hospital group integrating with ELGA, processing Gesundheitsdaten, planning mobile patient portal
 
-/arckit:at-dsgvo AT data protection for a research consortium processing pseudonymised health data for a longitudinal cohort study under §§7–8 DSG
+/arckit-at-dsgvo AT data protection for a research consortium processing pseudonymised health data for a longitudinal cohort study under §§7–8 DSG
 ```
 
 ## Suggested Next Steps

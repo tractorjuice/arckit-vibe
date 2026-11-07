@@ -14,7 +14,7 @@ You are helping an enterprise architect generate an **Austrian Accessibility Ass
 
 An entity can be subject to **both** — a federal body running an in-scope e-commerce or banking service is the common case. Determine applicability first, then assess only the tracks that apply.
 
-> **Not this command's job.** `/arckit:at-bvergg` already covers accessibility as a *procurement* clause (§107 BVergG). This command assesses the entity's own products, services, websites and apps. If you are writing a tender, run `/arckit:at-bvergg`.
+> **Not this command's job.** `/arckit-at-bvergg` already covers accessibility as a *procurement* clause (§107 BVergG). This command assesses the entity's own products, services, websites and apps. If you are writing a tender, run `/arckit-at-bvergg`.
 
 ## User Input
 
@@ -115,8 +115,8 @@ Read `.arckit/templates-custom/at-barrierefreiheit-template.md` if it exists, ot
 
    - One row per non-conformance: surface, criterion, severity, user impact, owner, target date, and the track it arises under.
    - Prioritise by user impact first and enforcement exposure second. A blocked login path outranks a decorative contrast failure regardless of which act is in play.
-   - Where remediation needs procurement, note the handoff to `/arckit:at-bvergg` so the conformance target lands in the Leistungsbeschreibung rather than being rediscovered at acceptance.
-   - Cross-reference each engineering item to an NFR-UX requirement ID, creating them via `/arckit:requirements` if they do not exist.
+   - Where remediation needs procurement, note the handoff to `/arckit-at-bvergg` so the conformance target lands in the Leistungsbeschreibung rather than being rediscovered at acceptance.
+   - Cross-reference each engineering item to an NFR-UX requirement ID, creating them via `/arckit-requirements` if they do not exist.
 
 **Populate the External References section** per `${VIBE_EXTENSION_ROOT}/references/citation-instructions.md`. BaFG (BGBl. I Nr. 76/2023), WZG (BGBl. I Nr. 59/2019), Directive (EU) 2019/882, Directive (EU) 2016/2102, EN 301 549 v3.2.1 and WCAG 2.1 MUST appear in the Document Register.
 
@@ -172,8 +172,8 @@ Exposure: {BaFG: SMS, up to EUR 80,000, tiered | WZG: FFG monitoring and complai
 
 Next steps:
 1. {If WZG applies and no statement exists: publish a Barrierefreiheitserklärung}
-2. {If remediation will be procured: Run /arckit:at-bvergg}
-3. {If gaps need engineering: Run /arckit:requirements to raise NFR-UX items}
+2. {If remediation will be procured: Run /arckit-at-bvergg}
+3. {If gaps need engineering: Run /arckit-requirements to raise NFR-UX items}
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 ```
 
@@ -184,7 +184,7 @@ Next steps:
 - **An exemption without evidence is a gap.** The SMS can require an entity claiming the microenterprise exemption to produce the supporting headcount and financial evidence. Record the figures in the assessment.
 - **The federal WZG does not cover Land bodies.** The Länder legislate separately. Route a Land or municipal body to its Landesgesetz rather than assessing it here.
 - **The WZG has no fines.** Do not carry the BaFG's EUR 80,000 ceiling into a public-sector assessment. The consequence there is monitoring, complaint and publication.
-- **Assess against WCAG 2.1 AA.** EN 301 549 v3.2.1 is the OJ-cited version and it is what carries the presumption of conformity. WCAG 2.2 AA arrives with v4.1.1, expected around October 2026 `[NEEDS VERIFICATION]`; specifying it earlier raises the bar above the legal floor and must be recorded as a deliberate decision. This matches `/arckit:at-bvergg`.
+- **Assess against WCAG 2.1 AA.** EN 301 549 v3.2.1 is the OJ-cited version and it is what carries the presumption of conformity. WCAG 2.2 AA arrives with v4.1.1, expected around October 2026 `[NEEDS VERIFICATION]`; specifying it earlier raises the bar above the legal floor and must be recorded as a deliberate decision. This matches `/arckit-at-bvergg`.
 - **Automated scanning is not conformance.** A statement resting on a tool report alone is a finding. Record the test method for every criterion.
 - **Verify citations**: the BaFG paragraph numbers here (§ 3 Z 19, § 6, § 21, § 24 Abs. 2, §§ 26, 28 and 36) were checked against the consolidated BaFG in RIS on 27 October 2026; it had not been amended since BGBl. I Nr. 76/2023. Check RIS for later amendments, and confirm the WZG and EN 301 549 citations, before external use.
 - **Use Write Tool**: Accessibility assessments carrying a per-criterion table run 2,000–4,000 words. Always use the Write tool.
@@ -208,11 +208,11 @@ Next steps:
 ## Example Usage
 
 ```text
-/arckit:at-barrierefreiheit Accessibility assessment for 001 — federal ministry citizen portal and its companion mobile app
+/arckit-at-barrierefreiheit Accessibility assessment for 001 — federal ministry citizen portal and its companion mobile app
 
-/arckit:at-barrierefreiheit Vienna fintech, 8 staff, EUR 1.4M turnover, consumer banking app plus a self-service card-issuing terminal in branches
+/arckit-at-barrierefreiheit Vienna fintech, 8 staff, EUR 1.4M turnover, consumer banking app plus a self-service card-issuing terminal in branches
 
-/arckit:at-barrierefreiheit Assess both tracks for a public transport operator — passenger information website, ticketing app, and platform ticket machines
+/arckit-at-barrierefreiheit Assess both tracks for a public transport operator — passenger information website, ticketing app, and platform ticket machines
 ```
 
 ## Suggested Next Steps

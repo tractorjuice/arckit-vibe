@@ -89,7 +89,7 @@ The Defence Industry Security Program (DISP) is the security accreditation frame
 
    - **Annual Self-Audit Plan** — DISP requires annual self-audit; describe scope, methodology, evidence retention.
 
-   - **ArcKit Evidence Integration** — map `/arckit:servicenow` CMDB evidence, `/arckit:risk` residual risks, `/arckit:traceability` claim-to-evidence links, `/arckit:graph-report` coverage, and `/arckit:maturity-model` uplift domains to DISP attestation claims.
+   - **ArcKit Evidence Integration** — map `/arckit-servicenow` CMDB evidence, `/arckit-risk` residual risks, `/arckit-traceability` claim-to-evidence links, `/arckit-graph-report` coverage, and `/arckit-maturity-model` uplift domains to DISP attestation claims.
 
    - **Attestation Statement** — formal CSO + Director sign-off statement attesting to the accuracy of the pack, with signature blocks, date, and re-attestation cadence.
 

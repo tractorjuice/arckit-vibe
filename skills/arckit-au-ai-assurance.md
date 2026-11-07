@@ -104,7 +104,7 @@ Australia's AI assurance landscape combines several frameworks that together gov
 
    - **Vendor / Foundation-Model Disclosure** — for systems built on third-party foundation models, document: vendor name, model version, vendor's AI policy compliance, training-data provenance disclosure (if available), data-residency for inference, IP / copyright position.
 
-   - **ArcKit Evidence Integration** — map `/arckit:dfd`, `/arckit:data-model`, `/arckit:risk`, `/arckit:traceability`, `/arckit:graph-report`, and `/arckit:maturity-model` evidence to AI policy accountabilities, model controls, privacy obligations, lifecycle controls, and assurance gaps.
+   - **ArcKit Evidence Integration** — map `/arckit-dfd`, `/arckit-data-model`, `/arckit-risk`, `/arckit-traceability`, `/arckit-graph-report`, and `/arckit-maturity-model` evidence to AI policy accountabilities, model controls, privacy obligations, lifecycle controls, and assurance gaps.
 
    - **Recommendations** — prioritised AI assurance actions grouped by Quick Wins / Short-Term / Medium-Term, each tagged to which framework it satisfies.
 

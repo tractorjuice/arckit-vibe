@@ -27,7 +27,7 @@ Use this command when **any** of the following conditions are met:
 
 **Do NOT use** when:
 
-- Full regulatory audit trail is required (use `/arckit:adm-preliminary` with full ADM workflow instead)
+- Full regulatory audit trail is required (use `/arckit-adm-preliminary` with full ADM workflow instead)
 
 - Multi-year enterprise transformation with 50+ stakeholder review gates
 
@@ -41,7 +41,7 @@ Use this command when **any** of the following conditions are met:
 
 - **PRIN** (Architecture Principles, in 000-global) — Extract: Guiding principles, decision framework, technology standards
 
-  - If missing: warn user to run `/arckit:principles` first. Even O-AA Lite benefits from established principles.
+  - If missing: warn user to run `/arckit-principles` first. Even O-AA Lite benefits from established principles.
 
 - **ADMP** (ADM Preliminary / Architecture Vision) — Extract: Existing scope, drivers, constraints if a preliminary ADM was already done
 
@@ -49,11 +49,11 @@ Use this command when **any** of the following conditions are met:
 
 - **STKE** (Stakeholder Analysis) — Extract: Stakeholder roles, drivers, goals and concerns for the Sprint 0 stakeholder map
 
-  - If missing: note that Sprint 0 builds the stakeholder map from the user input alone, and suggest `/arckit:stakeholders`
+  - If missing: note that Sprint 0 builds the stakeholder map from the user input alone, and suggest `/arckit-stakeholders`
 
 - **REQ** (Requirements) — Extract: Business requirements and NFR targets (performance, availability, security) for the Sprint 0 success criteria
 
-  - If missing: note that success criteria are drafted without requirement IDs, and suggest `/arckit:requirements`
+  - If missing: note that success criteria are drafted without requirement IDs, and suggest `/arckit-requirements`
 
 ### Prerequisites 1b: Read external documents and policies
 
@@ -88,7 +88,7 @@ Identify the target project from the hook context. If the user specifies a proje
 
 - **Also** apply the O-AA placeholder substitutions in `${VIBE_EXTENSION_ROOT}/references/placeholder-substitutions.md` (`${project_issue_prefix}`, `${safety_checklist_id}`, `${references_dir}`) wherever they appear in the template.
 
-> **Tip**: Users can customise templates with `/arckit:customize oaa-adm-lite`
+> **Tip**: Users can customise templates with `/arckit-customize oaa-adm-lite`
 
 ### 3. Sprint Map
 
@@ -128,13 +128,13 @@ Cite axioms by published number and name. Do not quote axiom text you cannot ver
 
 O-AA ADM Lite defines YAML sprint artefacts whose structure is inlined in `oaa-adm-lite-template.md`. These artefacts are deliverables owned by this command, not shared schema files:
 
-- **`vision.yaml`** — Architecture vision, scope, drivers, constraints (Sprint 0; consistent with the scope and vision established by `/arckit:adm-preliminary`)
+- **`vision.yaml`** — Architecture vision, scope, drivers, constraints (Sprint 0; consistent with the scope and vision established by `/arckit-adm-preliminary`)
 
-- **`implementation-strategy.yaml`** — Implementation waves, migration strategy (Sprint 3; consistent with `/arckit:transition-architecture`)
+- **`implementation-strategy.yaml`** — Implementation waves, migration strategy (Sprint 3; consistent with `/arckit-transition-architecture`)
 
 - **`stakeholder-map.md`** — Stakeholder roles, concerns, compliance mapping
 
-Validate each artefact against the inlined structure in the template before writing it, and run `/arckit:health` after the build to catch stale or orphaned artefacts.
+Validate each artefact against the inlined structure in the template before writing it, and run `/arckit-health` after the build to catch stale or orphaned artefacts.
 
 ### 6. Generate O-AA ADM Lite Document
 
@@ -194,7 +194,7 @@ Create the O-AA ADM Lite document following the template structure.
 
 - Continuous compliance evidence
 
-- Architecture change requests via `/arckit:architecture-change`
+- Architecture change requests via `/arckit-architecture-change`
 
 ### 7. External References
 
@@ -252,9 +252,9 @@ After writing the file, show a concise summary (NOT the full document):
 
 ### Next Steps
 1. Begin Sprint 0: Stakeholder workshops + vision definition
-2. Verify Sprint 0 artefacts: `/arckit:health`
-3. Continue to Sprint 1: `/arckit:product-architecture`
-4. Plan dual transformation: `/arckit:agile-strategy`
+2. Verify Sprint 0 artefacts: `/arckit-health`
+3. Continue to Sprint 1: `/arckit-product-architecture`
+4. Plan dual transformation: `/arckit-agile-strategy`
 
 **File location**: `projects/{P}/ARC-{P}-OAAL-v{VERSION}.md`
 ```
@@ -263,7 +263,7 @@ After writing the file, show a concise summary (NOT the full document):
 
 1. **O-AA vs Traditional TOGAF**: This is a lightweight, sprint-driven approach. It preserves TOGAF ADM structure but compresses the timeline and deliverable format. Do not use for regulated engagements requiring full ADM audit trails.
 
-2. **Sprint Artefacts**: The `vision.yaml` and `implementation-strategy.yaml` structures are defined inline in `oaa-adm-lite-template.md`. Validate artefacts against those structures and via `/arckit:health`; they stay consistent with the traditional TOGAF commands without sharing schema files.
+2. **Sprint Artefacts**: The `vision.yaml` and `implementation-strategy.yaml` structures are defined inline in `oaa-adm-lite-template.md`. Validate artefacts against those structures and via `/arckit-health`; they stay consistent with the traditional TOGAF commands without sharing schema files.
 
 3. **Product-Centric**: O-AA mandates product-centric architecture (Axiom 15, Project to Product Shift). The organizing principle is the product, not capabilities or services.
 

@@ -4,7 +4,7 @@ description: 'Wardley Mapping reference for a map, a positioning question or a s
   read: value-chain decomposition, evolution stages, OnlineWardleyMaps syntax, gameplay,
   doctrine and climatic patterns, build-versus-buy and inertia. Also loaded while
   a WARD artefact is being written. Not needed when the request is for a governed
-  Wardley artefact with document control; the /arckit:wardley, wardley.value-chain,
+  Wardley artefact with document control; the /arckit-wardley, wardley.value-chain,
   wardley.doctrine, wardley.gameplay and wardley.climate commands produce those.'
 ---
 
@@ -141,7 +141,7 @@ The highest-signal failures, collected from real maps. Check these before finali
 - **Treating the Y-axis as importance.** Visibility means *visibility to the user*, not business value or criticality. Power supply is invisible-but-critical → it belongs low on the map, not high.
 - **Floating components with no anchor.** Every value chain must trace upward to the user need. A component nothing depends on (directly or transitively) is either mis-placed or doesn't belong on this map.
 
-### OnlineWardleyMaps (OWM) syntax — for the `/arckit:wardley*` commands
+### OnlineWardleyMaps (OWM) syntax — for the `/arckit-wardley*` commands
 
 These produce OWM text for <https://create.wardleymaps.ai>. The renderer is strict:
 
@@ -177,7 +177,7 @@ Everything here parses without error and renders wrong. Found while building
   region will overlap component labels. Put notes in visibly empty areas of the map.
 - **Component labels default to the same offset**, so two components close together get
   overlapping labels. Set `label [x, y]` (pixel offsets, y negative is up) on the crowded ones, or
-  run `/arckit:wardley --tidy-owm` to place them automatically.
+  run `/arckit-wardley --tidy-owm` to place them automatically.
 - **Sourcing is its own directive, not part of the component line:** `build Foo` / `buy Bar` /
   `outsource Baz` on separate lines (the inline `component Foo [v, e] (build)` decorator also
   works). Omit them and the map shows positions but no build-versus-buy read — which is usually
@@ -194,7 +194,7 @@ Everything here parses without error and renders wrong. Found while building
 - **Listing only technology.** A value chain includes people, practices, and data — not just systems. Maps that are all boxes-of-software miss the inertia and doctrine insights that make the exercise worthwhile.
 - **Recommendations with no rationale.** Every strategic move must tie back to a position or movement on the map ("commoditize X because it sits Product-right with three vendors"), not generic advice.
 - **Manufacturing a source to fill the Source column.** A Source must name something that exists — copy the ID from the project context (value chains are numbered: `ARC-001-WVCH-001-v1.0`) or write `Assumption`. Inventing a plausible-looking ID is the failure the map check catches.
-- **Retyping a value chain's visibility instead of copying it.** A component sourced to a value chain carries that value chain's number to 2dp. If the value chain is wrong, fix it with `/arckit:wardley.value-chain` and re-run; if the map re-anchors on a different user need, source those components elsewhere.
+- **Retyping a value chain's visibility instead of copying it.** A component sourced to a value chain carries that value chain's number to 2dp. If the value chain is wrong, fix it with `/arckit-wardley-value-chain` and re-run; if the map re-anchors on a different user need, source those components elsewhere.
 
 ## Analysis Checklist
 
@@ -337,10 +337,10 @@ This skill handles **conversational** Wardley Mapping — quick questions, evolu
 
 For **formal architecture documents** with document control, project integration, UK Government compliance (TCoP, GDS, AI Playbook), and OnlineWardleyMaps syntax for https://create.wardleymaps.ai, use the ArcKit Wardley suite:
 
-- `/arckit:wardley.value-chain` — Decompose user needs into value chains (WVCH artifact)
-- `/arckit:wardley` — Create strategic Wardley Maps (WARD artifact)
-- `/arckit:wardley.doctrine` — Assess organizational doctrine maturity across 4 phases, 40+ principles (WDOC artifact)
-- `/arckit:wardley.gameplay` — Analyze strategic plays from 60+ gameplay patterns with D&D alignment (WGAM artifact)
-- `/arckit:wardley.climate` — Assess 32 climatic patterns across 6 categories with prediction horizons (WCLM artifact)
+- `/arckit-wardley-value-chain` — Decompose user needs into value chains (WVCH artifact)
+- `/arckit-wardley` — Create strategic Wardley Maps (WARD artifact)
+- `/arckit-wardley-doctrine` — Assess organizational doctrine maturity across 4 phases, 40+ principles (WDOC artifact)
+- `/arckit-wardley-gameplay` — Analyze strategic plays from 60+ gameplay patterns with D&D alignment (WGAM artifact)
+- `/arckit-wardley-climate` — Assess 32 climatic patterns across 6 categories with prediction horizons (WCLM artifact)
 
 These generate versioned artifacts saved to your project directory with full traceability to requirements and architecture principles. Each command works standalone but gets richer when sibling artifacts exist.

@@ -20,7 +20,7 @@ ${args}
 **MANDATORY** (warn if missing):
 
 - **PRIN** (Architecture Principles, in 000-global) — Extract: Guiding principles, decision framework, technology standards
-  - If missing: STOP and ask user to run `/arckit:principles` first. The Preliminary ADM must be grounded in architecture principles.
+  - If missing: STOP and ask user to run `/arckit-principles` first. The Preliminary ADM must be grounded in architecture principles.
 
 **RECOMMENDED** (read if available, note if missing):
 
@@ -56,7 +56,7 @@ Identify the target project from the hook context. If the user specifies a proje
 - **If not found**: Read `${VIBE_EXTENSION_ROOT}/templates/adm-preliminary-template.md` (default)
 - **Then**, read `${VIBE_EXTENSION_ROOT}/templates/_partials/RENDERING.md` and resolve the template's `<!-- DOC-CONTROL-HEADER -->` marker to the Document Control partial it selects, applying the `${organisation_name}` and `${default_classification}` substitutions. Remove the marker and its comment from the output — a rendered artefact must never contain either.
 
-> **Tip**: Users can customise templates with `/arckit:customize adm-preliminary`
+> **Tip**: Users can customise templates with `/arckit-customize adm-preliminary`
 
 ### 3. Clarify Scope with User
 
@@ -229,8 +229,8 @@ After writing the file, show a concise summary (NOT the full document):
 ### Next Steps
 1. Review Architecture Vision with Architecture Board / Sponsor
 2. Validate scope boundaries with key stakeholders
-3. Begin Phase B (Business Architecture): `/arckit:business-capability-map`
-4. Perform gap analysis: `/arckit:gap-analysis`
+3. Begin Phase B (Business Architecture): `/arckit-business-capability-map`
+4. Perform gap analysis: `/arckit-gap-analysis`
 
 ### Traceability
 - Aligns to [N] architecture principles
@@ -255,8 +255,8 @@ After writing the file, show a concise summary (NOT the full document):
 6. **Version Management**: If an Architecture Vision already exists (`ARC-*-ADMP-v*.md`), create a new version (v2.0) rather than overwriting. Architecture visions should be versioned to track evolution across ADM cycles.
 
 7. **Integration with Other Commands**:
-   - ADMP feeds into: `/arckit:business-capability-map` (Phase B — Business Architecture), `/arckit:gap-analysis` (Phase E — Opportunities & Solutions)
-   - ADMP is informed by: `/arckit:principles`, `/arckit:stakeholders`, `/arckit:strategy`
+   - ADMP feeds into: `/arckit-business-capability-map` (Phase B — Business Architecture), `/arckit-gap-analysis` (Phase E — Opportunities & Solutions)
+   - ADMP is informed by: `/arckit-principles`, `/arckit-stakeholders`, `/arckit-strategy`
 
 8. **TOGAF Alignment**: This document maps to TOGAF ADM Preliminary Phase outputs (Architecture Principles, Architecture Repository, Architecture Capability, ADM Scope & Tailoring) and to the Phase A (Architecture Vision) output, the Architecture Vision.
 

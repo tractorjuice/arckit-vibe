@@ -29,7 +29,7 @@ ${args}
 
 ## What This Command Does
 
-Reads the JSON backlog produced by `/arckit:backlog FORMAT=json` and pushes it to Trello:
+Reads the JSON backlog produced by `/arckit-backlog FORMAT=json` and pushes it to Trello:
 
 1. Creates a **board** with sprint-based lists
 2. Uses the board's six **colour labels** for priority (MoSCoW) and item type (Epic/Story/Task), with a **Label key** card that names them
@@ -54,8 +54,8 @@ Find the project directory:
 
 Locate the backlog JSON file:
 
-- Look for `ARC-*-BKLG-*.json` in `projects/{project-dir}/`. A re-run of `/arckit:backlog` writes a new version beside the old one, so if there are several, use the highest version (v1.10 is later than v1.9)
-- This is produced by `/arckit:backlog FORMAT=json`
+- Look for `ARC-*-BKLG-*.json` in `projects/{project-dir}/`. A re-run of `/arckit-backlog` writes a new version beside the old one, so if there are several, use the highest version (v1.10 is later than v1.9)
+- This is produced by `/arckit-backlog FORMAT=json`
 
 **If no JSON file found**:
 
@@ -63,9 +63,9 @@ Locate the backlog JSON file:
 No backlog JSON file found in projects/{project-dir}/
 
 Please generate one first:
-  /arckit:backlog FORMAT=json
+  /arckit-backlog FORMAT=json
 
-Then re-run /arckit:trello
+Then re-run /arckit-trello
 ```
 
 ### Step 2: Connect to Trello
@@ -77,7 +77,7 @@ The Trello tools come from the bundled `trello` MCP server: `trelloReadMember`, 
 ```text
 Trello isn't connected yet. Sign in to the "trello" MCP server once: run /mcp,
 choose "trello", and select Authenticate (other assistants have their own MCP
-sign-in command). Sign in to Trello in the browser, then re-run /arckit:trello.
+sign-in command). Sign in to Trello in the browser, then re-run /arckit-trello.
 ```
 
 Then call `trelloReadMember` with `action: "get_me"`. It confirms the connection and tells you who is signed in.
@@ -223,9 +223,9 @@ Next steps:
 No ARC-*-BKLG-*.json file found in projects/{project-dir}/
 
 Please generate one first:
-  /arckit:backlog FORMAT=json
+  /arckit-backlog FORMAT=json
 
-Then re-run /arckit:trello
+Then re-run /arckit-trello
 ```
 
 **Trello not connected**: see Step 2. Don't ask for an API key or token, and don't fall back to the Trello REST API.
@@ -256,7 +256,7 @@ Board URL: {board_url}
 
 ### Inputs From
 
-- `/arckit:backlog FORMAT=json` - Backlog JSON file (MANDATORY)
+- `/arckit-backlog FORMAT=json` - Backlog JSON file (MANDATORY)
 
 ### Outputs To
 
@@ -268,7 +268,7 @@ Board URL: {board_url}
 
 ### Signing in
 
-The first `/arckit:trello` in a session may ask you to approve the Trello tools, and the first ever use needs a one-time sign-in to the `trello` MCP server. Your assistant keeps the sign-in in its own credential store. ArcKit doesn't hold a Trello key or token.
+The first `/arckit-trello` in a session may ask you to approve the Trello tools, and the first ever use needs a one-time sign-in to the `trello` MCP server. Your assistant keeps the sign-in in its own credential store. ArcKit doesn't hold a Trello key or token.
 
 ### Board Cleanup
 

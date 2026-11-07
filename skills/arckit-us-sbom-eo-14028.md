@@ -98,7 +98,7 @@ For SBOM content, CISA's **2026 Minimum Elements for a Software Bill of Material
 
 ## Handoffs
 
-The attestation and SBOM directly evidence NIST 800-53 SR and SA family controls in `/arckit:us-nist-800-53`. SBOM-format choice, signing strategy, and any attestation gaps should be captured as ADRs via `/arckit:adr`. Components with known unmitigated vulnerabilities and any open attestation gaps feed `/arckit:risk`.
+The attestation and SBOM directly evidence NIST 800-53 SR and SA family controls in `/arckit-us-nist-800-53`. SBOM-format choice, signing strategy, and any attestation gaps should be captured as ADRs via `/arckit-adr`. Components with known unmitigated vulnerabilities and any open attestation gaps feed `/arckit-risk`.
 
 ## Important Notes
 
