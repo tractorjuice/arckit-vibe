@@ -23,5 +23,5 @@ system_prompt = "# Vendor Scoring\n\nYou are helping an enterprise architect sco
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-score.md"
-version = "6.20.0"
+version = "6.21.0"
 tags = ["arckit", "arckit-score"]
