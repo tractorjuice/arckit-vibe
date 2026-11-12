@@ -23,5 +23,5 @@ system_prompt = "You are helping an enterprise architect create a vendor evaluat
 
 [metadata]
 source = "plugins/arckit-claude/agents/arckit-evaluate.md"
-version = "6.21.0"
+version = "6.22.0"
 tags = ["arckit", "arckit-evaluate"]
